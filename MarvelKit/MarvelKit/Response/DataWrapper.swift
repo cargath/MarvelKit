@@ -1,12 +1,24 @@
 //
-//  CreatorDataWrapper.swift
+//  DataWrapper.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 29.04.16.
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct CreatorDataWrapper {
+// MARK: - Data wrapper interface
+
+public protocol DataWrapperProtocol {
+
+    associatedtype ContainerProtocolType: DataContainerProtocol
+
+}
+
+// MARK: - Data wrapper implementation
+
+public struct DataWrapper<ContainerType: DataContainerProtocol>: DataWrapperProtocol {
+
+    public typealias ContainerProtocolType = ContainerType
 
     /**
      * The HTTP status code of the returned result.
@@ -38,11 +50,11 @@ public struct CreatorDataWrapper {
     /**
      * The results returned by the call.
      */
-    public let data: CreatorDataContainer?
+    public let data: ContainerType
 
     /**
      * A digest value of the content returned by the call.
      */
     public let etag: String?
-
+    
 }

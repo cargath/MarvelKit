@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct Comic {
+// MARK: - Data implementation
+
+public struct Comic: DataProtocol {
 
     /**
      * The unique ID of the comic resource.
@@ -155,3 +157,9 @@ public struct Comic {
     public let events: EventList?
 
 }
+
+// MARK: - Typealiases used in the Marvel API docs
+
+public typealias ComicDataContainer = DataContainer<Comic>
+
+public typealias ComicDataWrapper = DataWrapper<ComicDataContainer>

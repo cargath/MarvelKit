@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct SeriesSummary {
+// MARK: - Summary implementation
+
+public struct SeriesSummary: SummaryProtocol {
 
     /**
      * The path to the individual series resource.
@@ -19,3 +21,7 @@ public struct SeriesSummary {
     public let name: String?
     
 }
+
+// MARK: - Typealias used in the Marvel API docs
+
+public typealias SeriesList = List<SeriesSummary>

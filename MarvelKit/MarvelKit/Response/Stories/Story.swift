@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct Story {
+// MARK: - Data implementation
+
+public struct Story: DataProtocol {
 
     /**
      * The unique ID of the story resource.
@@ -74,3 +76,9 @@ public struct Story {
     public let originalissue: ComicSummary?
 
 }
+
+// MARK: - Typealiases used in the Marvel API docs
+
+public typealias StoryDataContainer = DataContainer<Story>
+
+public typealias StoryDataWrapper = DataWrapper<StoryDataContainer>

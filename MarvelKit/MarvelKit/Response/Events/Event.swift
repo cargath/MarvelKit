@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct Event {
+// MARK: - Data implementation
+
+public struct Event: DataProtocol {
 
     /**
      * The unique ID of the event resource.
@@ -89,3 +91,9 @@ public struct Event {
     public let previous: EventSummary?
 
 }
+
+// MARK: - Typealiases used in the Marvel API docs
+
+public typealias EventDataContainer = DataContainer<Event>
+
+public typealias EventDataWrapper = DataWrapper<EventDataContainer>

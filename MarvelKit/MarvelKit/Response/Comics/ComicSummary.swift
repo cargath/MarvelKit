@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct ComicSummary {
+// MARK: - Summary implementation
+
+public struct ComicSummary: SummaryProtocol {
 
     /**
      * The path to the individual comic resource.
@@ -19,3 +21,7 @@ public struct ComicSummary {
     public let name: String?
     
 }
+
+// MARK: - Typealias used in the Marvel API docs
+
+public typealias ComicList = List<ComicSummary>

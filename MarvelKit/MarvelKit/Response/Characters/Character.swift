@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct Character {
+// MARK: - Data implementation
+
+public struct Character: DataProtocol {
 
     /**
      * The unique ID of the character resource.
@@ -64,3 +66,9 @@ public struct Character {
     public let series: SeriesList?
 
 }
+
+// MARK: - Typealiases used in the Marvel API docs
+
+public typealias CharacterDataContainer = DataContainer<Character>
+
+public typealias CharacterDataWrapper = DataWrapper<CharacterDataContainer>

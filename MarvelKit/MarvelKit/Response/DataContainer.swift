@@ -1,12 +1,24 @@
 //
-//  CharacterDataContainer.swift
+//  DataContainer.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 29.04.16.
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct CharacterDataContainer {
+// MARK: - Data container interface
+
+public protocol DataContainerProtocol {
+
+    associatedtype DataProtocolType: DataProtocol
+
+}
+
+// MARK: - Data container implementation
+
+public struct DataContainer<DataType: DataProtocol>: DataContainerProtocol {
+
+    public typealias DataProtocolType = DataType
 
     /**
      * The requested offset (number of skipped results) of the call.
@@ -29,8 +41,8 @@ public struct CharacterDataContainer {
     public let count: Int?
 
     /**
-     * The list of characters returned by the call.
+     * The list of results returned by the call.
      */
-    public let results: [Character]
+    public let results: [DataType]
 
 }

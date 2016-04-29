@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct CreatorSummary {
+// MARK: - Summary implementation
+
+public struct CreatorSummary: SummaryProtocol {
 
     /**
      * The path to the individual creator resource.
@@ -24,3 +26,7 @@ public struct CreatorSummary {
     public let role: String?
 
 }
+
+// MARK: - Typealias used in the Marvel API docs
+
+public typealias CreatorList = List<CreatorSummary>

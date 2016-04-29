@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct Series {
+// MARK: - Data implementation
+
+public struct Series: DataProtocol {
 
     /**
      * The unique ID of the series resource.
@@ -94,3 +96,9 @@ public struct Series {
     public let previous: SeriesSummary?
 
 }
+
+// MARK: - Typealiases used in the Marvel API docs
+
+public typealias SeriesDataContainer = DataContainer<Series>
+
+public typealias SeriesDataWrapper = DataWrapper<SeriesDataContainer>

@@ -6,7 +6,9 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public struct Creator {
+// MARK: - Data implementation
+
+public struct Creator: DataProtocol {
 
     /**
      * The unique ID of the creator resource.
@@ -79,3 +81,9 @@ public struct Creator {
     public let events: EventList?
 
 }
+
+// MARK: - Typealiases used in the Marvel API docs
+
+public typealias CreatorDataContainer = DataContainer<Creator>
+
+public typealias CreatorDataWrapper = DataWrapper<CreatorDataContainer>
