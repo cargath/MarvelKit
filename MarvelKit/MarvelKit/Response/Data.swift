@@ -8,8 +8,10 @@
 
 // MARK: - Data interface
 
-public protocol DataProtocol {
+public protocol DataProtocol: JSONObjectConvertible {
 
     var id: Int? { get }
+
+    var resourceURI: String? { get }
 
 }

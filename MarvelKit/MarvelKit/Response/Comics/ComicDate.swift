@@ -6,6 +6,8 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
+// MARK: - ComicDate
+
 public struct ComicDate {
 
     /**
@@ -17,5 +19,16 @@ public struct ComicDate {
      * The date.
      */
     public let date: String?
+
+}
+
+// MARK: - ComicDate + JSONObjectConvertible
+
+extension ComicDate: JSONObjectConvertible {
+
+    public init?(jsonObject: JSONObject) {
+        self.type = jsonObject["type"] as? String
+        self.date = jsonObject["date"] as? String
+    }
 
 }

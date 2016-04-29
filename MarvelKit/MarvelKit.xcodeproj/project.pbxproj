@@ -32,6 +32,7 @@
 		352073161CD3715A009BC420 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073151CD3715A009BC420 /* DataWrapper.swift */; };
 		3520731A1CD37180009BC420 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073191CD37180009BC420 /* List.swift */; };
 		3520731C1CD371A4009BC420 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520731B1CD371A4009BC420 /* Summary.swift */; };
+		352073201CD3B053009BC420 /* JSONObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520731F1CD3B053009BC420 /* JSONObjectConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		352073151CD3715A009BC420 /* DataWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataWrapper.swift; path = Response/DataWrapper.swift; sourceTree = "<group>"; };
 		352073191CD37180009BC420 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = List.swift; path = Response/List.swift; sourceTree = "<group>"; };
 		3520731B1CD371A4009BC420 /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Summary.swift; path = Response/Summary.swift; sourceTree = "<group>"; };
+		3520731F1CD3B053009BC420 /* JSONObjectConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONObjectConvertible.swift; path = Utils/JSONObjectConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				352072811CD35400009BC420 /* Response */,
 				352072821CD35405009BC420 /* Request */,
+				3520731E1CD3AB22009BC420 /* Utils */,
 				3520726A1CD34A0F009BC420 /* MarvelKit.h */,
 				3520726C1CD34A0F009BC420 /* Info.plist */,
 			);
@@ -222,6 +225,14 @@
 				352072961CD35422009BC420 /* Url.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		3520731E1CD3AB22009BC420 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3520731F1CD3B053009BC420 /* JSONObjectConvertible.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +346,7 @@
 				352072F01CD36963009BC420 /* CreatorSummary.swift in Sources */,
 				352073001CD369A6009BC420 /* Series.swift in Sources */,
 				352072D81CD36928009BC420 /* CharacterSummary.swift in Sources */,
+				352073201CD3B053009BC420 /* JSONObjectConvertible.swift in Sources */,
 				3520731C1CD371A4009BC420 /* Summary.swift in Sources */,
 				352073121CD3713B009BC420 /* Data.swift in Sources */,
 				352072E61CD3694A009BC420 /* ComicSummary.swift in Sources */,

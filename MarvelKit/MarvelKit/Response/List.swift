@@ -42,3 +42,16 @@ public struct List<SummaryType: SummaryProtocol>: ListProtocol {
     public let items: [SummaryType]
 
 }
+
+// MARK: - List + JSONObjectConvertible
+
+extension List: JSONObjectConvertible {
+
+    public init?(jsonObject: JSONObject) {
+        self.available = jsonObject["available"] as? Int
+        self.returned = jsonObject["returned"] as? Int
+        self.collectionURI = jsonObject["returned"] as? String
+        self.items = SummaryType.fromJSONArray(jsonObject["items"] as? JSONArray)
+    }
+
+}

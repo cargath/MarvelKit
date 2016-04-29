@@ -27,6 +27,18 @@ public struct CharacterSummary: SummaryProtocol {
 
 }
 
+// MARK: - Summary + JSONObjectConvertible
+
+extension CharacterSummary {
+
+    public init?(jsonObject: JSONObject) {
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.name = jsonObject["name"] as? String
+        self.role = jsonObject["role"] as? String
+    }
+    
+}
+
 // MARK: - Typealias used in the Marvel API docs
 
 public typealias CharacterList = List<CharacterSummary>

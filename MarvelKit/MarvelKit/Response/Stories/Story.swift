@@ -28,7 +28,7 @@ public struct Story: DataProtocol {
     /**
      * The canonical URL identifier for this resource.
      */
-    public let resourceURI: String
+    public let resourceURI: String?
 
     /**
      * The story type e.g. interior story, cover, text story.
@@ -74,6 +74,28 @@ public struct Story: DataProtocol {
      * A summary representation of the issue in which this story was originally published.
      */
     public let originalissue: ComicSummary?
+
+}
+
+// MARK: - Story + JSONObjectConvertible
+
+extension Story {
+
+    public init?(jsonObject: JSONObject) {
+        self.id = jsonObject["id"] as? Int
+        self.title = jsonObject["title"] as? String
+        self.description = jsonObject["description"] as? String
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.type = jsonObject["type"] as? String
+        self.modified = jsonObject["modified"] as? String
+        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
+        self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)
+        self.series = SeriesList(jsonObject: jsonObject["series"] as? JSONObject)
+        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
+        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
+        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
+        self.originalissue = ComicSummary(jsonObject: jsonObject["originalissue"] as? JSONObject)
+    }
 
 }
 

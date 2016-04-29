@@ -22,6 +22,17 @@ public struct SeriesSummary: SummaryProtocol {
     
 }
 
+// MARK: - Summary + JSONObjectConvertible
+
+extension SeriesSummary {
+
+    public init?(jsonObject: JSONObject) {
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.name = jsonObject["name"] as? String
+    }
+
+}
+
 // MARK: - Typealias used in the Marvel API docs
 
 public typealias SeriesList = List<SeriesSummary>

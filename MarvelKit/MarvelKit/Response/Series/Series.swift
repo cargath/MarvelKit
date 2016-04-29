@@ -97,6 +97,32 @@ public struct Series: DataProtocol {
 
 }
 
+// MARK: - Series + JSONObjectConvertible
+
+extension Series {
+
+    public init?(jsonObject: JSONObject) {
+        self.id = jsonObject["id"] as? Int
+        self.title = jsonObject["title"] as? String
+        self.description = jsonObject["description"] as? String
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.urls = Url.fromJSONArray(jsonObject["urls"] as? JSONArray)
+        self.startYear = jsonObject["startYear"] as? Int
+        self.endYear = jsonObject["endYear"] as? Int
+        self.rating = jsonObject["rating"] as? String
+        self.modified = jsonObject["modified"] as? String
+        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
+        self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)
+        self.stories = StoryList(jsonObject: jsonObject["stories"] as? JSONObject)
+        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
+        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
+        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
+        self.next = SeriesSummary(jsonObject: jsonObject["next"] as? JSONObject)
+        self.previous = SeriesSummary(jsonObject: jsonObject["previous"] as? JSONObject)
+    }
+
+}
+
 // MARK: - Typealiases used in the Marvel API docs
 
 public typealias SeriesDataContainer = DataContainer<Series>

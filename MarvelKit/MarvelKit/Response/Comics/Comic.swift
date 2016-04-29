@@ -158,6 +158,44 @@ public struct Comic: DataProtocol {
 
 }
 
+// MARK: - Comic + JSONObjectConvertible
+
+extension Comic {
+
+    public init?(jsonObject: JSONObject) {
+        self.id = jsonObject["id"] as? Int
+        self.digitalId = jsonObject["digitalId"] as? Int
+        self.title = jsonObject["title"] as? String
+        self.issueNumber = jsonObject["issueNumber"] as? Double
+        self.variantDescription = jsonObject["variantDescription"] as? String
+        self.description = jsonObject["description"] as? String
+        self.modified = jsonObject["modified"] as? String
+        self.isbn = jsonObject["isbn"] as? String
+        self.upc = jsonObject["upc"] as? String
+        self.diamondCode = jsonObject["diamondCode"] as? String
+        self.ean = jsonObject["ean"] as? String
+        self.issn = jsonObject["issn"] as? String
+        self.format = jsonObject["format"] as? String
+        self.pageCount = jsonObject["pageCount"] as? Int
+        self.textObjects = TextObject.fromJSONArray(jsonObject["textObjects"] as? JSONArray)
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.urls = Url.fromJSONArray(jsonObject["urls"] as? JSONArray)
+        self.series = SeriesSummary(jsonObject: jsonObject["series"] as? JSONObject)
+        self.variants = ComicSummary.fromJSONArray(jsonObject["variants"] as? JSONArray)
+        self.collections = ComicSummary.fromJSONArray(jsonObject["collections"] as? JSONArray)
+        self.collectedIssues = ComicSummary.fromJSONArray(jsonObject["collectedIssues"] as? JSONArray)
+        self.dates = ComicDate.fromJSONArray(jsonObject["dates"] as? JSONArray)
+        self.prices = ComicPrice.fromJSONArray(jsonObject["prices"] as? JSONArray)
+        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
+        self.images = Image.fromJSONArray(jsonObject["images"] as? JSONArray)
+        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
+        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
+        self.stories = StoryList(jsonObject: jsonObject["stories"] as? JSONObject)
+        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
+    }
+
+}
+
 // MARK: - Typealiases used in the Marvel API docs
 
 public typealias ComicDataContainer = DataContainer<Comic>

@@ -50,11 +50,27 @@ public struct DataWrapper<ContainerType: DataContainerProtocol>: DataWrapperProt
     /**
      * The results returned by the call.
      */
-    public let data: ContainerType
+    public let data: ContainerType?
 
     /**
      * A digest value of the content returned by the call.
      */
     public let etag: String?
     
+}
+
+// MARK: - Data wrapper + JSONObjectConvertible
+
+extension DataWrapper: JSONObjectConvertible {
+
+    public init?(jsonObject: JSONObject) {
+        self.code = jsonObject["code"] as? Int
+        self.status = jsonObject["status"] as? String
+        self.copyright = jsonObject["copyright"] as? String
+        self.attributionText = jsonObject["attributionText"] as? String
+        self.attributionHTML = jsonObject["attributionHTML"] as? String
+        self.data = ContainerType(jsonObject: jsonObject["data"] as? JSONObject)
+        self.etag = jsonObject["etag"] as? String
+    }
+
 }

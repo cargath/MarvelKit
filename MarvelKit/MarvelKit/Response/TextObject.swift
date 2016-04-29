@@ -6,6 +6,8 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
+// MARK: - TextObject
+
 public struct TextObject {
 
     /**
@@ -22,5 +24,17 @@ public struct TextObject {
      * The text.
      */
     public let text: String?
+
+}
+
+// MARK: - TextObject + JSONObjectConvertible
+
+extension TextObject: JSONObjectConvertible {
+
+    public init?(jsonObject: JSONObject) {
+        self.type = jsonObject["type"] as? String
+        self.language = jsonObject["language"] as? String
+        self.text = jsonObject["text"] as? String
+    }
 
 }

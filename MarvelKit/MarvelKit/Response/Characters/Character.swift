@@ -67,6 +67,26 @@ public struct Character: DataProtocol {
 
 }
 
+// MARK: - Character + JSONObjectConvertible
+
+extension Character {
+
+    public init?(jsonObject: JSONObject) {
+        self.id = jsonObject["id"] as? Int
+        self.name = jsonObject["name"] as? String
+        self.description = jsonObject["description"] as? String
+        self.modified = jsonObject["modified"] as? String
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.urls = Url.fromJSONArray(jsonObject["urls"] as? JSONArray)
+        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
+        self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)
+        self.stories = StoryList(jsonObject: jsonObject["stories"] as? JSONObject)
+        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
+        self.series = SeriesList(jsonObject: jsonObject["series"] as? JSONObject)
+    }
+
+}
+
 // MARK: - Typealiases used in the Marvel API docs
 
 public typealias CharacterDataContainer = DataContainer<Character>

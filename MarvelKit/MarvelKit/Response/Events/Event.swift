@@ -92,6 +92,31 @@ public struct Event: DataProtocol {
 
 }
 
+// MARK: - Event + JSONObjectConvertible
+
+extension Event {
+
+    public init?(jsonObject: JSONObject) {
+        self.id = jsonObject["id"] as? Int
+        self.title = jsonObject["title"] as? String
+        self.description = jsonObject["description"] as? String
+        self.resourceURI = jsonObject["resourceURI"] as? String
+        self.urls = Url.fromJSONArray(jsonObject["urls"] as? JSONArray)
+        self.modified = jsonObject["modified"] as? String
+        self.start = jsonObject["start"] as? String
+        self.end = jsonObject["end"] as? String
+        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
+        self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)
+        self.stories = StoryList(jsonObject: jsonObject["stories"] as? JSONObject)
+        self.series = SeriesList(jsonObject: jsonObject["series"] as? JSONObject)
+        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
+        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
+        self.next = EventSummary(jsonObject: jsonObject["next"] as? JSONObject)
+        self.previous = EventSummary(jsonObject: jsonObject["previous"] as? JSONObject)
+    }
+
+}
+
 // MARK: - Typealiases used in the Marvel API docs
 
 public typealias EventDataContainer = DataContainer<Event>
