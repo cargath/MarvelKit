@@ -17,6 +17,7 @@ public struct Image {
 
     /**
      * The file extension for the image.
+     * Actually 'extension', which is a keyword in Swift.
      */
     public let pathExtension: String?
 
@@ -28,7 +29,7 @@ extension Image: JSONObjectConvertible {
 
     public init?(jsonObject: JSONObject) {
         self.path = jsonObject["path"] as? String
-        self.pathExtension = jsonObject["pathExtension"] as? String
+        self.pathExtension = jsonObject["extension"] as? String
     }
 
 }

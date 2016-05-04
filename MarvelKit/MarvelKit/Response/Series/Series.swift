@@ -51,6 +51,11 @@ public struct Series: DataProtocol {
     public let rating: String?
 
     /**
+     * Note: Appears in response body, not model schema.
+     */
+    public let type: String?
+
+    /**
      * The date the resource was most recently modified.
      */
     public let modified: String?
@@ -110,6 +115,7 @@ extension Series {
         self.startYear = jsonObject["startYear"] as? Int
         self.endYear = jsonObject["endYear"] as? Int
         self.rating = jsonObject["rating"] as? String
+        self.type = jsonObject["type"] as? String
         self.modified = jsonObject["modified"] as? String
         self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
         self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)

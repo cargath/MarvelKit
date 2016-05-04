@@ -50,7 +50,7 @@ extension List: JSONObjectConvertible {
     public init?(jsonObject: JSONObject) {
         self.available = jsonObject["available"] as? Int
         self.returned = jsonObject["returned"] as? Int
-        self.collectionURI = jsonObject["returned"] as? String
+        self.collectionURI = jsonObject["collectionURI"] as? String
         self.items = SummaryType.fromJSONArray(jsonObject["items"] as? JSONArray)
     }
 

@@ -73,7 +73,7 @@ public struct Story: DataProtocol {
     /**
      * A summary representation of the issue in which this story was originally published.
      */
-    public let originalissue: ComicSummary?
+    public let originalIssue: ComicSummary?
 
 }
 
@@ -94,7 +94,7 @@ extension Story {
         self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
         self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
         self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
-        self.originalissue = ComicSummary(jsonObject: jsonObject["originalissue"] as? JSONObject)
+        self.originalIssue = ComicSummary(jsonObject: jsonObject["originalIssue"] as? JSONObject)
     }
 
 }

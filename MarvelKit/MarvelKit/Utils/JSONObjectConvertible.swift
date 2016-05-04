@@ -11,6 +11,25 @@
 public typealias JSONObject = Dictionary<String, AnyObject>
 public typealias JSONArray = Array<JSONObject>
 
+// MARK: - Get JSON objects from resource
+
+public extension NSJSONSerialization {
+
+    public class func JSONObjectNamed(name: String, forBundle bundle: NSBundle) -> JSONObject? {
+
+        if let
+            filePath = bundle.pathForResource(name, ofType: "json"),
+            data = NSData(contentsOfFile: filePath),
+            json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONObject {
+
+            return json
+        }
+
+        return nil
+    }
+    
+}
+
 // MARK: - JSONObjectConvertible interface
 
 public protocol JSONObjectConvertible {

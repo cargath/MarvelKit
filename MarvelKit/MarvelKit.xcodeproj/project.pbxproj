@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3520726B1CD34A0F009BC420 /* MarvelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3520726A1CD34A0F009BC420 /* MarvelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		352072721CD34A10009BC420 /* MarvelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352072671CD34A0F009BC420 /* MarvelKit.framework */; };
-		352072771CD34A10009BC420 /* MarvelKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352072761CD34A10009BC420 /* MarvelKitTests.swift */; };
 		352072A31CD35422009BC420 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520728F1CD35422009BC420 /* Image.swift */; };
 		352072A91CD35422009BC420 /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352072951CD35422009BC420 /* TextObject.swift */; };
 		352072AA1CD35422009BC420 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352072961CD35422009BC420 /* Url.swift */; };
@@ -33,6 +32,18 @@
 		3520731A1CD37180009BC420 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073191CD37180009BC420 /* List.swift */; };
 		3520731C1CD371A4009BC420 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520731B1CD371A4009BC420 /* Summary.swift */; };
 		352073201CD3B053009BC420 /* JSONObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520731F1CD3B053009BC420 /* JSONObjectConvertible.swift */; };
+		352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073231CD3CC73009BC420 /* CharacterTests.swift */; };
+		352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073251CD3CC7E009BC420 /* ComicTests.swift */; };
+		352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073271CD3CC91009BC420 /* CreatorTests.swift */; };
+		3520732A1CD3CCA5009BC420 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352073291CD3CCA5009BC420 /* EventTests.swift */; };
+		3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520732B1CD3CCB2009BC420 /* SeriesTests.swift */; };
+		3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520732D1CD3CCBD009BC420 /* StoryTests.swift */; };
+		352073361CD3CE14009BC420 /* StoryTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073301CD3CE14009BC420 /* StoryTests.json */; };
+		352073371CD3CE14009BC420 /* SeriesTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073311CD3CE14009BC420 /* SeriesTests.json */; };
+		352073381CD3CE14009BC420 /* EventTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073321CD3CE14009BC420 /* EventTests.json */; };
+		352073391CD3CE14009BC420 /* CreatorTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073331CD3CE14009BC420 /* CreatorTests.json */; };
+		3520733A1CD3CE14009BC420 /* CharacterTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073341CD3CE14009BC420 /* CharacterTests.json */; };
+		3520733B1CD3CE14009BC420 /* ComicTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073351CD3CE14009BC420 /* ComicTests.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +61,6 @@
 		3520726A1CD34A0F009BC420 /* MarvelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarvelKit.h; sourceTree = "<group>"; };
 		3520726C1CD34A0F009BC420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		352072711CD34A10009BC420 /* MarvelKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		352072761CD34A10009BC420 /* MarvelKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelKitTests.swift; sourceTree = "<group>"; };
 		352072781CD34A10009BC420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3520728F1CD35422009BC420 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Response/Image.swift; sourceTree = "<group>"; };
 		352072951CD35422009BC420 /* TextObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextObject.swift; path = Response/TextObject.swift; sourceTree = "<group>"; };
@@ -75,6 +85,18 @@
 		352073191CD37180009BC420 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = List.swift; path = Response/List.swift; sourceTree = "<group>"; };
 		3520731B1CD371A4009BC420 /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Summary.swift; path = Response/Summary.swift; sourceTree = "<group>"; };
 		3520731F1CD3B053009BC420 /* JSONObjectConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONObjectConvertible.swift; path = Utils/JSONObjectConvertible.swift; sourceTree = "<group>"; };
+		352073231CD3CC73009BC420 /* CharacterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
+		352073251CD3CC7E009BC420 /* ComicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicTests.swift; sourceTree = "<group>"; };
+		352073271CD3CC91009BC420 /* CreatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorTests.swift; sourceTree = "<group>"; };
+		352073291CD3CCA5009BC420 /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		3520732B1CD3CCB2009BC420 /* SeriesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesTests.swift; sourceTree = "<group>"; };
+		3520732D1CD3CCBD009BC420 /* StoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTests.swift; sourceTree = "<group>"; };
+		352073301CD3CE14009BC420 /* StoryTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = StoryTests.json; path = Resources/StoryTests.json; sourceTree = "<group>"; };
+		352073311CD3CE14009BC420 /* SeriesTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SeriesTests.json; path = Resources/SeriesTests.json; sourceTree = "<group>"; };
+		352073321CD3CE14009BC420 /* EventTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EventTests.json; path = Resources/EventTests.json; sourceTree = "<group>"; };
+		352073331CD3CE14009BC420 /* CreatorTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CreatorTests.json; path = Resources/CreatorTests.json; sourceTree = "<group>"; };
+		352073341CD3CE14009BC420 /* CharacterTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CharacterTests.json; path = Resources/CharacterTests.json; sourceTree = "<group>"; };
+		352073351CD3CE14009BC420 /* ComicTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ComicTests.json; path = Resources/ComicTests.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +151,14 @@
 		352072751CD34A10009BC420 /* MarvelKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				352072761CD34A10009BC420 /* MarvelKitTests.swift */,
+				3520732F1CD3CD17009BC420 /* Resources */,
 				352072781CD34A10009BC420 /* Info.plist */,
+				352073231CD3CC73009BC420 /* CharacterTests.swift */,
+				352073251CD3CC7E009BC420 /* ComicTests.swift */,
+				352073271CD3CC91009BC420 /* CreatorTests.swift */,
+				352073291CD3CCA5009BC420 /* EventTests.swift */,
+				3520732B1CD3CCB2009BC420 /* SeriesTests.swift */,
+				3520732D1CD3CCBD009BC420 /* StoryTests.swift */,
 			);
 			path = MarvelKitTests;
 			sourceTree = "<group>";
@@ -235,6 +263,19 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		3520732F1CD3CD17009BC420 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				352073341CD3CE14009BC420 /* CharacterTests.json */,
+				352073351CD3CE14009BC420 /* ComicTests.json */,
+				352073331CD3CE14009BC420 /* CreatorTests.json */,
+				352073321CD3CE14009BC420 /* EventTests.json */,
+				352073311CD3CE14009BC420 /* SeriesTests.json */,
+				352073301CD3CE14009BC420 /* StoryTests.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -333,6 +374,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352073391CD3CE14009BC420 /* CreatorTests.json in Resources */,
+				3520733B1CD3CE14009BC420 /* ComicTests.json in Resources */,
+				352073381CD3CE14009BC420 /* EventTests.json in Resources */,
+				3520733A1CD3CE14009BC420 /* CharacterTests.json in Resources */,
+				352073371CD3CE14009BC420 /* SeriesTests.json in Resources */,
+				352073361CD3CE14009BC420 /* StoryTests.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +420,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				352072771CD34A10009BC420 /* MarvelKitTests.swift in Sources */,
+				3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */,
+				352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */,
+				3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */,
+				3520732A1CD3CCA5009BC420 /* EventTests.swift in Sources */,
+				352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */,
+				352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +605,7 @@
 				3520727D1CD34A10009BC420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3520727E1CD34A10009BC420 /* Build configuration list for PBXNativeTarget "MarvelKitTests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +614,7 @@
 				352072801CD34A10009BC420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
