@@ -22,6 +22,7 @@
 		350156AC1CDB8F650021759D /* Creator+ResourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350156AB1CDB8F650021759D /* Creator+ResourceProtocol.swift */; };
 		350156AE1CDB8F6F0021759D /* Comic+ResourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350156AD1CDB8F6F0021759D /* Comic+ResourceProtocol.swift */; };
 		350156B01CDB8F760021759D /* Character+ResourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350156AF1CDB8F760021759D /* Character+ResourceProtocol.swift */; };
+		35068DFD1CDF583F00E35FDB /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35068DFC1CDF583F00E35FDB /* MD5.swift */; };
 		3520726B1CD34A0F009BC420 /* MarvelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3520726A1CD34A0F009BC420 /* MarvelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		352072721CD34A10009BC420 /* MarvelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352072671CD34A0F009BC420 /* MarvelKit.framework */; };
 		352072A31CD35422009BC420 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520728F1CD35422009BC420 /* Image.swift */; };
@@ -59,6 +60,7 @@
 		352073391CD3CE14009BC420 /* CreatorTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073331CD3CE14009BC420 /* CreatorTests.json */; };
 		3520733A1CD3CE14009BC420 /* CharacterTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073341CD3CE14009BC420 /* CharacterTests.json */; };
 		3520733B1CD3CE14009BC420 /* ComicTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 352073351CD3CE14009BC420 /* ComicTests.json */; };
+		3528E6DE1CE11D9700A53022 /* MD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E6DD1CE11D9700A53022 /* MD5Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,7 @@
 		350156AB1CDB8F650021759D /* Creator+ResourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Creator+ResourceProtocol.swift"; path = "Request/Creators/Creator+ResourceProtocol.swift"; sourceTree = "<group>"; };
 		350156AD1CDB8F6F0021759D /* Comic+ResourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Comic+ResourceProtocol.swift"; path = "Request/Comics/Comic+ResourceProtocol.swift"; sourceTree = "<group>"; };
 		350156AF1CDB8F760021759D /* Character+ResourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Character+ResourceProtocol.swift"; path = "Request/Characters/Character+ResourceProtocol.swift"; sourceTree = "<group>"; };
+		35068DFC1CDF583F00E35FDB /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Utils/MD5.swift; sourceTree = "<group>"; };
 		352072671CD34A0F009BC420 /* MarvelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3520726A1CD34A0F009BC420 /* MarvelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarvelKit.h; sourceTree = "<group>"; };
 		3520726C1CD34A0F009BC420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		352073331CD3CE14009BC420 /* CreatorTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CreatorTests.json; path = Resources/CreatorTests.json; sourceTree = "<group>"; };
 		352073341CD3CE14009BC420 /* CharacterTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CharacterTests.json; path = Resources/CharacterTests.json; sourceTree = "<group>"; };
 		352073351CD3CE14009BC420 /* ComicTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ComicTests.json; path = Resources/ComicTests.json; sourceTree = "<group>"; };
+		3528E6DD1CE11D9700A53022 /* MD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MD5Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,13 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				3520732F1CD3CD17009BC420 /* Resources */,
+				3528E6DF1CE23B3A00A53022 /* Response */,
+				3528E6E01CE23B4900A53022 /* Utils */,
 				352072781CD34A10009BC420 /* Info.plist */,
-				352073231CD3CC73009BC420 /* CharacterTests.swift */,
-				352073251CD3CC7E009BC420 /* ComicTests.swift */,
-				352073271CD3CC91009BC420 /* CreatorTests.swift */,
-				352073291CD3CCA5009BC420 /* EventTests.swift */,
-				3520732B1CD3CCB2009BC420 /* SeriesTests.swift */,
-				3520732D1CD3CCBD009BC420 /* StoryTests.swift */,
 			);
 			path = MarvelKitTests;
 			sourceTree = "<group>";
@@ -360,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				3520731F1CD3B053009BC420 /* JSONObjectConvertible.swift */,
+				35068DFC1CDF583F00E35FDB /* MD5.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -375,6 +376,27 @@
 				352073301CD3CE14009BC420 /* StoryTests.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		3528E6DF1CE23B3A00A53022 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				352073231CD3CC73009BC420 /* CharacterTests.swift */,
+				352073251CD3CC7E009BC420 /* ComicTests.swift */,
+				352073271CD3CC91009BC420 /* CreatorTests.swift */,
+				352073291CD3CCA5009BC420 /* EventTests.swift */,
+				3520732B1CD3CCB2009BC420 /* SeriesTests.swift */,
+				3520732D1CD3CCBD009BC420 /* StoryTests.swift */,
+			);
+			name = Response;
+			sourceTree = "<group>";
+		};
+		3528E6E01CE23B4900A53022 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3528E6DD1CE11D9700A53022 /* MD5Tests.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +533,7 @@
 				350156851CDB83090021759D /* Resource.swift in Sources */,
 				350156AC1CDB8F650021759D /* Creator+ResourceProtocol.swift in Sources */,
 				352072EC1CD36963009BC420 /* Creator.swift in Sources */,
+				35068DFD1CDF583F00E35FDB /* MD5.swift in Sources */,
 				352072FA1CD3699B009BC420 /* EventSummary.swift in Sources */,
 				3501569A1CDB8E030021759D /* CharacterFilter.swift in Sources */,
 				350156AE1CDB8F6F0021759D /* Comic+ResourceProtocol.swift in Sources */,
@@ -539,6 +562,7 @@
 				3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */,
 				352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */,
 				3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */,
+				3528E6DE1CE11D9700A53022 /* MD5Tests.swift in Sources */,
 				3520732A1CD3CCA5009BC420 /* EventTests.swift in Sources */,
 				352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */,
 				352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */,
