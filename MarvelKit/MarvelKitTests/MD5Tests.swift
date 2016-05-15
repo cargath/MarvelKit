@@ -24,10 +24,10 @@ class MD5Tests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
+    func testMDH5() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual("1abcd1234".md5(), "ffd275c5130566a2916217b101f26150")
+        XCTAssertEqual("1abcd1234".md5, "ffd275c5130566a2916217b101f26150")
     }
 
 }

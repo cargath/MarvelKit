@@ -19,7 +19,7 @@ public protocol ResourceProtocol {
 public extension ResourceProtocol {
 
     public static var baseURLString: String {
-        return "http://gateway.marvel.com/v1/public"
+        return "https://gateway.marvel.com/v1/public"
     }
 
     public static var baseURL: NSURL? {
