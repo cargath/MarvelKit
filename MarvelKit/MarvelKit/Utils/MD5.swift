@@ -24,23 +24,22 @@
 //  - i was interested in how to implement MD5
 //
 
-public extension SequenceType where Generator.Element == UInt8 {
+extension SequenceType where Generator.Element == UInt8 {
 
-    public func toHexString() -> String {
+    var hexString: String {
         return self.lazy.reduce("") { $0 + String(format: "%02x", $1) }
     }
 
-    public func md5() -> [Generator.Element] {
+    var md5: [Generator.Element] {
         return MD5(Array(self)).calculate()
     }
     
 }
 
-/** String extension */
 extension String {
 
-    public func md5() -> String {
-        return self.utf8.lazy.map({ $0 as UInt8 }).md5().toHexString()
+    var md5: String {
+        return self.utf8.lazy.map({ $0 as UInt8 }).md5.hexString
     }
 
 }
@@ -89,7 +88,7 @@ func arrayOfBytes<T>(value: T, length: Int? = nil) -> [UInt8] {
 extension Int {
 
     /** Array of bytes with optional padding (little-endian) */
-    public func bytes(totalBytes: Int = sizeof(Int)) -> [UInt8] {
+    func bytes(totalBytes: Int = sizeof(Int)) -> [UInt8] {
         return arrayOfBytes(self, length: totalBytes)
     }
 

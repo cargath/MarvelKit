@@ -12,6 +12,8 @@ public protocol ResourceProtocol {
 
     static var name: String { get }
 
+    init?(jsonObject: JSONObject)
+
 }
 
 public extension ResourceProtocol {
