@@ -11,8 +11,8 @@ public enum EventParameter {
     public enum Order: String {
 
         // name
-        case NameAscending = "nameDate"
-        case NameDescending = "-nameDate"
+        case NameAscending = "name"
+        case NameDescending = "-name"
 
         // start date
         case StartDateAscending = "startDate"
