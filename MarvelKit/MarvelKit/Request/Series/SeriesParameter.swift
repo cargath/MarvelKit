@@ -164,7 +164,7 @@ extension SeriesParameter: ResourceParameterProtocol {
             case let .SeriesType(value):
                 return value.rawValue
             case let .Contains(value):
-                return value.csv
+                return value.flatMap({ $0.rawValue }).csv
             case let .OrderBy(value):
                 return value.flatMap({ $0.rawValue }).csv
             case let .Limit(value):
