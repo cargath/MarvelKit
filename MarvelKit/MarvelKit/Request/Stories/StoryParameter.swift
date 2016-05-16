@@ -71,11 +71,49 @@ public enum StoryParameter {
 extension StoryParameter: ResourceParameterProtocol {
 
     public var key: String {
-        return "key"
+        switch self {
+            case .ModifiedSince:
+                return "modifiedSince"
+            case .Comics:
+                return "comics"
+            case .Series:
+                return "series"
+            case .Events:
+                return "events"
+            case .Creators:
+                return "creators"
+            case .Characters:
+                return "characters"
+            case .OrderBy:
+                return "orderBy"
+            case .Limit:
+                return "limit"
+            case .Offset:
+                return "offset"
+        }
     }
 
     public var value: String {
-        return "value"
+        switch self {
+            case let .ModifiedSince(value):
+                return value.string
+            case let .Comics(value):
+                return value.csv
+            case let .Series(value):
+                return value.csv
+            case let .Events(value):
+                return value.csv
+            case let .Creators(value):
+                return value.csv
+            case let .Characters(value):
+                return value.csv
+            case let .OrderBy(value):
+                return value.flatMap({ $0.rawValue }).csv
+            case let .Limit(value):
+                return "\(value)"
+            case let .Offset(value):
+                return "\(value)"
+        }
     }
-    
+
 }

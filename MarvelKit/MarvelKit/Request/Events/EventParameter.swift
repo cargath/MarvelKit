@@ -85,11 +85,57 @@ public enum EventParameter {
 extension EventParameter: ResourceParameterProtocol {
 
     public var key: String {
-        return "key"
+        switch self {
+            case .Name:
+                return "name"
+            case .NameStartsWith:
+                return "nameStartsWith"
+            case .ModifiedSince:
+                return "modifiedSince"
+            case .Creators:
+                return "creators"
+            case .Characters:
+                return "characters"
+            case .Series:
+                return "series"
+            case .Comics:
+                return "comics"
+            case .Stories:
+                return "stories"
+            case .OrderBy:
+                return "orderBy"
+            case .Limit:
+                return "limit"
+            case .Offset:
+                return "offset"
+        }
     }
 
     public var value: String {
-        return "value"
+        switch self {
+            case let .Name(value):
+                return value
+            case let .NameStartsWith(value):
+                return value
+            case let .ModifiedSince(value):
+                return value.string
+            case let .Creators(value):
+                return value.csv
+            case let .Characters(value):
+                return value.csv
+            case let .Series(value):
+                return value.csv
+            case let .Comics(value):
+                return value.csv
+            case let .Stories(value):
+                return value.csv
+            case let .OrderBy(value):
+                return value.flatMap({ $0.rawValue }).csv
+            case let .Limit(value):
+                return "\(value)"
+            case let .Offset(value):
+                return "\(value)"
+        }
     }
     
 }
