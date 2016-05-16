@@ -10,6 +10,8 @@ extension Story: ResourceProtocol {
 
     public typealias ResourceFilterType = StoryFilter
 
+    public typealias ResourceParameterType = StoryParameter
+
     public static var name: String {
         return "stories"
     }

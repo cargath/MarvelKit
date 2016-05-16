@@ -21,14 +21,14 @@ public extension MarvelKitError {
 
     var description: String {
         switch self {
-        case let .JSONObjectConvertibleError(msg):
-            return msg
-        case let .NSJSONSerializationError(msg):
-            return msg
-        case let .NSURLSessionError(msg):
-            return msg
-        case let .NSURLError(msg):
-            return msg
+            case let .JSONObjectConvertibleError(msg):
+                return msg
+            case let .NSJSONSerializationError(msg):
+                return msg
+            case let .NSURLSessionError(msg):
+                return msg
+            case let .NSURLError(msg):
+                return msg
         }
     }
 

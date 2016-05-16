@@ -10,6 +10,8 @@ extension Comic: ResourceProtocol {
 
     public typealias ResourceFilterType = ComicFilter
 
+    public typealias ResourceParameterType = ComicParameter
+
     public static var name: String {
         return "comics"
     }

@@ -10,6 +10,8 @@ public protocol ResourceProtocol {
 
     associatedtype ResourceFilterType: ResourceFilterProtocol
 
+    associatedtype ResourceParameterType: ResourceParameterProtocol
+
     static var name: String { get }
 
     init?(jsonObject: JSONObject)

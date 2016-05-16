@@ -10,6 +10,8 @@ extension Creator: ResourceProtocol {
 
     public typealias ResourceFilterType = CreatorFilter
 
+    public typealias ResourceParameterType = CreatorParameter
+
     public static var name: String {
         return "creators"
     }

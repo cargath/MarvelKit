@@ -10,6 +10,8 @@ extension Series: ResourceProtocol {
 
     public typealias ResourceFilterType = SeriesFilter
 
+    public typealias ResourceParameterType = SeriesParameter
+
     public static var name: String {
         return "series"
     }

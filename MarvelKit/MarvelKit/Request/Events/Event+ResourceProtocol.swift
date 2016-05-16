@@ -10,6 +10,8 @@ extension Event: ResourceProtocol {
 
     public typealias ResourceFilterType = EventFilter
 
+    public typealias ResourceParameterType = EventParameter
+
     public static var name: String {
         return "events"
     }

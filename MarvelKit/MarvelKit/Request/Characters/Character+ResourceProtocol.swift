@@ -10,6 +10,8 @@ extension Character: ResourceProtocol {
 
     public typealias ResourceFilterType = CharacterFilter
 
+    public typealias ResourceParameterType = CharacterParameter
+
     public static var name: String {
         return "characters"
     }
