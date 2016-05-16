@@ -77,6 +77,10 @@
 		3528E7941CE9EDDF00A53022 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */; };
 		3528E7981CEA23ED00A53022 /* ComicParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7971CEA23EC00A53022 /* ComicParameterTests.swift */; };
 		3528E79A1CEA47FB00A53022 /* CharacterParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7991CEA47FB00A53022 /* CharacterParameterTests.swift */; };
+		3528E79C1CEA4B6400A53022 /* CreatorParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E79B1CEA4B6400A53022 /* CreatorParameterTests.swift */; };
+		3528E79E1CEA4BA400A53022 /* EventParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E79D1CEA4BA400A53022 /* EventParameterTests.swift */; };
+		3528E7A01CEA4BC800A53022 /* SeriesParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */; };
+		3528E7A21CEA4BE900A53022 /* StoryParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +167,10 @@
 		3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		3528E7971CEA23EC00A53022 /* ComicParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicParameterTests.swift; sourceTree = "<group>"; };
 		3528E7991CEA47FB00A53022 /* CharacterParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterParameterTests.swift; sourceTree = "<group>"; };
+		3528E79B1CEA4B6400A53022 /* CreatorParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorParameterTests.swift; sourceTree = "<group>"; };
+		3528E79D1CEA4BA400A53022 /* EventParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventParameterTests.swift; sourceTree = "<group>"; };
+		3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesParameterTests.swift; sourceTree = "<group>"; };
+		3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryParameterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +459,10 @@
 				3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */,
 				3528E7991CEA47FB00A53022 /* CharacterParameterTests.swift */,
 				3528E7971CEA23EC00A53022 /* ComicParameterTests.swift */,
+				3528E79B1CEA4B6400A53022 /* CreatorParameterTests.swift */,
+				3528E79D1CEA4BA400A53022 /* EventParameterTests.swift */,
+				3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */,
+				3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -629,6 +641,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3528E7A01CEA4BC800A53022 /* SeriesParameterTests.swift in Sources */,
+				3528E79E1CEA4BA400A53022 /* EventParameterTests.swift in Sources */,
 				3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */,
 				352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */,
 				3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */,
@@ -637,7 +651,9 @@
 				352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */,
 				3528E79A1CEA47FB00A53022 /* CharacterParameterTests.swift in Sources */,
 				352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */,
+				3528E79C1CEA4B6400A53022 /* CreatorParameterTests.swift in Sources */,
 				3528E7941CE9EDDF00A53022 /* AuthenticationTests.swift in Sources */,
+				3528E7A21CEA4BE900A53022 /* StoryParameterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
