@@ -11,8 +11,8 @@ public enum CharacterParameter {
     public enum Order: String {
 
         // name
-        case NameAscending = "nameDate"
-        case NameDescending = "-nameDate"
+        case NameAscending = "name"
+        case NameDescending = "-name"
 
         // modified since
         case ModifiedAscending = "modified"

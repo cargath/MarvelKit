@@ -75,6 +75,8 @@
 		3528E78D1CE9E11700A53022 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78C1CE9E11700A53022 /* Authentication.swift */; };
 		3528E78F1CE9EAF000A53022 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78E1CE9EAF000A53022 /* Request.swift */; };
 		3528E7941CE9EDDF00A53022 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */; };
+		3528E7981CEA23ED00A53022 /* ComicParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7971CEA23EC00A53022 /* ComicParameterTests.swift */; };
+		3528E79A1CEA47FB00A53022 /* CharacterParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7991CEA47FB00A53022 /* CharacterParameterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,8 @@
 		3528E78C1CE9E11700A53022 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = Request/Authentication.swift; sourceTree = "<group>"; };
 		3528E78E1CE9EAF000A53022 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Request/Request.swift; sourceTree = "<group>"; };
 		3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		3528E7971CEA23EC00A53022 /* ComicParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicParameterTests.swift; sourceTree = "<group>"; };
+		3528E7991CEA47FB00A53022 /* CharacterParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterParameterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +449,8 @@
 			isa = PBXGroup;
 			children = (
 				3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */,
+				3528E7991CEA47FB00A53022 /* CharacterParameterTests.swift */,
+				3528E7971CEA23EC00A53022 /* ComicParameterTests.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -626,8 +632,10 @@
 				3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */,
 				352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */,
 				3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */,
+				3528E7981CEA23ED00A53022 /* ComicParameterTests.swift in Sources */,
 				3520732A1CD3CCA5009BC420 /* EventTests.swift in Sources */,
 				352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */,
+				3528E79A1CEA47FB00A53022 /* CharacterParameterTests.swift in Sources */,
 				352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */,
 				3528E7941CE9EDDF00A53022 /* AuthenticationTests.swift in Sources */,
 			);
