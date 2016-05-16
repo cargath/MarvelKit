@@ -64,137 +64,138 @@ public enum ComicParameter {
     /**
      * Filter by the issue format (e.g. comic, digital comic, hardcover).
      */
-    case Format(value: IssueFormat)
+    case Format(IssueFormat)
 
     /**
      * Filter by the issue format type (comic or collection).
      */
-    case FormatType(value: IssueFormatType)
+    case FormatType(IssueFormatType)
 
     /**
      * Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set.
      */
-    case NoVariants(value: Bool)
+    case NoVariants(Bool)
 
     /**
      * Return comics within a predefined date range.
      */
-    case DateDescriptor(value: PredefinedDateDescriptor)
+    case DateDescriptor(PredefinedDateDescriptor)
 
     /**
      * Return comics within a date range.
      */
-    case DateRange(date1: NSDate, date2: NSDate)
+    case DateRange(NSDate, NSDate)
 
     /**
      * Return only issues in series whose title matches the input.
      */
-    case Title(value: String)
+    case Title(String)
 
     /**
      * Return only issues in series whose title starts with the input.
      */
-    case TitleStartsWith(value: String)
+    case TitleStartsWith(String)
 
     /**
      * Return only issues in series whose start year matches the input.
      */
-    case StartYear(value: Int)
+    case StartYear(Int)
 
     /**
      * Return only issues in series whose issue number matches the input.
      */
-    case IssueNumber(value: Int)
+    case IssueNumber(Int)
 
     /**
      * Filter by diamond code.
      */
-    case DiamondCode(value: String)
+    case DiamondCode(String)
 
     /**
      * Filter by digital comic id.
      */
-    case DigitalID(value: Int)
+    case DigitalID(Int)
 
     /**
      * Filter by UPC.
      */
-    case UPC(value: String)
+    case UPC(String)
 
     /**
      * Filter by ISBN.
      */
-    case ISBN(value: String)
+    case ISBN(String)
 
     /**
      * Filter by EAN.
      */
-    case EAN(value: String)
+    case EAN(String)
 
     /**
      * Filter by ISSN.
      */
-    case ISSN(value: String)
+    case ISSN(String)
 
     /**
      * Include only results which are available digitally.
      */
-    case HasDigitalIssue(value: Bool)
+    case HasDigitalIssue(Bool)
 
     /**
      * Return only comics which have been modified since the specified date.
      */
-    case ModifiedSince(value: NSDate)
+    case ModifiedSince(NSDate)
 
     /**
      * Return only comics which feature work by the specified creators ids.
      */
-    case Creators(value: [Int])
+    case Creators([Int])
 
     /**
      * Return only comics which feature the specified characters ids.
      */
-    case Characters(value: [Int])
+    case Characters([Int])
 
     /**
      * Return only comics which are part of the specified series ids.
      */
-    case Series(value: [Int])
+    case Series([Int])
 
     /**
      * Return only comics which take place in the specified events ids.
      */
-    case Events(value: [Int])
+    case Events([Int])
 
     /**
      * Return only comics which contain the specified stories ids.
      */
-    case Stories(value: [Int])
+    case Stories([Int])
 
     /**
      * Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear).
      */
-    case SharedAppearances(value: [Int])
+    case SharedAppearances([Int])
 
     /**
      * Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work).
      */
-    case Collaborators(value: [Int])
+    case Collaborators([Int])
 
     /**
-     * Order the result set by a field or fields. Multiple values are given priority in the order in which they are passed.
+     * Order the result set by a field or fields.
+     * Multiple values are given priority in the order in which they are passed.
      */
-    case OrderBy(value: [Order])
+    case OrderBy([Order])
 
     /**
      * Limit the result set to the specified number of resources.
      */
-    case Limit(value: Int)
+    case Limit(Int)
 
     /**
      * Skip the specified number of resources in the result set.
      */
-    case Offset(value: Int)
+    case Offset(Int)
 
 }
 
