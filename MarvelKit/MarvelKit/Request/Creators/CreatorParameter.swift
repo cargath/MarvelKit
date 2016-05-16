@@ -118,11 +118,77 @@ public enum CreatorParameter {
 extension CreatorParameter: ResourceParameterProtocol {
 
     public var key: String {
-        return "key"
+        switch self {
+            case .FirstName:
+                return "firstName"
+            case .MiddleName:
+                return "middleName"
+            case .LastName:
+                return "lastName"
+            case .Suffix:
+                return "suffix"
+            case .NameStartsWith:
+                return "nameStartsWith"
+            case .FirstNameStartsWith:
+                return "firstNameStartsWith"
+            case .MiddleNameStartsWith:
+                return "middleNameStartsWith"
+            case .LastNameStartsWith:
+                return "lastNameStartsWith"
+            case .ModifiedSince:
+                return "modifiedSince"
+            case .Comics:
+                return "comics"
+            case .Series:
+                return "series"
+            case .Events:
+                return "events"
+            case .Stories:
+                return "stories"
+            case .OrderBy:
+                return "orderBy"
+            case .Limit:
+                return "limit"
+            case .Offset:
+                return "offset"
+        }
     }
 
     public var value: String {
-        return "value"
+        switch self {
+            case let .FirstName(value):
+                return value
+            case let .MiddleName(value):
+                return value
+            case let .LastName(value):
+                return value
+            case let .Suffix(value):
+                return value
+            case let .NameStartsWith(value):
+                return value
+            case let .FirstNameStartsWith(value):
+                return value
+            case let .MiddleNameStartsWith(value):
+                return value
+            case let .LastNameStartsWith(value):
+                return value
+            case let .ModifiedSince(value):
+                return value.string
+            case let .Comics(value):
+                return value.csv
+            case let .Series(value):
+                return value.csv
+            case let .Events(value):
+                return value.csv
+            case let .Stories(value):
+                return value.csv
+            case let .OrderBy(value):
+                return value.flatMap({ $0.rawValue }).csv
+            case let .Limit(value):
+                return "\(value)"
+            case let .Offset(value):
+                return "\(value)"
+        }
     }
     
 }
