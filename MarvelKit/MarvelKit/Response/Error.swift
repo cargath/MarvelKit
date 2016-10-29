@@ -20,11 +20,11 @@ public struct Error {
 
 extension Error: JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject) {
+    public init?(JSONObject: JSONObject) {
 
         guard let
-            message = jsonObject["message"] as? String,
-            let code = jsonObject["code"] as? String else {
+            message = JSONObject["message"] as? String,
+            let code = JSONObject["code"] as? String else {
 
             return nil
         }

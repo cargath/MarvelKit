@@ -106,25 +106,25 @@ public struct Series: DataProtocol {
 
 extension Series {
 
-    public init?(jsonObject: JSONObject) {
-        self.id = jsonObject["id"] as? Int
-        self.title = jsonObject["title"] as? String
-        self.description = jsonObject["description"] as? String
-        self.resourceURI = jsonObject["resourceURI"] as? String
-        self.urls = Url.fromJSONArray(jsonObject["urls"] as? JSONArray)
-        self.startYear = jsonObject["startYear"] as? Int
-        self.endYear = jsonObject["endYear"] as? Int
-        self.rating = jsonObject["rating"] as? String
-        self.type = jsonObject["type"] as? String
-        self.modified = jsonObject["modified"] as? String
-        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
-        self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)
-        self.stories = StoryList(jsonObject: jsonObject["stories"] as? JSONObject)
-        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
-        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
-        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
-        self.next = SeriesSummary(jsonObject: jsonObject["next"] as? JSONObject)
-        self.previous = SeriesSummary(jsonObject: jsonObject["previous"] as? JSONObject)
+    public init?(JSONObject: JSONObject) {
+        self.id = JSONObject["id"] as? Int
+        self.title = JSONObject["title"] as? String
+        self.description = JSONObject["description"] as? String
+        self.resourceURI = JSONObject["resourceURI"] as? String
+        self.urls = Url.from(JSONArray: JSONObject["urls"] as? JSONArray)
+        self.startYear = JSONObject["startYear"] as? Int
+        self.endYear = JSONObject["endYear"] as? Int
+        self.rating = JSONObject["rating"] as? String
+        self.type = JSONObject["type"] as? String
+        self.modified = JSONObject["modified"] as? String
+        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
+        self.comics = ComicList(JSONObject: JSONObject["comics"] as? JSONObject)
+        self.stories = StoryList(JSONObject: JSONObject["stories"] as? JSONObject)
+        self.events = EventList(JSONObject: JSONObject["events"] as? JSONObject)
+        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
+        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
+        self.next = SeriesSummary(JSONObject: JSONObject["next"] as? JSONObject)
+        self.previous = SeriesSummary(JSONObject: JSONObject["previous"] as? JSONObject)
     }
 
 }

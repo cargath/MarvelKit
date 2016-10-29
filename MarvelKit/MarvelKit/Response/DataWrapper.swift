@@ -63,14 +63,14 @@ public struct DataWrapper<ContainerType: DataContainerProtocol>: DataWrapperProt
 
 extension DataWrapper: JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject) {
-        self.code = jsonObject["code"] as? Int
-        self.status = jsonObject["status"] as? String
-        self.copyright = jsonObject["copyright"] as? String
-        self.attributionText = jsonObject["attributionText"] as? String
-        self.attributionHTML = jsonObject["attributionHTML"] as? String
-        self.data = ContainerType(jsonObject: jsonObject["data"] as? JSONObject)
-        self.etag = jsonObject["etag"] as? String
+    public init?(JSONObject: JSONObject) {
+        self.code = JSONObject["code"] as? Int
+        self.status = JSONObject["status"] as? String
+        self.copyright = JSONObject["copyright"] as? String
+        self.attributionText = JSONObject["attributionText"] as? String
+        self.attributionHTML = JSONObject["attributionHTML"] as? String
+        self.data = ContainerType(JSONObject: JSONObject["data"] as? JSONObject)
+        self.etag = JSONObject["etag"] as? String
     }
 
 }

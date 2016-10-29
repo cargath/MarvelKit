@@ -31,10 +31,10 @@ public struct StorySummary: SummaryProtocol {
 
 extension StorySummary {
 
-    public init?(jsonObject: JSONObject) {
-        self.resourceURI = jsonObject["resourceURI"] as? String
-        self.name = jsonObject["name"] as? String
-        self.type = jsonObject["type"] as? String
+    public init?(JSONObject: JSONObject) {
+        self.resourceURI = JSONObject["resourceURI"] as? String
+        self.name = JSONObject["name"] as? String
+        self.type = JSONObject["type"] as? String
     }
 
 }

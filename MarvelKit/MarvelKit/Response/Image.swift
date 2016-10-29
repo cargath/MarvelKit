@@ -27,9 +27,9 @@ public struct Image {
 
 extension Image: JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject) {
-        self.path = jsonObject["path"] as? String
-        self.pathExtension = jsonObject["extension"] as? String
+    public init?(JSONObject: JSONObject) {
+        self.path = JSONObject["path"] as? String
+        self.pathExtension = JSONObject["extension"] as? String
     }
 
 }

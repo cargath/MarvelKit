@@ -14,7 +14,7 @@ public protocol ResourceProtocol {
 
     static var name: String { get }
 
-    init?(jsonObject: JSONObject)
+    init?(JSONObject: JSONObject)
 
 }
 

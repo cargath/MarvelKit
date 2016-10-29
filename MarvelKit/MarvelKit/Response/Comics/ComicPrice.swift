@@ -26,9 +26,9 @@ public struct ComicPrice {
 
 extension ComicPrice: JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject) {
-        self.type = jsonObject["type"] as? String
-        self.price = jsonObject["price"] as? Float
+    public init?(JSONObject: JSONObject) {
+        self.type = JSONObject["type"] as? String
+        self.price = JSONObject["price"] as? Float
     }
 
 }

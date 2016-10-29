@@ -40,7 +40,7 @@ open class Request<Resource: DataResourceProtocol> {
     open func exec(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) {
 
         guard let url = self.url else {
-            return errorHandler(.nsurlError(msg: "Failed to create URL for resource"))
+            return errorHandler(.URLError(msg: "Failed to create URL for resource"))
         }
 
         defaultSession.resourceTaskWithURL(url, successHandler: { response, resource in

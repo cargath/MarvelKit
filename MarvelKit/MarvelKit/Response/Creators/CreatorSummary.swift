@@ -31,10 +31,10 @@ public struct CreatorSummary: SummaryProtocol {
 
 extension CreatorSummary {
 
-    public init?(jsonObject: JSONObject) {
-        self.resourceURI = jsonObject["resourceURI"] as? String
-        self.name = jsonObject["name"] as? String
-        self.role = jsonObject["role"] as? String
+    public init?(JSONObject: JSONObject) {
+        self.resourceURI = JSONObject["resourceURI"] as? String
+        self.name = JSONObject["name"] as? String
+        self.role = JSONObject["role"] as? String
     }
 
 }

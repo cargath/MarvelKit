@@ -15,7 +15,7 @@ public typealias JSONArray = Array<JSONObject>
 
 public extension JSONSerialization {
 
-    public class func JSONObjectNamed(_ name: String, forBundle bundle: Bundle) -> JSONObject? {
+    public class func JSONObject(named name: String, forBundle bundle: Bundle) -> JSONObject? {
 
         if let
             filePath = bundle.path(forResource: name, ofType: "json"),
@@ -33,16 +33,16 @@ public extension JSONSerialization {
 // MARK: - JSONObjectConvertible interface
 
 public protocol JSONObjectConvertible {
-    init?(jsonObject: JSONObject)
+    init?(JSONObject: JSONObject)
 }
 
 // MARK: - JSONObjectConvertible + convenience initializer for optionals
 
 public extension JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject?) {
-        if let jsonObject = jsonObject {
-            self.init(jsonObject: jsonObject)
+    public init?(JSONObject: JSONObject?) {
+        if let JSONObject = JSONObject {
+            self.init(JSONObject: JSONObject)
         } else {
             return nil
         }
@@ -54,15 +54,15 @@ public extension JSONObjectConvertible {
 
 public extension JSONObjectConvertible {
 
-    public static func fromJSONArray(_ jsonArray: JSONArray) -> [Self] {
-        return jsonArray.flatMap { jsonObject in
-            return Self.init(jsonObject: jsonObject)
+    public static func from(JSONArray: JSONArray) -> [Self] {
+        return JSONArray.flatMap { JSONObject in
+            return Self.init(JSONObject: JSONObject)
         }
     }
 
-    public static func fromJSONArray(_ jsonArray: JSONArray?) -> [Self] {
-        if let jsonArray = jsonArray {
-            return fromJSONArray(jsonArray)
+    public static func from(JSONArray: JSONArray?) -> [Self] {
+        if let JSONArray = JSONArray {
+            return from(JSONArray: JSONArray)
         } else {
             return []
         }

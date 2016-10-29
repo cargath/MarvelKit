@@ -26,9 +26,9 @@ public struct Url {
 
 extension Url: JSONObjectConvertible {
 
-    public init(jsonObject: Dictionary<String, AnyObject>) {
-        self.type = jsonObject["type"] as? String
-        self.url = jsonObject["url"] as? String
+    public init(JSONObject: Dictionary<String, AnyObject>) {
+        self.type = JSONObject["type"] as? String
+        self.url = JSONObject["url"] as? String
     }
 
 }

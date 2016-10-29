@@ -51,12 +51,12 @@ public struct DataContainer<DataType: DataProtocol>: DataContainerProtocol {
 
 extension DataContainer {
 
-    public init?(jsonObject: JSONObject) {
-        self.offset = jsonObject["offset"] as? Int
-        self.limit = jsonObject["limit"] as? Int
-        self.total = jsonObject["total"] as? Int
-        self.count = jsonObject["count"] as? Int
-        self.results = DataType.fromJSONArray(jsonObject["results"] as? JSONArray)
+    public init?(JSONObject: JSONObject) {
+        self.offset = JSONObject["offset"] as? Int
+        self.limit = JSONObject["limit"] as? Int
+        self.total = JSONObject["total"] as? Int
+        self.count = JSONObject["count"] as? Int
+        self.results = DataType.from(JSONArray: JSONObject["results"] as? JSONArray)
     }
 
 }

@@ -31,10 +31,10 @@ public struct TextObject {
 
 extension TextObject: JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject) {
-        self.type = jsonObject["type"] as? String
-        self.language = jsonObject["language"] as? String
-        self.text = jsonObject["text"] as? String
+    public init?(JSONObject: JSONObject) {
+        self.type = JSONObject["type"] as? String
+        self.language = JSONObject["language"] as? String
+        self.text = JSONObject["text"] as? String
     }
 
 }

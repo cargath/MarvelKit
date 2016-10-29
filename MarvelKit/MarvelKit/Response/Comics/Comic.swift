@@ -162,36 +162,36 @@ public struct Comic: DataProtocol {
 
 extension Comic {
 
-    public init?(jsonObject: JSONObject) {
-        self.id = jsonObject["id"] as? Int
-        self.digitalId = jsonObject["digitalId"] as? Int
-        self.title = jsonObject["title"] as? String
-        self.issueNumber = jsonObject["issueNumber"] as? Double
-        self.variantDescription = jsonObject["variantDescription"] as? String
-        self.description = jsonObject["description"] as? String
-        self.modified = jsonObject["modified"] as? String
-        self.isbn = jsonObject["isbn"] as? String
-        self.upc = jsonObject["upc"] as? String
-        self.diamondCode = jsonObject["diamondCode"] as? String
-        self.ean = jsonObject["ean"] as? String
-        self.issn = jsonObject["issn"] as? String
-        self.format = jsonObject["format"] as? String
-        self.pageCount = jsonObject["pageCount"] as? Int
-        self.textObjects = TextObject.fromJSONArray(jsonObject["textObjects"] as? JSONArray)
-        self.resourceURI = jsonObject["resourceURI"] as? String
-        self.urls = Url.fromJSONArray(jsonObject["urls"] as? JSONArray)
-        self.series = SeriesSummary(jsonObject: jsonObject["series"] as? JSONObject)
-        self.variants = ComicSummary.fromJSONArray(jsonObject["variants"] as? JSONArray)
-        self.collections = ComicSummary.fromJSONArray(jsonObject["collections"] as? JSONArray)
-        self.collectedIssues = ComicSummary.fromJSONArray(jsonObject["collectedIssues"] as? JSONArray)
-        self.dates = ComicDate.fromJSONArray(jsonObject["dates"] as? JSONArray)
-        self.prices = ComicPrice.fromJSONArray(jsonObject["prices"] as? JSONArray)
-        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
-        self.images = Image.fromJSONArray(jsonObject["images"] as? JSONArray)
-        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
-        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
-        self.stories = StoryList(jsonObject: jsonObject["stories"] as? JSONObject)
-        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
+    public init?(JSONObject: JSONObject) {
+        self.id = JSONObject["id"] as? Int
+        self.digitalId = JSONObject["digitalId"] as? Int
+        self.title = JSONObject["title"] as? String
+        self.issueNumber = JSONObject["issueNumber"] as? Double
+        self.variantDescription = JSONObject["variantDescription"] as? String
+        self.description = JSONObject["description"] as? String
+        self.modified = JSONObject["modified"] as? String
+        self.isbn = JSONObject["isbn"] as? String
+        self.upc = JSONObject["upc"] as? String
+        self.diamondCode = JSONObject["diamondCode"] as? String
+        self.ean = JSONObject["ean"] as? String
+        self.issn = JSONObject["issn"] as? String
+        self.format = JSONObject["format"] as? String
+        self.pageCount = JSONObject["pageCount"] as? Int
+        self.textObjects = TextObject.from(JSONArray: JSONObject["textObjects"] as? JSONArray)
+        self.resourceURI = JSONObject["resourceURI"] as? String
+        self.urls = Url.from(JSONArray: JSONObject["urls"] as? JSONArray)
+        self.series = SeriesSummary(JSONObject: JSONObject["series"] as? JSONObject)
+        self.variants = ComicSummary.from(JSONArray: JSONObject["variants"] as? JSONArray)
+        self.collections = ComicSummary.from(JSONArray: JSONObject["collections"] as? JSONArray)
+        self.collectedIssues = ComicSummary.from(JSONArray: JSONObject["collectedIssues"] as? JSONArray)
+        self.dates = ComicDate.from(JSONArray: JSONObject["dates"] as? JSONArray)
+        self.prices = ComicPrice.from(JSONArray: JSONObject["prices"] as? JSONArray)
+        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
+        self.images = Image.from(JSONArray: JSONObject["images"] as? JSONArray)
+        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
+        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
+        self.stories = StoryList(JSONObject: JSONObject["stories"] as? JSONObject)
+        self.events = EventList(JSONObject: JSONObject["events"] as? JSONObject)
     }
 
 }

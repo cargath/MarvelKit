@@ -47,11 +47,11 @@ public struct List<SummaryType: SummaryProtocol>: ListProtocol {
 
 extension List: JSONObjectConvertible {
 
-    public init?(jsonObject: JSONObject) {
-        self.available = jsonObject["available"] as? Int
-        self.returned = jsonObject["returned"] as? Int
-        self.collectionURI = jsonObject["collectionURI"] as? String
-        self.items = SummaryType.fromJSONArray(jsonObject["items"] as? JSONArray)
+    public init?(JSONObject: JSONObject) {
+        self.available = JSONObject["available"] as? Int
+        self.returned = JSONObject["returned"] as? Int
+        self.collectionURI = JSONObject["collectionURI"] as? String
+        self.items = SummaryType.from(JSONArray: JSONObject["items"] as? JSONArray)
     }
 
 }

@@ -81,20 +81,20 @@ public struct Story: DataProtocol {
 
 extension Story {
 
-    public init?(jsonObject: JSONObject) {
-        self.id = jsonObject["id"] as? Int
-        self.title = jsonObject["title"] as? String
-        self.description = jsonObject["description"] as? String
-        self.resourceURI = jsonObject["resourceURI"] as? String
-        self.type = jsonObject["type"] as? String
-        self.modified = jsonObject["modified"] as? String
-        self.thumbnail = Image(jsonObject: jsonObject["thumbnail"] as? JSONObject)
-        self.comics = ComicList(jsonObject: jsonObject["comics"] as? JSONObject)
-        self.series = SeriesList(jsonObject: jsonObject["series"] as? JSONObject)
-        self.events = EventList(jsonObject: jsonObject["events"] as? JSONObject)
-        self.characters = CharacterList(jsonObject: jsonObject["characters"] as? JSONObject)
-        self.creators = CreatorList(jsonObject: jsonObject["creators"] as? JSONObject)
-        self.originalIssue = ComicSummary(jsonObject: jsonObject["originalIssue"] as? JSONObject)
+    public init?(JSONObject: JSONObject) {
+        self.id = JSONObject["id"] as? Int
+        self.title = JSONObject["title"] as? String
+        self.description = JSONObject["description"] as? String
+        self.resourceURI = JSONObject["resourceURI"] as? String
+        self.type = JSONObject["type"] as? String
+        self.modified = JSONObject["modified"] as? String
+        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
+        self.comics = ComicList(JSONObject: JSONObject["comics"] as? JSONObject)
+        self.series = SeriesList(JSONObject: JSONObject["series"] as? JSONObject)
+        self.events = EventList(JSONObject: JSONObject["events"] as? JSONObject)
+        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
+        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
+        self.originalIssue = ComicSummary(JSONObject: JSONObject["originalIssue"] as? JSONObject)
     }
 
 }
