@@ -17,7 +17,7 @@ class StoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        dataWrapper = StoryDataWrapper(jsonObject: JSONSerialization.JSONObjectNamed("StoryTests", forBundle: Bundle(for: StoryTests.self)))
+        dataWrapper = StoryDataWrapper(JSONObject: JSONSerialization.JSONObject(named: "StoryTests", forBundle: Bundle(for: StoryTests.self)))
     }
     
     override func tearDown() {
