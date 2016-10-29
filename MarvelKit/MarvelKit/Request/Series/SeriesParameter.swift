@@ -8,7 +8,7 @@
 
 public enum SeriesParameter {
 
-    public enum Type: String {
+    public enum `Type`: String {
 
         case Collection = "collection"
         case OneShot = "one shot"
@@ -36,73 +36,73 @@ public enum SeriesParameter {
     /**
      * Return only series matching the specified title.
      */
-    case Title(String)
+    case title(String)
 
     /**
      * Return series with titles that begin with the specified string (e.g. Sp).
      */
-    case TitleStartsWith(String)
+    case titleStartsWith(String)
 
     /**
      * Return only series matching the specified start year.
      */
-    case StartYear(Int)
+    case startYear(Int)
 
     /**
      * Return only series which have been modified since the specified date.
      */
-    case ModifiedSince(NSDate)
+    case modifiedSince(Date)
 
     /**
      * Return only series which contain the specified comics.
      */
-    case Comics([Int])
+    case comics([Int])
 
     /**
      * Return only series which contain the specified stories.
      */
-    case Stories([Int])
+    case stories([Int])
 
     /**
      * Return only series which have comics that take place during the specified events.
      */
-    case Events([Int])
+    case events([Int])
 
     /**
      * Return only series which feature work by the specified creators.
      */
-    case Creators([Int])
+    case creators([Int])
 
     /**
      * Return only series which feature the specified characters.
      */
-    case Characters([Int])
+    case characters([Int])
 
     /**
      * Filter the series by publication frequency type.
      */
-    case SeriesType(Type)
+    case seriesType(Type)
 
     /**
      * Return only series containing one or more comics with the specified format.
      */
-    case Contains([ComicParameter.IssueFormat])
+    case contains([ComicParameter.IssueFormat])
 
     /**
      * Order the result set by a field or fields.
      * Multiple values are given priority in the order in which they are passed.
      */
-    case OrderBy([Order])
+    case orderBy([Order])
 
     /**
      * Limit the result set to the specified number of resources.
      */
-    case Limit(Int)
+    case limit(Int)
 
     /**
      * Skip the specified number of resources in the result set.
      */
-    case Offset(Int)
+    case offset(Int)
 
 }
 
@@ -110,66 +110,66 @@ extension SeriesParameter: ResourceParameterProtocol {
 
     public var key: String {
         switch self {
-            case .Title:
+            case .title:
                 return "title"
-            case .TitleStartsWith:
+            case .titleStartsWith:
                 return "titleStartsWith"
-            case .StartYear:
+            case .startYear:
                 return "startYear"
-            case .ModifiedSince:
+            case .modifiedSince:
                 return "modifiedSince"
-            case .Comics:
+            case .comics:
                 return "comics"
-            case .Stories:
+            case .stories:
                 return "stories"
-            case .Events:
+            case .events:
                 return "events"
-            case .Creators:
+            case .creators:
                 return "creators"
-            case .Characters:
+            case .characters:
                 return "characters"
-            case .SeriesType:
+            case .seriesType:
                 return "seriesType"
-            case .Contains:
+            case .contains:
                 return "contains"
-            case .OrderBy:
+            case .orderBy:
                 return "orderBy"
-            case .Limit:
+            case .limit:
                 return "limit"
-            case .Offset:
+            case .offset:
                 return "offset"
         }
     }
 
     public var value: String {
         switch self {
-            case let .Title(value):
+            case let .title(value):
                 return value
-            case let .TitleStartsWith(value):
+            case let .titleStartsWith(value):
                 return value
-            case let .StartYear(value):
+            case let .startYear(value):
                 return "\(value)"
-            case let .ModifiedSince(value):
+            case let .modifiedSince(value):
                 return value.string
-            case let .Comics(value):
+            case let .comics(value):
                 return value.csv
-            case let .Stories(value):
+            case let .stories(value):
                 return value.csv
-            case let .Events(value):
+            case let .events(value):
                 return value.csv
-            case let .Creators(value):
+            case let .creators(value):
                 return value.csv
-            case let .Characters(value):
+            case let .characters(value):
                 return value.csv
-            case let .SeriesType(value):
+            case let .seriesType(value):
                 return value.rawValue
-            case let .Contains(value):
+            case let .contains(value):
                 return value.flatMap({ $0.rawValue }).csv
-            case let .OrderBy(value):
+            case let .orderBy(value):
                 return value.flatMap({ $0.rawValue }).csv
-            case let .Limit(value):
+            case let .limit(value):
                 return "\(value)"
-            case let .Offset(value):
+            case let .offset(value):
                 return "\(value)"
         }
     }

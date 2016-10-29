@@ -13,87 +13,87 @@ import XCTest
 class CreatorParameterTests: XCTestCase {
 
     func testFirstName() {
-        XCTAssertEqual(CreatorParameter.FirstName("FirstName").key, "firstName")
-        XCTAssertEqual(CreatorParameter.FirstName("FirstName").value, "FirstName")
+        XCTAssertEqual(CreatorParameter.firstName("FirstName").key, "firstName")
+        XCTAssertEqual(CreatorParameter.firstName("FirstName").value, "FirstName")
     }
 
     func testMiddleName() {
-        XCTAssertEqual(CreatorParameter.MiddleName("MiddleName").key, "middleName")
-        XCTAssertEqual(CreatorParameter.MiddleName("MiddleName").value, "MiddleName")
+        XCTAssertEqual(CreatorParameter.middleName("MiddleName").key, "middleName")
+        XCTAssertEqual(CreatorParameter.middleName("MiddleName").value, "MiddleName")
     }
 
     func testLastName() {
-        XCTAssertEqual(CreatorParameter.LastName("LastName").key, "lastName")
-        XCTAssertEqual(CreatorParameter.LastName("LastName").value, "LastName")
+        XCTAssertEqual(CreatorParameter.lastName("LastName").key, "lastName")
+        XCTAssertEqual(CreatorParameter.lastName("LastName").value, "LastName")
     }
 
     func testSuffix() {
-        XCTAssertEqual(CreatorParameter.Suffix("Suffix").key, "suffix")
-        XCTAssertEqual(CreatorParameter.Suffix("Suffix").value, "Suffix")
+        XCTAssertEqual(CreatorParameter.suffix("Suffix").key, "suffix")
+        XCTAssertEqual(CreatorParameter.suffix("Suffix").value, "Suffix")
     }
 
     func testNameStartsWith() {
-        XCTAssertEqual(CreatorParameter.NameStartsWith("NameStartsWith").key, "nameStartsWith")
-        XCTAssertEqual(CreatorParameter.NameStartsWith("NameStartsWith").value, "NameStartsWith")
+        XCTAssertEqual(CreatorParameter.nameStartsWith("NameStartsWith").key, "nameStartsWith")
+        XCTAssertEqual(CreatorParameter.nameStartsWith("NameStartsWith").value, "NameStartsWith")
     }
 
     func testFirstNameStartsWith() {
-        XCTAssertEqual(CreatorParameter.FirstNameStartsWith("FirstNameStartsWith").key, "firstNameStartsWith")
-        XCTAssertEqual(CreatorParameter.FirstNameStartsWith("FirstNameStartsWith").value, "FirstNameStartsWith")
+        XCTAssertEqual(CreatorParameter.firstNameStartsWith("FirstNameStartsWith").key, "firstNameStartsWith")
+        XCTAssertEqual(CreatorParameter.firstNameStartsWith("FirstNameStartsWith").value, "FirstNameStartsWith")
     }
 
     func testMiddleNameStartsWith() {
-        XCTAssertEqual(CreatorParameter.MiddleNameStartsWith("MiddleNameStartsWith").key, "middleNameStartsWith")
-        XCTAssertEqual(CreatorParameter.MiddleNameStartsWith("MiddleNameStartsWith").value, "MiddleNameStartsWith")
+        XCTAssertEqual(CreatorParameter.middleNameStartsWith("MiddleNameStartsWith").key, "middleNameStartsWith")
+        XCTAssertEqual(CreatorParameter.middleNameStartsWith("MiddleNameStartsWith").value, "MiddleNameStartsWith")
     }
 
     func testLastNameStartsWith() {
-        XCTAssertEqual(CreatorParameter.LastNameStartsWith("LastNameStartsWith").key, "lastNameStartsWith")
-        XCTAssertEqual(CreatorParameter.LastNameStartsWith("LastNameStartsWith").value, "LastNameStartsWith")
+        XCTAssertEqual(CreatorParameter.lastNameStartsWith("LastNameStartsWith").key, "lastNameStartsWith")
+        XCTAssertEqual(CreatorParameter.lastNameStartsWith("LastNameStartsWith").value, "LastNameStartsWith")
     }
 
     func testModifiedSince() {
-        XCTAssertEqual(CreatorParameter.ModifiedSince(NSDate(timeIntervalSince1970: 0)).key, "modifiedSince")
-        XCTAssertEqual(CreatorParameter.ModifiedSince(NSDate(timeIntervalSince1970: 0)).value, "1970-01-01")
+        XCTAssertEqual(CreatorParameter.modifiedSince(Date(timeIntervalSince1970: 0)).key, "modifiedSince")
+        XCTAssertEqual(CreatorParameter.modifiedSince(Date(timeIntervalSince1970: 0)).value, "1970-01-01")
     }
 
     func testComics() {
-        XCTAssertEqual(CreatorParameter.Comics([1, 2, 3]).key, "comics")
-        XCTAssertEqual(CreatorParameter.Comics([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CreatorParameter.comics([1, 2, 3]).key, "comics")
+        XCTAssertEqual(CreatorParameter.comics([1, 2, 3]).value, "1,2,3")
     }
 
     func testSeries() {
-        XCTAssertEqual(CreatorParameter.Series([1, 2, 3]).key, "series")
-        XCTAssertEqual(CreatorParameter.Series([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CreatorParameter.series([1, 2, 3]).key, "series")
+        XCTAssertEqual(CreatorParameter.series([1, 2, 3]).value, "1,2,3")
     }
 
     func testEvents() {
-        XCTAssertEqual(CreatorParameter.Events([1, 2, 3]).key, "events")
-        XCTAssertEqual(CreatorParameter.Events([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CreatorParameter.events([1, 2, 3]).key, "events")
+        XCTAssertEqual(CreatorParameter.events([1, 2, 3]).value, "1,2,3")
     }
 
     func testStories() {
-        XCTAssertEqual(CreatorParameter.Stories([1, 2, 3]).key, "stories")
-        XCTAssertEqual(CreatorParameter.Stories([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CreatorParameter.stories([1, 2, 3]).key, "stories")
+        XCTAssertEqual(CreatorParameter.stories([1, 2, 3]).value, "1,2,3")
     }
 
     func testOrderBy() {
         // Ascending
-        XCTAssertEqual(CreatorParameter.OrderBy([.FirstNameAscending, .MiddleNameAscending, .LastNameAscending, .SuffixAscending, .ModifiedAscending]).key, "orderBy")
-        XCTAssertEqual(CreatorParameter.OrderBy([.FirstNameAscending, .MiddleNameAscending, .LastNameAscending, .SuffixAscending, .ModifiedAscending]).value, "firstName,middleName,lastName,suffix,modified")
+        XCTAssertEqual(CreatorParameter.orderBy([.FirstNameAscending, .MiddleNameAscending, .LastNameAscending, .SuffixAscending, .ModifiedAscending]).key, "orderBy")
+        XCTAssertEqual(CreatorParameter.orderBy([.FirstNameAscending, .MiddleNameAscending, .LastNameAscending, .SuffixAscending, .ModifiedAscending]).value, "firstName,middleName,lastName,suffix,modified")
         // Descending
-        XCTAssertEqual(CreatorParameter.OrderBy([.FirstNameDescending, .MiddleNameDescending, .LastNameDescending, .SuffixDescending, .ModifiedDescending]).key, "orderBy")
-        XCTAssertEqual(CreatorParameter.OrderBy([.FirstNameDescending, .MiddleNameDescending, .LastNameDescending, .SuffixDescending, .ModifiedDescending]).value, "-firstName,-middleName,-lastName,-suffix,-modified")
+        XCTAssertEqual(CreatorParameter.orderBy([.FirstNameDescending, .MiddleNameDescending, .LastNameDescending, .SuffixDescending, .ModifiedDescending]).key, "orderBy")
+        XCTAssertEqual(CreatorParameter.orderBy([.FirstNameDescending, .MiddleNameDescending, .LastNameDescending, .SuffixDescending, .ModifiedDescending]).value, "-firstName,-middleName,-lastName,-suffix,-modified")
     }
 
     func testLimit() {
-        XCTAssertEqual(CreatorParameter.Limit(1).key, "limit")
-        XCTAssertEqual(CreatorParameter.Limit(1).value, "1")
+        XCTAssertEqual(CreatorParameter.limit(1).key, "limit")
+        XCTAssertEqual(CreatorParameter.limit(1).value, "1")
     }
 
     func testOffset() {
-        XCTAssertEqual(CreatorParameter.Offset(1).key, "offset")
-        XCTAssertEqual(CreatorParameter.Offset(1).value, "1")
+        XCTAssertEqual(CreatorParameter.offset(1).key, "offset")
+        XCTAssertEqual(CreatorParameter.offset(1).value, "1")
     }
 
 }

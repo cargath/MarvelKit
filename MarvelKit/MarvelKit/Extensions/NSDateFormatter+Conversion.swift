@@ -8,34 +8,34 @@
 
 import Foundation
 
-extension NSDateFormatter {
+extension DateFormatter {
 
-    static var marvelDateFormatter: NSDateFormatter {
+    static var marvelDateFormatter: DateFormatter {
 
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
 
-        dateFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        dateFormatter.calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        dateFormatter.locale = Locale.current
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
 
         return dateFormatter
     }
 
 }
 
-extension NSDate {
+extension Date {
 
     var string: String {
-        return NSDateFormatter.marvelDateFormatter.stringFromDate(self)
+        return DateFormatter.marvelDateFormatter.string(from: self)
     }
 
 }
 
 extension String {
 
-    var date: NSDate? {
-        return NSDateFormatter.marvelDateFormatter.dateFromString(self)
+    var date: Date? {
+        return DateFormatter.marvelDateFormatter.date(from: self)
     }
     
 }

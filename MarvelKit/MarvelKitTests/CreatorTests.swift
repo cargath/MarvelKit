@@ -17,7 +17,7 @@ class CreatorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        dataWrapper = CreatorDataWrapper(jsonObject: NSJSONSerialization.JSONObjectNamed("CreatorTests", forBundle: NSBundle(forClass: CreatorTests.self)))
+        dataWrapper = CreatorDataWrapper(jsonObject: JSONSerialization.JSONObjectNamed("CreatorTests", forBundle: Bundle(for: CreatorTests.self)))
     }
     
     override func tearDown() {

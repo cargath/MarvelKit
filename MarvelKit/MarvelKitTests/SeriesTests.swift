@@ -17,7 +17,7 @@ class SeriesTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        dataWrapper = SeriesDataWrapper(jsonObject: NSJSONSerialization.JSONObjectNamed("SeriesTests", forBundle: NSBundle(forClass: SeriesTests.self)))
+        dataWrapper = SeriesDataWrapper(jsonObject: JSONSerialization.JSONObjectNamed("SeriesTests", forBundle: Bundle(for: SeriesTests.self)))
     }
     
     override func tearDown() {

@@ -64,138 +64,138 @@ public enum ComicParameter {
     /**
      * Filter by the issue format (e.g. comic, digital comic, hardcover).
      */
-    case Format(IssueFormat)
+    case format(IssueFormat)
 
     /**
      * Filter by the issue format type (comic or collection).
      */
-    case FormatType(IssueFormatType)
+    case formatType(IssueFormatType)
 
     /**
      * Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set.
      */
-    case NoVariants(Bool)
+    case noVariants(Bool)
 
     /**
      * Return comics within a predefined date range.
      */
-    case DateDescriptor(PredefinedDateDescriptor)
+    case dateDescriptor(PredefinedDateDescriptor)
 
     /**
      * Return comics within a date range.
      */
-    case DateRange(NSDate, NSDate)
+    case dateRange(Date, Date)
 
     /**
      * Return only issues in series whose title matches the input.
      */
-    case Title(String)
+    case title(String)
 
     /**
      * Return only issues in series whose title starts with the input.
      */
-    case TitleStartsWith(String)
+    case titleStartsWith(String)
 
     /**
      * Return only issues in series whose start year matches the input.
      */
-    case StartYear(Int)
+    case startYear(Int)
 
     /**
      * Return only issues in series whose issue number matches the input.
      */
-    case IssueNumber(Int)
+    case issueNumber(Int)
 
     /**
      * Filter by diamond code.
      */
-    case DiamondCode(String)
+    case diamondCode(String)
 
     /**
      * Filter by digital comic id.
      */
-    case DigitalID(Int)
+    case digitalID(Int)
 
     /**
      * Filter by UPC.
      */
-    case UPC(String)
+    case upc(String)
 
     /**
      * Filter by ISBN.
      */
-    case ISBN(String)
+    case isbn(String)
 
     /**
      * Filter by EAN.
      */
-    case EAN(String)
+    case ean(String)
 
     /**
      * Filter by ISSN.
      */
-    case ISSN(String)
+    case issn(String)
 
     /**
      * Include only results which are available digitally.
      */
-    case HasDigitalIssue(Bool)
+    case hasDigitalIssue(Bool)
 
     /**
      * Return only comics which have been modified since the specified date.
      */
-    case ModifiedSince(NSDate)
+    case modifiedSince(Date)
 
     /**
      * Return only comics which feature work by the specified creators ids.
      */
-    case Creators([Int])
+    case creators([Int])
 
     /**
      * Return only comics which feature the specified characters ids.
      */
-    case Characters([Int])
+    case characters([Int])
 
     /**
      * Return only comics which are part of the specified series ids.
      */
-    case Series([Int])
+    case series([Int])
 
     /**
      * Return only comics which take place in the specified events ids.
      */
-    case Events([Int])
+    case events([Int])
 
     /**
      * Return only comics which contain the specified stories ids.
      */
-    case Stories([Int])
+    case stories([Int])
 
     /**
      * Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear).
      */
-    case SharedAppearances([Int])
+    case sharedAppearances([Int])
 
     /**
      * Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work).
      */
-    case Collaborators([Int])
+    case collaborators([Int])
 
     /**
      * Order the result set by a field or fields.
      * Multiple values are given priority in the order in which they are passed.
      */
-    case OrderBy([Order])
+    case orderBy([Order])
 
     /**
      * Limit the result set to the specified number of resources.
      */
-    case Limit(Int)
+    case limit(Int)
 
     /**
      * Skip the specified number of resources in the result set.
      */
-    case Offset(Int)
+    case offset(Int)
 
 }
 
@@ -203,118 +203,118 @@ extension ComicParameter: ResourceParameterProtocol {
 
     public var key: String {
         switch self {
-            case .Format:
+            case .format:
                 return "format"
-            case .FormatType:
+            case .formatType:
                 return "formatType"
-            case .NoVariants:
+            case .noVariants:
                 return "noVariants"
-            case .DateDescriptor:
+            case .dateDescriptor:
                 return "dateDescriptor"
-            case .DateRange:
+            case .dateRange:
                 return "dateRange"
-            case .Title:
+            case .title:
                 return "title"
-            case .TitleStartsWith:
+            case .titleStartsWith:
                 return "titleStartsWith"
-            case .StartYear:
+            case .startYear:
                 return "startYear"
-            case .IssueNumber:
+            case .issueNumber:
                 return "issueNumber"
-            case .DiamondCode:
+            case .diamondCode:
                 return "diamondCode"
-            case .DigitalID:
+            case .digitalID:
                 return "digitalId"
-            case .UPC:
+            case .upc:
                 return "upc"
-            case .ISBN:
+            case .isbn:
                 return "isbn"
-            case .EAN:
+            case .ean:
                 return "ean"
-            case .ISSN:
+            case .issn:
                 return "issn"
-            case .HasDigitalIssue:
+            case .hasDigitalIssue:
                 return "hasDigitalIssue"
-            case .ModifiedSince:
+            case .modifiedSince:
                 return "modifiedSince"
-            case .Creators:
+            case .creators:
                 return "creators"
-            case .Characters:
+            case .characters:
                 return "characters"
-            case .Series:
+            case .series:
                 return "series"
-            case .Events:
+            case .events:
                 return "events"
-            case .Stories:
+            case .stories:
                 return "stories"
-            case .SharedAppearances:
+            case .sharedAppearances:
                 return "sharedAppearances"
-            case .Collaborators:
+            case .collaborators:
                 return "collaborators"
-            case .OrderBy:
+            case .orderBy:
                 return "orderBy"
-            case .Limit:
+            case .limit:
                 return "limit"
-            case .Offset:
+            case .offset:
                 return "offset"
         }
     }
 
     public var value: String {
         switch self {
-            case let .Format(value):
+            case let .format(value):
                 return value.rawValue
-            case let .FormatType(value):
+            case let .formatType(value):
                 return value.rawValue
-            case let .NoVariants(value):
+            case let .noVariants(value):
                 return value ? "true" : "false"
-            case let .DateDescriptor(value):
+            case let .dateDescriptor(value):
                 return value.rawValue
-            case let .DateRange(date1, date2):
+            case let .dateRange(date1, date2):
                 return "\(date1.string),\(date2.string)"
-            case let .Title(value):
+            case let .title(value):
                 return value
-            case let .TitleStartsWith(value):
+            case let .titleStartsWith(value):
                 return value
-            case let .StartYear(value):
+            case let .startYear(value):
                 return "\(value)"
-            case let .IssueNumber(value):
+            case let .issueNumber(value):
                 return "\(value)"
-            case let .DiamondCode(value):
+            case let .diamondCode(value):
                 return value
-            case let .DigitalID(value):
+            case let .digitalID(value):
                 return "\(value)"
-            case let .UPC(value):
+            case let .upc(value):
                 return value
-            case let .ISBN(value):
+            case let .isbn(value):
                 return value
-            case let .EAN(value):
+            case let .ean(value):
                 return value
-            case let .ISSN(value):
+            case let .issn(value):
                 return value
-            case let .HasDigitalIssue(value):
+            case let .hasDigitalIssue(value):
                 return value ? "true" : "false"
-            case let .ModifiedSince(value):
+            case let .modifiedSince(value):
                 return value.string
-            case let .Creators(value):
+            case let .creators(value):
                 return value.csv
-            case let .Characters(value):
+            case let .characters(value):
                 return value.csv
-            case let .Series(value):
+            case let .series(value):
                 return value.csv
-            case let .Events(value):
+            case let .events(value):
                 return value.csv
-            case let .Stories(value):
+            case let .stories(value):
                 return value.csv
-            case let .SharedAppearances(value):
+            case let .sharedAppearances(value):
                 return value.csv
-            case let .Collaborators(value):
+            case let .collaborators(value):
                 return value.csv
-            case let .OrderBy(value):
+            case let .orderBy(value):
                 return value.flatMap({ $0.rawValue }).csv
-            case let .Limit(value):
+            case let .limit(value):
                 return "\(value)"
-            case let .Offset(value):
+            case let .offset(value):
                 return "\(value)"
         }
     }

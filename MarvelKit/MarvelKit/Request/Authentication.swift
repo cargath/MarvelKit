@@ -35,14 +35,14 @@ public extension Authentication {
      * A timestamp (or other long string which can change on a request-by-request basis)
      */
     var timestamp: String {
-        return String(Int(NSDate().timeIntervalSince1970))
+        return String(Int(Date().timeIntervalSince1970))
     }
 
     /**
      * A md5 digest of the ts parameter, your private key and your public key (e.g. md5(ts+privateKey+publicKey)).
      */
-    func hash(timestamp timestamp: String) -> String {
-        return timestamp.stringByAppendingString(privateKey).stringByAppendingString(publicKey).md5
+    func hash(timestamp: String) -> String {
+        return timestamp.appending(privateKey).appending(publicKey).md5
     }
 
     /**
@@ -52,7 +52,7 @@ public extension Authentication {
         return hash(timestamp: timestamp)
     }
 
-    func params(timestamp timestamp: String, publicKey: String, hash: String) -> URLParameters {
+    func params(timestamp: String, publicKey: String, hash: String) -> URLParameters {
         return [
             "ts": timestamp,
             "apikey": publicKey,

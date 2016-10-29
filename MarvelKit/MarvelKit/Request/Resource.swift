@@ -24,8 +24,8 @@ public extension ResourceProtocol {
         return "https://gateway.marvel.com/v1/public"
     }
 
-    public static var baseURL: NSURL? {
-        return NSURL(string: baseURLString)
+    public static var baseURL: URL? {
+        return URL(string: baseURLString)
     }
 
 }
@@ -36,11 +36,11 @@ public extension ResourceProtocol {
         return name
     }
 
-    public static func pathComponent(id id: Int) -> String {
+    public static func pathComponent(id: Int) -> String {
         return "\(name)/\(id)"
     }
 
-    public static func pathComponent(filter filter: ResourceFilter<ResourceFilterType>) -> String {
+    public static func pathComponent(filter: ResourceFilter<ResourceFilterType>) -> String {
         return "\(filter.pathComponent)/\(name)"
     }
 
@@ -48,16 +48,16 @@ public extension ResourceProtocol {
 
 public extension ResourceProtocol {
 
-    public static func absoluteURL() -> NSURL? {
-        return baseURL?.URLByAppendingPathComponent(pathComponent())
+    public static func absoluteURL() -> URL? {
+        return baseURL?.appendingPathComponent(pathComponent())
     }
 
-    public static func absoluteURL(id id: Int) -> NSURL? {
-        return baseURL?.URLByAppendingPathComponent(pathComponent(id: id))
+    public static func absoluteURL(id: Int) -> URL? {
+        return baseURL?.appendingPathComponent(pathComponent(id: id))
     }
 
-    public static func absoluteURL(filter filter: ResourceFilter<ResourceFilterType>) -> NSURL? {
-        return baseURL?.URLByAppendingPathComponent(pathComponent(filter: filter))
+    public static func absoluteURL(filter: ResourceFilter<ResourceFilterType>) -> URL? {
+        return baseURL?.appendingPathComponent(pathComponent(filter: filter))
     }
     
 }

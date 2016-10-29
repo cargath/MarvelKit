@@ -24,7 +24,7 @@ extension Error: JSONObjectConvertible {
 
         guard let
             message = jsonObject["message"] as? String,
-            code = jsonObject["code"] as? String else {
+            let code = jsonObject["code"] as? String else {
 
             return nil
         }

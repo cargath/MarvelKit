@@ -13,62 +13,62 @@ import XCTest
 class EventParameterTests: XCTestCase {
 
     func testName() {
-        XCTAssertEqual(EventParameter.Name("Name").key, "name")
-        XCTAssertEqual(EventParameter.Name("Name").value, "Name")
+        XCTAssertEqual(EventParameter.name("Name").key, "name")
+        XCTAssertEqual(EventParameter.name("Name").value, "Name")
     }
 
     func testNameStartsWith() {
-        XCTAssertEqual(EventParameter.NameStartsWith("NameStartsWith").key, "nameStartsWith")
-        XCTAssertEqual(EventParameter.NameStartsWith("NameStartsWith").value, "NameStartsWith")
+        XCTAssertEqual(EventParameter.nameStartsWith("NameStartsWith").key, "nameStartsWith")
+        XCTAssertEqual(EventParameter.nameStartsWith("NameStartsWith").value, "NameStartsWith")
     }
 
     func testModifiedSince() {
-        XCTAssertEqual(EventParameter.ModifiedSince(NSDate(timeIntervalSince1970: 0)).key, "modifiedSince")
-        XCTAssertEqual(EventParameter.ModifiedSince(NSDate(timeIntervalSince1970: 0)).value, "1970-01-01")
+        XCTAssertEqual(EventParameter.modifiedSince(Date(timeIntervalSince1970: 0)).key, "modifiedSince")
+        XCTAssertEqual(EventParameter.modifiedSince(Date(timeIntervalSince1970: 0)).value, "1970-01-01")
     }
 
     func testCreators() {
-        XCTAssertEqual(EventParameter.Creators([1, 2, 3]).key, "creators")
-        XCTAssertEqual(EventParameter.Creators([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(EventParameter.creators([1, 2, 3]).key, "creators")
+        XCTAssertEqual(EventParameter.creators([1, 2, 3]).value, "1,2,3")
     }
 
     func testCharacters() {
-        XCTAssertEqual(EventParameter.Characters([1, 2, 3]).key, "characters")
-        XCTAssertEqual(EventParameter.Characters([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(EventParameter.characters([1, 2, 3]).key, "characters")
+        XCTAssertEqual(EventParameter.characters([1, 2, 3]).value, "1,2,3")
     }
 
     func testSeries() {
-        XCTAssertEqual(EventParameter.Series([1, 2, 3]).key, "series")
-        XCTAssertEqual(EventParameter.Series([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(EventParameter.series([1, 2, 3]).key, "series")
+        XCTAssertEqual(EventParameter.series([1, 2, 3]).value, "1,2,3")
     }
 
     func testComics() {
-        XCTAssertEqual(EventParameter.Comics([1, 2, 3]).key, "comics")
-        XCTAssertEqual(EventParameter.Comics([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(EventParameter.comics([1, 2, 3]).key, "comics")
+        XCTAssertEqual(EventParameter.comics([1, 2, 3]).value, "1,2,3")
     }
 
     func testStories() {
-        XCTAssertEqual(EventParameter.Stories([1, 2, 3]).key, "stories")
-        XCTAssertEqual(EventParameter.Stories([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(EventParameter.stories([1, 2, 3]).key, "stories")
+        XCTAssertEqual(EventParameter.stories([1, 2, 3]).value, "1,2,3")
     }
 
     func testOrderBy() {
         // Ascending
-        XCTAssertEqual(EventParameter.OrderBy([.NameAscending, .StartDateAscending, .ModifiedAscending]).key, "orderBy")
-        XCTAssertEqual(EventParameter.OrderBy([.NameAscending, .StartDateAscending, .ModifiedAscending]).value, "name,startDate,modified")
+        XCTAssertEqual(EventParameter.orderBy([.NameAscending, .StartDateAscending, .ModifiedAscending]).key, "orderBy")
+        XCTAssertEqual(EventParameter.orderBy([.NameAscending, .StartDateAscending, .ModifiedAscending]).value, "name,startDate,modified")
         // Descending
-        XCTAssertEqual(EventParameter.OrderBy([.NameDescending, .StartDateDescending, .ModifiedDescending]).key, "orderBy")
-        XCTAssertEqual(EventParameter.OrderBy([.NameDescending, .StartDateDescending, .ModifiedDescending]).value, "-name,-startDate,-modified")
+        XCTAssertEqual(EventParameter.orderBy([.NameDescending, .StartDateDescending, .ModifiedDescending]).key, "orderBy")
+        XCTAssertEqual(EventParameter.orderBy([.NameDescending, .StartDateDescending, .ModifiedDescending]).value, "-name,-startDate,-modified")
     }
 
     func testLimit() {
-        XCTAssertEqual(EventParameter.Limit(1).key, "limit")
-        XCTAssertEqual(EventParameter.Limit(1).value, "1")
+        XCTAssertEqual(EventParameter.limit(1).key, "limit")
+        XCTAssertEqual(EventParameter.limit(1).value, "1")
     }
 
     func testOffset() {
-        XCTAssertEqual(EventParameter.Offset(1).key, "offset")
-        XCTAssertEqual(EventParameter.Offset(1).value, "1")
+        XCTAssertEqual(EventParameter.offset(1).key, "offset")
+        XCTAssertEqual(EventParameter.offset(1).value, "1")
     }
 
 }

@@ -27,58 +27,58 @@ public enum EventParameter {
     /**
      * Return only events which match the specified name.
      */
-    case Name(String)
+    case name(String)
 
     /**
      * Return events with names that begin with the specified string (e.g. Sp).
      */
-    case NameStartsWith(String)
+    case nameStartsWith(String)
 
     /**
      * Return only events which have been modified since the specified date.
      */
-    case ModifiedSince(NSDate)
+    case modifiedSince(Date)
 
     /**
      * Return only events which feature work by the specified creators.
      */
-    case Creators([Int])
+    case creators([Int])
 
     /**
      * Return only events which feature the specified characters.
      */
-    case Characters([Int])
+    case characters([Int])
 
     /**
      * Return only events which are part of the specified series.
      */
-    case Series([Int])
+    case series([Int])
 
     /**
      * Return only events which take place in the specified comics.
      */
-    case Comics([Int])
+    case comics([Int])
 
     /**
      * Return only events which take place in the specified stories.
      */
-    case Stories([Int])
+    case stories([Int])
 
     /**
      * Order the result set by a field or fields.
      * Multiple values are given priority in the order in which they are passed.
      */
-    case OrderBy([Order])
+    case orderBy([Order])
 
     /**
      * Limit the result set to the specified number of resources.
      */
-    case Limit(Int)
+    case limit(Int)
 
     /**
      * Skip the specified number of resources in the result set.
      */
-    case Offset(Int)
+    case offset(Int)
 
 }
 
@@ -86,54 +86,54 @@ extension EventParameter: ResourceParameterProtocol {
 
     public var key: String {
         switch self {
-            case .Name:
+            case .name:
                 return "name"
-            case .NameStartsWith:
+            case .nameStartsWith:
                 return "nameStartsWith"
-            case .ModifiedSince:
+            case .modifiedSince:
                 return "modifiedSince"
-            case .Creators:
+            case .creators:
                 return "creators"
-            case .Characters:
+            case .characters:
                 return "characters"
-            case .Series:
+            case .series:
                 return "series"
-            case .Comics:
+            case .comics:
                 return "comics"
-            case .Stories:
+            case .stories:
                 return "stories"
-            case .OrderBy:
+            case .orderBy:
                 return "orderBy"
-            case .Limit:
+            case .limit:
                 return "limit"
-            case .Offset:
+            case .offset:
                 return "offset"
         }
     }
 
     public var value: String {
         switch self {
-            case let .Name(value):
+            case let .name(value):
                 return value
-            case let .NameStartsWith(value):
+            case let .nameStartsWith(value):
                 return value
-            case let .ModifiedSince(value):
+            case let .modifiedSince(value):
                 return value.string
-            case let .Creators(value):
+            case let .creators(value):
                 return value.csv
-            case let .Characters(value):
+            case let .characters(value):
                 return value.csv
-            case let .Series(value):
+            case let .series(value):
                 return value.csv
-            case let .Comics(value):
+            case let .comics(value):
                 return value.csv
-            case let .Stories(value):
+            case let .stories(value):
                 return value.csv
-            case let .OrderBy(value):
+            case let .orderBy(value):
                 return value.flatMap({ $0.rawValue }).csv
-            case let .Limit(value):
+            case let .limit(value):
                 return "\(value)"
-            case let .Offset(value):
+            case let .offset(value):
                 return "\(value)"
         }
     }

@@ -20,9 +20,9 @@ struct Account: Authentication {
 
 // MARK: - MarvelKit
 
-public class MarvelKit {
+open class MarvelKit {
 
-    let defaultSession = NSURLSession(configuration: .defaultSessionConfiguration())
+    let defaultSession = URLSession(configuration: .default)
 
     let account: Account
 
@@ -34,15 +34,15 @@ public class MarvelKit {
 
     // MARK: Generate requests
 
-    public func request<Resource: DataResourceProtocol>(resource: Resource.Type) -> Request<Resource> {
+    open func request<Resource: DataResourceProtocol>(_ resource: Resource.Type) -> Request<Resource> {
         return Request(resource: resource, authentication: account)
     }
 
-    public func request<Resource: DataResourceProtocol>(resource: Resource.Type, id: Int) -> Request<Resource> {
+    open func request<Resource: DataResourceProtocol>(_ resource: Resource.Type, id: Int) -> Request<Resource> {
         return Request(resource: resource, authentication: account, id: id)
     }
 
-    public func request<Resource: DataResourceProtocol>(resource: Resource.Type, filter: ResourceFilter<Resource.ResourceFilterType>) -> Request<Resource> {
+    open func request<Resource: DataResourceProtocol>(_ resource: Resource.Type, filter: ResourceFilter<Resource.ResourceFilterType>) -> Request<Resource> {
         return Request(resource: resource, authentication: account, filter: filter)
     }
 

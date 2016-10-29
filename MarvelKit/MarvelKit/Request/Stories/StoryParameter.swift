@@ -23,48 +23,48 @@ public enum StoryParameter {
     /**
      * Return only stories which have been modified since the specified date.
      */
-    case ModifiedSince(NSDate)
+    case modifiedSince(Date)
 
     /**
      * Return only stories contained in the specified comics.
      */
-    case Comics([Int])
+    case comics([Int])
 
     /**
      * Return only stories contained the specified series.
      */
-    case Series([Int])
+    case series([Int])
 
     /**
      * Return only stories which take place during the specified events.
      */
-    case Events([Int])
+    case events([Int])
 
     /**
      * Return only stories which feature work by the specified creators.
      */
-    case Creators([Int])
+    case creators([Int])
 
     /**
      * Return only stories which feature the specified characters.
      */
-    case Characters([Int])
+    case characters([Int])
 
     /**
      * Order the result set by a field or fields.
      * Multiple values are given priority in the order in which they are passed.
      */
-    case OrderBy([Order])
+    case orderBy([Order])
 
     /**
      * Limit the result set to the specified number of resources.
      */
-    case Limit(Int)
+    case limit(Int)
 
     /**
      * Skip the specified number of resources in the result set.
      */
-    case Offset(Int)
+    case offset(Int)
 
 }
 
@@ -72,46 +72,46 @@ extension StoryParameter: ResourceParameterProtocol {
 
     public var key: String {
         switch self {
-            case .ModifiedSince:
+            case .modifiedSince:
                 return "modifiedSince"
-            case .Comics:
+            case .comics:
                 return "comics"
-            case .Series:
+            case .series:
                 return "series"
-            case .Events:
+            case .events:
                 return "events"
-            case .Creators:
+            case .creators:
                 return "creators"
-            case .Characters:
+            case .characters:
                 return "characters"
-            case .OrderBy:
+            case .orderBy:
                 return "orderBy"
-            case .Limit:
+            case .limit:
                 return "limit"
-            case .Offset:
+            case .offset:
                 return "offset"
         }
     }
 
     public var value: String {
         switch self {
-            case let .ModifiedSince(value):
+            case let .modifiedSince(value):
                 return value.string
-            case let .Comics(value):
+            case let .comics(value):
                 return value.csv
-            case let .Series(value):
+            case let .series(value):
                 return value.csv
-            case let .Events(value):
+            case let .events(value):
                 return value.csv
-            case let .Creators(value):
+            case let .creators(value):
                 return value.csv
-            case let .Characters(value):
+            case let .characters(value):
                 return value.csv
-            case let .OrderBy(value):
+            case let .orderBy(value):
                 return value.flatMap({ $0.rawValue }).csv
-            case let .Limit(value):
+            case let .limit(value):
                 return "\(value)"
-            case let .Offset(value):
+            case let .offset(value):
                 return "\(value)"
         }
     }

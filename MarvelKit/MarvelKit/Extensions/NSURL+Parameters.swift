@@ -10,25 +10,29 @@ import Foundation
 
 public typealias URLParameters = [String: String]
 
-public extension NSURLComponents {
+public extension URLComponents {
 
-    public func byAppendingQueryItems(queryItems: [NSURLQueryItem]) -> NSURLComponents {
+    public func byAppendingQueryItems(_ queryItems: [URLQueryItem]) -> URLComponents {
+
+        var copy = self
+
         if !queryItems.isEmpty {
-            self.queryItems = (self.queryItems ?? []) + queryItems
+            copy.queryItems = (copy.queryItems ?? []) + queryItems
         }
-        return self
+
+        return copy
     }
 
-    public func byAppendParameters(parameters: URLParameters) -> NSURLComponents {
-        return byAppendingQueryItems(parameters.flatMap { key, value in NSURLQueryItem(name: key, value: value) })
+    public func byAppendParameters(_ parameters: URLParameters) -> URLComponents {
+        return byAppendingQueryItems(parameters.flatMap { key, value in URLQueryItem(name: key, value: value) })
     }
 
 }
 
-public extension NSURL {
+public extension URL {
 
-    public func byAppendingParameters(parameters: URLParameters) -> NSURL? {
-        return NSURLComponents(string: absoluteString)?.byAppendParameters(parameters).URL
+    public func byAppendingParameters(_ parameters: URLParameters) -> URL? {
+        return URLComponents(string: absoluteString)?.byAppendParameters(parameters).url
     }
     
 }

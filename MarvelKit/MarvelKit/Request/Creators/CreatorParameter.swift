@@ -35,83 +35,83 @@ public enum CreatorParameter {
     /**
      * Filter by creator first name (e.g. Brian).
      */
-    case FirstName(String)
+    case firstName(String)
 
     /**
      * Filter by creator middle name (e.g. Michael).
      */
-    case MiddleName(String)
+    case middleName(String)
 
     /**
      * Filter by creator last name (e.g. Bendis).
      */
-    case LastName(String)
+    case lastName(String)
 
     /**
      * Filter by suffix or honorific (e.g. Jr., Sr.).
      */
-    case Suffix(String)
+    case suffix(String)
 
     /**
      * Filter by creator names that match critera (e.g. B, St L).
      */
-    case NameStartsWith(String)
+    case nameStartsWith(String)
 
     /**
      * Filter by creator first names that match critera (e.g. B, St L).
      */
-    case FirstNameStartsWith(String)
+    case firstNameStartsWith(String)
 
     /**
      * Filter by creator middle names that match critera (e.g. Mi).
      */
-    case MiddleNameStartsWith(String)
+    case middleNameStartsWith(String)
 
     /**
      * Filter by creator last names that match critera (e.g. Ben).
      */
-    case LastNameStartsWith(String)
+    case lastNameStartsWith(String)
 
     /**
      * Return only creators which have been modified since the specified date.
      */
-    case ModifiedSince(NSDate)
+    case modifiedSince(Date)
 
     /**
      * Return only creators who worked on in the specified comics.
      */
-    case Comics([Int])
+    case comics([Int])
 
     /**
      * Return only creators who worked on the specified series.
      */
-    case Series([Int])
+    case series([Int])
 
     /**
      * Return only creators who worked on comics that took place in the specified events.
      */
-    case Events([Int])
+    case events([Int])
 
     /**
      * Return only creators who worked on the specified stories.
      */
-    case Stories([Int])
+    case stories([Int])
 
     /**
      * Order the result set by a field or fields.
      * Multiple values are given priority in the order in which they are passed.
      */
-    case OrderBy([Order])
+    case orderBy([Order])
 
     /**
      * Limit the result set to the specified number of resources.
      */
-    case Limit(Int)
+    case limit(Int)
 
     /**
      * Skip the specified number of resources in the result set.
      */
-    case Offset(Int)
+    case offset(Int)
 
 }
 
@@ -119,74 +119,74 @@ extension CreatorParameter: ResourceParameterProtocol {
 
     public var key: String {
         switch self {
-            case .FirstName:
+            case .firstName:
                 return "firstName"
-            case .MiddleName:
+            case .middleName:
                 return "middleName"
-            case .LastName:
+            case .lastName:
                 return "lastName"
-            case .Suffix:
+            case .suffix:
                 return "suffix"
-            case .NameStartsWith:
+            case .nameStartsWith:
                 return "nameStartsWith"
-            case .FirstNameStartsWith:
+            case .firstNameStartsWith:
                 return "firstNameStartsWith"
-            case .MiddleNameStartsWith:
+            case .middleNameStartsWith:
                 return "middleNameStartsWith"
-            case .LastNameStartsWith:
+            case .lastNameStartsWith:
                 return "lastNameStartsWith"
-            case .ModifiedSince:
+            case .modifiedSince:
                 return "modifiedSince"
-            case .Comics:
+            case .comics:
                 return "comics"
-            case .Series:
+            case .series:
                 return "series"
-            case .Events:
+            case .events:
                 return "events"
-            case .Stories:
+            case .stories:
                 return "stories"
-            case .OrderBy:
+            case .orderBy:
                 return "orderBy"
-            case .Limit:
+            case .limit:
                 return "limit"
-            case .Offset:
+            case .offset:
                 return "offset"
         }
     }
 
     public var value: String {
         switch self {
-            case let .FirstName(value):
+            case let .firstName(value):
                 return value
-            case let .MiddleName(value):
+            case let .middleName(value):
                 return value
-            case let .LastName(value):
+            case let .lastName(value):
                 return value
-            case let .Suffix(value):
+            case let .suffix(value):
                 return value
-            case let .NameStartsWith(value):
+            case let .nameStartsWith(value):
                 return value
-            case let .FirstNameStartsWith(value):
+            case let .firstNameStartsWith(value):
                 return value
-            case let .MiddleNameStartsWith(value):
+            case let .middleNameStartsWith(value):
                 return value
-            case let .LastNameStartsWith(value):
+            case let .lastNameStartsWith(value):
                 return value
-            case let .ModifiedSince(value):
+            case let .modifiedSince(value):
                 return value.string
-            case let .Comics(value):
+            case let .comics(value):
                 return value.csv
-            case let .Series(value):
+            case let .series(value):
                 return value.csv
-            case let .Events(value):
+            case let .events(value):
                 return value.csv
-            case let .Stories(value):
+            case let .stories(value):
                 return value.csv
-            case let .OrderBy(value):
+            case let .orderBy(value):
                 return value.flatMap({ $0.rawValue }).csv
-            case let .Limit(value):
+            case let .limit(value):
                 return "\(value)"
-            case let .Offset(value):
+            case let .offset(value):
                 return "\(value)"
         }
     }

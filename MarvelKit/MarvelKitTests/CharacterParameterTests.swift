@@ -13,57 +13,57 @@ import XCTest
 class CharacterParameterTests: XCTestCase {
 
     func testName() {
-        XCTAssertEqual(CharacterParameter.Name("Name").key, "name")
-        XCTAssertEqual(CharacterParameter.Name("Name").value, "Name")
+        XCTAssertEqual(CharacterParameter.name("Name").key, "name")
+        XCTAssertEqual(CharacterParameter.name("Name").value, "Name")
     }
 
     func testNameStartsWith() {
-        XCTAssertEqual(CharacterParameter.NameStartsWith("NameStartsWith").key, "nameStartsWith")
-        XCTAssertEqual(CharacterParameter.NameStartsWith("NameStartsWith").value, "NameStartsWith")
+        XCTAssertEqual(CharacterParameter.nameStartsWith("NameStartsWith").key, "nameStartsWith")
+        XCTAssertEqual(CharacterParameter.nameStartsWith("NameStartsWith").value, "NameStartsWith")
     }
 
     func testModifiedSince() {
-        XCTAssertEqual(CharacterParameter.ModifiedSince(NSDate(timeIntervalSince1970: 0)).key, "modifiedSince")
-        XCTAssertEqual(CharacterParameter.ModifiedSince(NSDate(timeIntervalSince1970: 0)).value, "1970-01-01")
+        XCTAssertEqual(CharacterParameter.modifiedSince(Date(timeIntervalSince1970: 0)).key, "modifiedSince")
+        XCTAssertEqual(CharacterParameter.modifiedSince(Date(timeIntervalSince1970: 0)).value, "1970-01-01")
     }
 
     func testComics() {
-        XCTAssertEqual(CharacterParameter.Comics([1, 2, 3]).key, "comics")
-        XCTAssertEqual(CharacterParameter.Comics([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CharacterParameter.comics([1, 2, 3]).key, "comics")
+        XCTAssertEqual(CharacterParameter.comics([1, 2, 3]).value, "1,2,3")
     }
 
     func testSeries() {
-        XCTAssertEqual(CharacterParameter.Series([1, 2, 3]).key, "series")
-        XCTAssertEqual(CharacterParameter.Series([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CharacterParameter.series([1, 2, 3]).key, "series")
+        XCTAssertEqual(CharacterParameter.series([1, 2, 3]).value, "1,2,3")
     }
 
     func testEvents() {
-        XCTAssertEqual(CharacterParameter.Events([1, 2, 3]).key, "events")
-        XCTAssertEqual(CharacterParameter.Events([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CharacterParameter.events([1, 2, 3]).key, "events")
+        XCTAssertEqual(CharacterParameter.events([1, 2, 3]).value, "1,2,3")
     }
 
     func testStories() {
-        XCTAssertEqual(CharacterParameter.Stories([1, 2, 3]).key, "stories")
-        XCTAssertEqual(CharacterParameter.Stories([1, 2, 3]).value, "1,2,3")
+        XCTAssertEqual(CharacterParameter.stories([1, 2, 3]).key, "stories")
+        XCTAssertEqual(CharacterParameter.stories([1, 2, 3]).value, "1,2,3")
     }
 
     func testOrderBy() {
         // Ascending
-        XCTAssertEqual(CharacterParameter.OrderBy([.NameAscending, .ModifiedAscending]).key, "orderBy")
-        XCTAssertEqual(CharacterParameter.OrderBy([.NameAscending, .ModifiedAscending]).value, "name,modified")
+        XCTAssertEqual(CharacterParameter.orderBy([.NameAscending, .ModifiedAscending]).key, "orderBy")
+        XCTAssertEqual(CharacterParameter.orderBy([.NameAscending, .ModifiedAscending]).value, "name,modified")
         // Descending
-        XCTAssertEqual(CharacterParameter.OrderBy([.NameDescending, .ModifiedDescending]).key, "orderBy")
-        XCTAssertEqual(CharacterParameter.OrderBy([.NameDescending, .ModifiedDescending]).value, "-name,-modified")
+        XCTAssertEqual(CharacterParameter.orderBy([.NameDescending, .ModifiedDescending]).key, "orderBy")
+        XCTAssertEqual(CharacterParameter.orderBy([.NameDescending, .ModifiedDescending]).value, "-name,-modified")
     }
 
     func testLimit() {
-        XCTAssertEqual(CharacterParameter.Limit(1).key, "limit")
-        XCTAssertEqual(CharacterParameter.Limit(1).value, "1")
+        XCTAssertEqual(CharacterParameter.limit(1).key, "limit")
+        XCTAssertEqual(CharacterParameter.limit(1).value, "1")
     }
 
     func testOffset() {
-        XCTAssertEqual(CharacterParameter.Offset(1).key, "offset")
-        XCTAssertEqual(CharacterParameter.Offset(1).value, "1")
+        XCTAssertEqual(CharacterParameter.offset(1).key, "offset")
+        XCTAssertEqual(CharacterParameter.offset(1).value, "1")
     }
 
 }

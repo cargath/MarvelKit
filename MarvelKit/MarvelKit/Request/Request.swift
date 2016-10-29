@@ -6,14 +6,14 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public typealias DataResourceProtocol = protocol<DataProtocol, ResourceProtocol>
+public typealias DataResourceProtocol = DataProtocol & ResourceProtocol
 
-public class Request<Resource: DataResourceProtocol> {
+open class Request<Resource: DataResourceProtocol> {
 
-    var url: NSURL?
+    var url: URL?
 
-    var defaultSession: NSURLSession {
-        return NSURLSession(configuration: .defaultSessionConfiguration())
+    var defaultSession: URLSession {
+        return URLSession(configuration: .default)
     }
 
     // MARK: Internal initializers
@@ -32,15 +32,15 @@ public class Request<Resource: DataResourceProtocol> {
 
     // MARK: Public builders
 
-    public func withParameters(parameters: [Resource.ResourceParameterType]) -> Request<Resource> {
+    open func withParameters(_ parameters: [Resource.ResourceParameterType]) -> Request<Resource> {
         url = url?.byAppendingParameters(parameters.urlParameters)
         return self
     }
 
-    public func exec(success successHandler: DataWrapper<DataContainer<Resource>> -> Void, error errorHandler: MarvelKitError -> Void) {
+    open func exec(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) {
 
         guard let url = self.url else {
-            return errorHandler(.NSURLError(msg: "Failed to create URL for resource"))
+            return errorHandler(.nsurlError(msg: "Failed to create URL for resource"))
         }
 
         defaultSession.resourceTaskWithURL(url, successHandler: { response, resource in

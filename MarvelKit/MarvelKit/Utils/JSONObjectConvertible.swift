@@ -13,14 +13,14 @@ public typealias JSONArray = Array<JSONObject>
 
 // MARK: - Get JSON objects from resource
 
-public extension NSJSONSerialization {
+public extension JSONSerialization {
 
-    public class func JSONObjectNamed(name: String, forBundle bundle: NSBundle) -> JSONObject? {
+    public class func JSONObjectNamed(_ name: String, forBundle bundle: Bundle) -> JSONObject? {
 
         if let
-            filePath = bundle.pathForResource(name, ofType: "json"),
-            data = NSData(contentsOfFile: filePath),
-            json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONObject {
+            filePath = bundle.path(forResource: name, ofType: "json"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONObject {
 
             return json
         }
@@ -54,13 +54,13 @@ public extension JSONObjectConvertible {
 
 public extension JSONObjectConvertible {
 
-    public static func fromJSONArray(jsonArray: JSONArray) -> [Self] {
+    public static func fromJSONArray(_ jsonArray: JSONArray) -> [Self] {
         return jsonArray.flatMap { jsonObject in
             return Self.init(jsonObject: jsonObject)
         }
     }
 
-    public static func fromJSONArray(jsonArray: JSONArray?) -> [Self] {
+    public static func fromJSONArray(_ jsonArray: JSONArray?) -> [Self] {
         if let jsonArray = jsonArray {
             return fromJSONArray(jsonArray)
         } else {
