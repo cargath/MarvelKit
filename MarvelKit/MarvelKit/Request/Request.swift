@@ -19,21 +19,21 @@ open class Request<Resource: DataResourceProtocol> {
     // MARK: Internal initializers
 
     init(resource: Resource.Type, authentication: Authentication) {
-        url = resource.absoluteURL()?.byAppendingParameters(authentication.params())
+        url = resource.absoluteURL()?.appendingParameters(authentication.params())
     }
 
     init(resource: Resource.Type, authentication: Authentication, id: Int) {
-        url = resource.absoluteURL(id: id)?.byAppendingParameters(authentication.params())
+        url = resource.absoluteURL(id: id)?.appendingParameters(authentication.params())
     }
 
     init(resource: Resource.Type, authentication: Authentication, filter: ResourceFilter<Resource.ResourceFilterType>) {
-        url = resource.absoluteURL(filter: filter)?.byAppendingParameters(authentication.params())
+        url = resource.absoluteURL(filter: filter)?.appendingParameters(authentication.params())
     }
 
     // MARK: Public builders
 
     open func withParameters(_ parameters: [Resource.ResourceParameterType]) -> Request<Resource> {
-        url = url?.byAppendingParameters(parameters.urlParameters)
+        url = url?.appendingParameters(parameters.urlParameters)
         return self
     }
 

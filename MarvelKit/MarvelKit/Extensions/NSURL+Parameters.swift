@@ -12,7 +12,7 @@ public typealias URLParameters = [String: String]
 
 public extension URLComponents {
 
-    public func byAppendingQueryItems(_ queryItems: [URLQueryItem]) -> URLComponents {
+    public func appendingQueryItems(_ queryItems: [URLQueryItem]) -> URLComponents {
 
         var copy = self
 
@@ -23,16 +23,16 @@ public extension URLComponents {
         return copy
     }
 
-    public func byAppendParameters(_ parameters: URLParameters) -> URLComponents {
-        return byAppendingQueryItems(parameters.flatMap { key, value in URLQueryItem(name: key, value: value) })
+    public func appendingParameters(_ parameters: URLParameters) -> URLComponents {
+        return appendingQueryItems(parameters.flatMap { key, value in URLQueryItem(name: key, value: value) })
     }
 
 }
 
 public extension URL {
 
-    public func byAppendingParameters(_ parameters: URLParameters) -> URL? {
-        return URLComponents(string: absoluteString)?.byAppendParameters(parameters).url
+    public func appendingParameters(_ parameters: URLParameters) -> URL? {
+        return URLComponents(string: absoluteString)?.appendingParameters(parameters).url
     }
     
 }
