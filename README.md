@@ -4,12 +4,12 @@ A Swift SDK for working with the https://developer.marvel.com/ API.
 
 ## Usage
 
-    let client = MarvelKit(privateKey: "abcd", publicKey: "1234")
+    let marvelKitClient = MarvelKitClient(privateKey: "abcd", publicKey: "1234")
     
     func performRequest() {
-        client
-            .request(Comic.self)
-            .withParameters([.DateRange(NSDate(timeIntervalSinceReferenceDate: 0), NSDate()), .Limit(2)])
+        marvelKitClient
+            .request(MarvelKit.Comic)
+            .withParameters([.dateRange(Date(timeIntervalSinceReferenceDate: 0), Date()), .limit(2)])
             .exec(success: onSuccess, error: onError)
     }
 
