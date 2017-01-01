@@ -1,9 +1,9 @@
 //
-//  MarvelKit.swift
+//  MarvelKitClient.swift
 //  MarvelKit
 //
-//  Created by Carsten Könemann on 05.05.16.
-//  Copyright © 2016 cargath. All rights reserved.
+//  Created by Carsten Könemann on 01/01/2017.
+//  Copyright © 2017 cargath. All rights reserved.
 //
 
 import Foundation
@@ -18,9 +18,9 @@ struct Account: Authentication {
 
 }
 
-// MARK: - MarvelKit
+// MARK: - MarvelKitClient
 
-open class MarvelKit {
+public class MarvelKitClient {
 
     let defaultSession = URLSession(configuration: .default)
 
@@ -45,5 +45,5 @@ open class MarvelKit {
     open func request<Resource: DataResourceProtocol>(_ resource: Resource.Type, filter: ResourceFilter<Resource.ResourceFilterType>) -> Request<Resource> {
         return Request(resource: resource, authentication: account, filter: filter)
     }
-
+    
 }

@@ -21,7 +21,7 @@ class AuthenticationTests: XCTestCase {
     }
 
     func testMarvelKit() {
-        XCTAssertEqual(MarvelKit(privateKey: "abcd", publicKey: "1234").account.hash(timestamp: "1"), "ffd275c5130566a2916217b101f26150")
+        XCTAssertEqual(MarvelKitClient(privateKey: "abcd", publicKey: "1234").account.hash(timestamp: "1"), "ffd275c5130566a2916217b101f26150")
     }
 
 }
