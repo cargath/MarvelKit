@@ -6,6 +6,15 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
+// MARK: - ComicDateType
+
+public enum ComicDateType: String {
+
+    case focDate = "focDate"
+    case onsaleDate = "onsaleDate"
+
+}
+
 // MARK: - ComicDate
 
 public struct ComicDate {
