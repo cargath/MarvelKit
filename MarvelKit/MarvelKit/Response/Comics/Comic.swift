@@ -158,6 +158,36 @@ public struct Comic: DataProtocol {
 
 }
 
+// MARK: - Comic + ComicDate
+
+public extension Comic {
+
+    public var focDate: Date? {
+
+        for comicDate in dates {
+            if let type = comicDate.type, type == ComicDateType.focDate.rawValue,
+                let date = comicDate.date?.iso8601Date {
+                return date
+            }
+        }
+
+        return nil
+    }
+
+    public var onsaleDate: Date? {
+
+        for comicDate in dates {
+            if let type = comicDate.type, type == ComicDateType.onsaleDate.rawValue,
+                let date = comicDate.date?.iso8601Date {
+                return date
+            }
+        }
+        
+        return nil
+    }
+    
+}
+
 // MARK: - Comic + JSONObjectConvertible
 
 extension Comic {
