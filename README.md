@@ -2,6 +2,8 @@
 
 A Swift SDK for working with the https://developer.marvel.com/ API.
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 ## Usage
 
     let marvelKitClient = MarvelKitClient(privateKey: "abcd", publicKey: "1234")
