@@ -77,7 +77,7 @@
 		3528E7831CE8EC4600A53022 /* SeriesParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7821CE8EC4600A53022 /* SeriesParameter.swift */; };
 		3528E7851CE8EC6100A53022 /* StoryParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7841CE8EC6100A53022 /* StoryParameter.swift */; };
 		3528E7871CE90BE300A53022 /* NSDateFormatter+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7861CE90BE300A53022 /* NSDateFormatter+Conversion.swift */; };
-		3528E78B1CE9328E00A53022 /* SequenceType+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78A1CE9328E00A53022 /* SequenceType+Reduce.swift */; };
+		3528E78B1CE9328E00A53022 /* Sequence+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */; };
 		3528E78D1CE9E11700A53022 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78C1CE9E11700A53022 /* Authentication.swift */; };
 		3528E78F1CE9EAF000A53022 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78E1CE9EAF000A53022 /* Request.swift */; };
 		3528E7941CE9EDDF00A53022 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */; };
@@ -173,7 +173,7 @@
 		3528E7821CE8EC4600A53022 /* SeriesParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesParameter.swift; path = Request/Series/SeriesParameter.swift; sourceTree = "<group>"; };
 		3528E7841CE8EC6100A53022 /* StoryParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryParameter.swift; path = Request/Stories/StoryParameter.swift; sourceTree = "<group>"; };
 		3528E7861CE90BE300A53022 /* NSDateFormatter+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDateFormatter+Conversion.swift"; path = "Extensions/NSDateFormatter+Conversion.swift"; sourceTree = "<group>"; };
-		3528E78A1CE9328E00A53022 /* SequenceType+Reduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType+Reduce.swift"; path = "Extensions/SequenceType+Reduce.swift"; sourceTree = "<group>"; };
+		3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sequence+Reduce.swift"; path = "Extensions/Sequence+Reduce.swift"; sourceTree = "<group>"; };
 		3528E78C1CE9E11700A53022 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = Request/Authentication.swift; sourceTree = "<group>"; };
 		3528E78E1CE9EAF000A53022 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Request/Request.swift; sourceTree = "<group>"; };
 		3528E7931CE9EDDF00A53022 /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 				3528E7861CE90BE300A53022 /* NSDateFormatter+Conversion.swift */,
 				3528E7701CE8B05000A53022 /* NSURL+Parameters.swift */,
 				3528E7721CE8B0A500A53022 /* NSURLSession+Tasks.swift */,
-				3528E78A1CE9328E00A53022 /* SequenceType+Reduce.swift */,
+				3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -654,7 +654,7 @@
 				350156A61CDB8F520021759D /* Story+ResourceProtocol.swift in Sources */,
 				3520730E1CD369AF009BC420 /* StorySummary.swift in Sources */,
 				3528E7791CE8E7DD00A53022 /* CharacterParameter.swift in Sources */,
-				3528E78B1CE9328E00A53022 /* SequenceType+Reduce.swift in Sources */,
+				3528E78B1CE9328E00A53022 /* Sequence+Reduce.swift in Sources */,
 				350156A21CDB8ED60021759D /* SeriesFilter.swift in Sources */,
 				352072E01CD3694A009BC420 /* Comic.swift in Sources */,
 				350156B01CDB8F760021759D /* Character+ResourceProtocol.swift in Sources */,

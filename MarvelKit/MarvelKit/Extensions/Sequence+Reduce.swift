@@ -1,5 +1,5 @@
 //
-//  SequenceType+Reduce.swift
+//  Sequence+Reduce.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 16.05.16.
