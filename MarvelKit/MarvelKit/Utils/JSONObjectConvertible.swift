@@ -17,10 +17,9 @@ public extension JSONSerialization {
 
     public class func JSONObject(named name: String, forBundle bundle: Bundle) -> JSONObject? {
 
-        if let
-            filePath = bundle.path(forResource: name, ofType: "json"),
-            let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
-            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONObject {
+        if let filePath = bundle.path(forResource: name, ofType: "json"),
+           let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
+           let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONObject {
 
             return json
         }
