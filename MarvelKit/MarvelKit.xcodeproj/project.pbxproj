@@ -87,6 +87,7 @@
 		3528E79E1CEA4BA400A53022 /* EventParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E79D1CEA4BA400A53022 /* EventParameterTests.swift */; };
 		3528E7A01CEA4BC800A53022 /* SeriesParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */; };
 		3528E7A21CEA4BE900A53022 /* StoryParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */; };
+		AD00523A1EEB4CE2007F2161 /* CreatorSummary+Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		3528E79D1CEA4BA400A53022 /* EventParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventParameterTests.swift; sourceTree = "<group>"; };
 		3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesParameterTests.swift; sourceTree = "<group>"; };
 		3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryParameterTests.swift; sourceTree = "<group>"; };
+		AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreatorSummary+Role.swift"; path = "Response/Creators/CreatorSummary+Role.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 			children = (
 				352072E71CD36963009BC420 /* Creator.swift */,
 				352072EB1CD36963009BC420 /* CreatorSummary.swift */,
+				AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */,
 			);
 			name = Creators;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				352072D41CD36928009BC420 /* Character.swift in Sources */,
 				352072F61CD3699B009BC420 /* Event.swift in Sources */,
 				352072AA1CD35422009BC420 /* Url.swift in Sources */,
+				AD00523A1EEB4CE2007F2161 /* CreatorSummary+Role.swift in Sources */,
 				3528E7831CE8EC4600A53022 /* SeriesParameter.swift in Sources */,
 				3501569E1CDB8E850021759D /* CreatorFilter.swift in Sources */,
 				3528E77F1CE8EC2000A53022 /* CreatorParameter.swift in Sources */,
