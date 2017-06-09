@@ -519,6 +519,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3520727B1CD34A10009BC420 /* Build configuration list for PBXNativeTarget "MarvelKit" */;
 			buildPhases = (
+				AD00523B1EEB52AC007F2161 /* Mark TODOs and FIXMEs as warnings */,
 				352072621CD34A0F009BC420 /* Sources */,
 				352072631CD34A0F009BC420 /* Frameworks */,
 				352072641CD34A0F009BC420 /* Headers */,
@@ -611,6 +612,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD00523B1EEB52AC007F2161 /* Mark TODOs and FIXMEs as warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Mark TODOs and FIXMEs as warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		352072621CD34A0F009BC420 /* Sources */ = {
