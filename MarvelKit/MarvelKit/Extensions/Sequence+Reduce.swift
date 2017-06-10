@@ -8,11 +8,8 @@
 
 extension Sequence {
 
-    // TODO: use joined(separator: ",")
     var csv: String {
-        return enumerated().reduce("", { aggregate, indexElementTuple in
-            indexElementTuple.0 > 0 ? "\(aggregate),\(indexElementTuple.1)" : "\(aggregate)\(indexElementTuple.1)"
-        })
+        return map({"\($0)"}).joined(separator: ",")
     }
 
 }
