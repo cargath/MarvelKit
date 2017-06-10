@@ -35,6 +35,12 @@ public extension MarvelKitError {
 }
 
 public extension URLSession {
+    
+    public func failingTask(_ errorHandler: @escaping (MarvelKitError) -> Void) -> URLSessionTask {
+        return URLSession.shared.dataTask(with: URL(fileURLWithPath: "")) { _ in
+            errorHandler(.URLError(msg: "Failed to create URL for resource"))
+        }
+    }
 
     public typealias ErrorHandler = (URLResponse?, MarvelKitError) -> Void
 

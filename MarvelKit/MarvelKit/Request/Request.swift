@@ -12,10 +12,6 @@ open class Request<Resource: DataResourceProtocol> {
 
     var url: URL?
 
-    var defaultSession: URLSession {
-        return URLSession(configuration: .default)
-    }
-
     // MARK: Internal initializers
 
     init(resource: Resource.Type, authentication: Authentication) {
@@ -32,22 +28,26 @@ open class Request<Resource: DataResourceProtocol> {
 
     // MARK: Public builders
 
-    open func withParameters(_ parameters: [Resource.ResourceParameterType]) -> Request<Resource> {
+    public func withParameters(_ parameters: [Resource.ResourceParameterType]) -> Request<Resource> {
         url = url?.appendingParameters(parameters.urlParameters)
         return self
     }
-
-    open func exec(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) {
-
+    
+    public func resourceTask(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) -> URLSessionTask {
+        
         guard let url = self.url else {
-            return errorHandler(.URLError(msg: "Failed to create URL for resource"))
+            return URLSession.shared.failingTask(errorHandler)
         }
-
-        defaultSession.resourceTaskWithURL(url, successHandler: { response, resource in
+        
+        return URLSession.shared.resourceTaskWithURL(url, successHandler: { response, resource in
             successHandler(resource)
         }, errorHandler: { response, error in
             errorHandler(error)
-        }).resume()
+        })
+    }
+
+    public func exec(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) {
+        resourceTask(success: successHandler, error: errorHandler).resume()
     }
     
 }
