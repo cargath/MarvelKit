@@ -42,9 +42,7 @@ public extension URLSession {
         }
     }
 
-    public typealias ErrorHandler = (URLResponse?, MarvelKitError) -> Void
-
-    public func dataTaskWithURL(_ url: URL, successHandler: @escaping (URLResponse?, Data) -> Void, errorHandler: @escaping ErrorHandler) -> URLSessionDataTask {
+    public func dataTaskWithURL(_ url: URL, successHandler: @escaping (URLResponse?, Data) -> Void, errorHandler: @escaping (URLResponse?, MarvelKitError) -> Void) -> URLSessionDataTask {
         return dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 return errorHandler(response, .URLSessionError(msg: error.localizedDescription))
@@ -56,10 +54,9 @@ public extension URLSession {
                         return errorHandler(response, .URLSessionError(msg: "Failed to receive data"))
                     }
                 } else {
-                    if let
-                        data = data,
-                        let JSONObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSONObject,
-                        let error = Error(JSONObject: JSONObject) {
+                    if let data = data,
+                       let JSONObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSONObject,
+                       let error = Error(JSONObject: JSONObject) {
                         return errorHandler(response, .URLSessionError(msg: "Failed with status code '\(response.statusCode)'; Error: '\(error)'"))
                     } else {
                         return errorHandler(response, .URLSessionError(msg: "Failed with status code '\(response.statusCode)'"))
@@ -71,7 +68,7 @@ public extension URLSession {
         }) 
     }
 
-    public func JSONTaskWithURL(_ url: URL, successHandler: @escaping (URLResponse?, JSONObject) -> Void, errorHandler: @escaping ErrorHandler) -> URLSessionTask {
+    public func JSONTaskWithURL(_ url: URL, successHandler: @escaping (URLResponse?, JSONObject) -> Void, errorHandler: @escaping (URLResponse?, MarvelKitError) -> Void) -> URLSessionTask {
         return dataTaskWithURL(url, successHandler: { response, data in
             do {
                 if let jsonObject = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSONObject {
@@ -85,7 +82,7 @@ public extension URLSession {
         }, errorHandler: errorHandler)
     }
 
-    public func resourceTaskWithURL<Resource: ResourceProtocol & DataProtocol>(_ url: URL, successHandler: @escaping (URLResponse?, DataWrapper<DataContainer<Resource>>) -> Void, errorHandler: @escaping ErrorHandler) -> URLSessionTask {
+    public func resourceTaskWithURL<Resource: ResourceProtocol & DataProtocol>(_ url: URL, successHandler: @escaping (URLResponse?, DataWrapper<DataContainer<Resource>>) -> Void, errorHandler: @escaping (URLResponse?, MarvelKitError) -> Void) -> URLSessionTask {
         return JSONTaskWithURL(url, successHandler: { response, JSONObject in
             if let resource = DataWrapper<DataContainer<Resource>>(JSONObject: JSONObject) {
                 return successHandler(response, resource)
