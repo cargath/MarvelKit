@@ -67,8 +67,8 @@
 		352364801CFB4100002A30B8 /* SeriesURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523647F1CFB4100002A30B8 /* SeriesURLTests.swift */; };
 		352364821CFB410B002A30B8 /* StoryURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352364811CFB410B002A30B8 /* StoryURLTests.swift */; };
 		3528E76E1CE8A04C00A53022 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E76D1CE8A04C00A53022 /* Error.swift */; };
-		3528E7711CE8B05000A53022 /* NSURL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7701CE8B05000A53022 /* NSURL+Parameters.swift */; };
-		3528E7731CE8B0A500A53022 /* NSURLSession+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7721CE8B0A500A53022 /* NSURLSession+Tasks.swift */; };
+		3528E7711CE8B05000A53022 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7701CE8B05000A53022 /* URL+Parameters.swift */; };
+		3528E7731CE8B0A500A53022 /* URLSession+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7721CE8B0A500A53022 /* URLSession+Tasks.swift */; };
 		3528E7771CE8E63200A53022 /* ResourceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7761CE8E63200A53022 /* ResourceParameter.swift */; };
 		3528E7791CE8E7DD00A53022 /* CharacterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7781CE8E7DD00A53022 /* CharacterParameter.swift */; };
 		3528E77D1CE8EC0600A53022 /* ComicParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E77C1CE8EC0600A53022 /* ComicParameter.swift */; };
@@ -76,7 +76,7 @@
 		3528E7811CE8EC3000A53022 /* EventParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7801CE8EC3000A53022 /* EventParameter.swift */; };
 		3528E7831CE8EC4600A53022 /* SeriesParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7821CE8EC4600A53022 /* SeriesParameter.swift */; };
 		3528E7851CE8EC6100A53022 /* StoryParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7841CE8EC6100A53022 /* StoryParameter.swift */; };
-		3528E7871CE90BE300A53022 /* NSDateFormatter+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7861CE90BE300A53022 /* NSDateFormatter+Conversion.swift */; };
+		3528E7871CE90BE300A53022 /* DateFormatter+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7861CE90BE300A53022 /* DateFormatter+Conversion.swift */; };
 		3528E78B1CE9328E00A53022 /* Sequence+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */; };
 		3528E78D1CE9E11700A53022 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78C1CE9E11700A53022 /* Authentication.swift */; };
 		3528E78F1CE9EAF000A53022 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E78E1CE9EAF000A53022 /* Request.swift */; };
@@ -164,8 +164,8 @@
 		3523647F1CFB4100002A30B8 /* SeriesURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesURLTests.swift; sourceTree = "<group>"; };
 		352364811CFB410B002A30B8 /* StoryURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryURLTests.swift; sourceTree = "<group>"; };
 		3528E76D1CE8A04C00A53022 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Response/Error.swift; sourceTree = "<group>"; };
-		3528E7701CE8B05000A53022 /* NSURL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+Parameters.swift"; path = "Extensions/NSURL+Parameters.swift"; sourceTree = "<group>"; };
-		3528E7721CE8B0A500A53022 /* NSURLSession+Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Tasks.swift"; path = "Extensions/NSURLSession+Tasks.swift"; sourceTree = "<group>"; };
+		3528E7701CE8B05000A53022 /* URL+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Parameters.swift"; path = "Extensions/URL+Parameters.swift"; sourceTree = "<group>"; };
+		3528E7721CE8B0A500A53022 /* URLSession+Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLSession+Tasks.swift"; path = "Extensions/URLSession+Tasks.swift"; sourceTree = "<group>"; };
 		3528E7761CE8E63200A53022 /* ResourceParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceParameter.swift; path = Request/ResourceParameter.swift; sourceTree = "<group>"; };
 		3528E7781CE8E7DD00A53022 /* CharacterParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterParameter.swift; path = Request/Characters/CharacterParameter.swift; sourceTree = "<group>"; };
 		3528E77C1CE8EC0600A53022 /* ComicParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComicParameter.swift; path = Request/Comics/ComicParameter.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		3528E7801CE8EC3000A53022 /* EventParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventParameter.swift; path = Request/Events/EventParameter.swift; sourceTree = "<group>"; };
 		3528E7821CE8EC4600A53022 /* SeriesParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesParameter.swift; path = Request/Series/SeriesParameter.swift; sourceTree = "<group>"; };
 		3528E7841CE8EC6100A53022 /* StoryParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryParameter.swift; path = Request/Stories/StoryParameter.swift; sourceTree = "<group>"; };
-		3528E7861CE90BE300A53022 /* NSDateFormatter+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDateFormatter+Conversion.swift"; path = "Extensions/NSDateFormatter+Conversion.swift"; sourceTree = "<group>"; };
+		3528E7861CE90BE300A53022 /* DateFormatter+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Conversion.swift"; path = "Extensions/DateFormatter+Conversion.swift"; sourceTree = "<group>"; };
 		3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sequence+Reduce.swift"; path = "Extensions/Sequence+Reduce.swift"; sourceTree = "<group>"; };
 		3528E78C1CE9E11700A53022 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = Request/Authentication.swift; sourceTree = "<group>"; };
 		3528E78E1CE9EAF000A53022 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Request/Request.swift; sourceTree = "<group>"; };
@@ -470,10 +470,10 @@
 		3528E76F1CE8B03500A53022 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3528E7861CE90BE300A53022 /* NSDateFormatter+Conversion.swift */,
-				3528E7701CE8B05000A53022 /* NSURL+Parameters.swift */,
-				3528E7721CE8B0A500A53022 /* NSURLSession+Tasks.swift */,
+				3528E7861CE90BE300A53022 /* DateFormatter+Conversion.swift */,
 				3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */,
+				3528E7701CE8B05000A53022 /* URL+Parameters.swift */,
+				3528E7721CE8B0A500A53022 /* URLSession+Tasks.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -652,7 +652,7 @@
 				3528E76E1CE8A04C00A53022 /* Error.swift in Sources */,
 				350156A01CDB8EAB0021759D /* EventFilter.swift in Sources */,
 				352073161CD3715A009BC420 /* DataWrapper.swift in Sources */,
-				3528E7711CE8B05000A53022 /* NSURL+Parameters.swift in Sources */,
+				3528E7711CE8B05000A53022 /* URL+Parameters.swift in Sources */,
 				352072A31CD35422009BC420 /* Image.swift in Sources */,
 				3501569C1CDB8E5E0021759D /* ComicFilter.swift in Sources */,
 				352072A91CD35422009BC420 /* TextObject.swift in Sources */,
@@ -664,7 +664,7 @@
 				352072EC1CD36963009BC420 /* Creator.swift in Sources */,
 				35068DFD1CDF583F00E35FDB /* MD5.swift in Sources */,
 				3528E7771CE8E63200A53022 /* ResourceParameter.swift in Sources */,
-				3528E7871CE90BE300A53022 /* NSDateFormatter+Conversion.swift in Sources */,
+				3528E7871CE90BE300A53022 /* DateFormatter+Conversion.swift in Sources */,
 				352072FA1CD3699B009BC420 /* EventSummary.swift in Sources */,
 				3501569A1CDB8E030021759D /* CharacterFilter.swift in Sources */,
 				350156AE1CDB8F6F0021759D /* Comic+ResourceProtocol.swift in Sources */,
@@ -680,7 +680,7 @@
 				352072E01CD3694A009BC420 /* Comic.swift in Sources */,
 				350156B01CDB8F760021759D /* Character+ResourceProtocol.swift in Sources */,
 				352073141CD3714A009BC420 /* DataContainer.swift in Sources */,
-				3528E7731CE8B0A500A53022 /* NSURLSession+Tasks.swift in Sources */,
+				3528E7731CE8B0A500A53022 /* URLSession+Tasks.swift in Sources */,
 				3528E78D1CE9E11700A53022 /* Authentication.swift in Sources */,
 				3528E77D1CE8EC0600A53022 /* ComicParameter.swift in Sources */,
 				3518CE751E1912F1007885D1 /* MarvelKitClient.swift in Sources */,

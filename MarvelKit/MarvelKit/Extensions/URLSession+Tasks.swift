@@ -1,5 +1,5 @@
 //
-//  NSURLSession+Tasks.swift
+//  URLSession+Tasks.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 15.05.16.

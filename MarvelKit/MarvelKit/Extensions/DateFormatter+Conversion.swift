@@ -1,5 +1,5 @@
 //
-//  NSDateFormatter+Conversion.swift
+//  DateFormatter+Conversion.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 15.05.16.
