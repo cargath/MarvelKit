@@ -8,7 +8,7 @@
 
 public typealias DataResourceProtocol = DataProtocol & ResourceProtocol
 
-open class Request<Resource: DataResourceProtocol> {
+public class Request<Resource: DataResourceProtocol> {
 
     var url: URL?
 
