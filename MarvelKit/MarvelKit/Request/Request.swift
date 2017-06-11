@@ -33,21 +33,4 @@ open class Request<Resource: DataResourceProtocol> {
         return self
     }
     
-    public func resourceTask(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) -> URLSessionTask {
-        
-        guard let url = self.url else {
-            return URLSession.shared.failingTask(errorHandler)
-        }
-        
-        return URLSession.shared.resourceTaskWithURL(url, successHandler: { response, resource in
-            successHandler(resource)
-        }, errorHandler: { response, error in
-            errorHandler(error)
-        })
-    }
-
-    public func exec(success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) {
-        resourceTask(success: successHandler, error: errorHandler).resume()
-    }
-    
 }
