@@ -9,15 +9,14 @@
 extension Sequence {
 
     var csv: String {
-        return enumerated().reduce("", { aggregate, indexElementTuple in
-            indexElementTuple.0 > 0 ? "\(aggregate),\(indexElementTuple.1)" : "\(aggregate)\(indexElementTuple.1)"
-        })
+        return map({"\($0)"}).joined(separator: ",")
     }
 
 }
 
 extension Sequence where Iterator.Element: ResourceParameterProtocol {
 
+    // TODO: add custom init(resourceParameter: [ResourceParameterProtocol]) to URLParameters
     var urlParameters: URLParameters {
         return reduce(URLParameters(), { aggregate, resourceParameter in
             var newAggregate = aggregate
