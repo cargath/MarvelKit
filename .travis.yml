@@ -1,0 +1,3 @@
+language: swift
+xcode_project: MarvelKit/MarvelKit.xcodeproj
+xcode_scheme: MarvelKitTests

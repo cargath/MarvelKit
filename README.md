@@ -2,6 +2,7 @@
 
 [![Swift 3](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/cargath/MarvelKit.svg?branch=master)](https://travis-ci.org/cargath/MarvelKit)
 
 A Swift SDK for working with the https://developer.marvel.com/ API.
 
