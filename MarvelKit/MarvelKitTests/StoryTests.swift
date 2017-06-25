@@ -57,6 +57,7 @@ class StoryTests: XCTestCase {
         XCTAssertEqual(dataWrapper?.data?.results[0].resourceURI, "http://gateway.marvel.com/v1/public/stories/7")
         XCTAssertEqual(dataWrapper?.data?.results[0].type, "story")
         XCTAssertEqual(dataWrapper?.data?.results[0].modified, "1969-12-31T19:00:00-0500")
+        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 1969, month: 12, day: 31, hour: 19, minute: 0, second: 0, timeZoneOffset: -5 * 60 * 60))
 
         XCTAssertNil(dataWrapper?.data?.results[0].thumbnail)
     }

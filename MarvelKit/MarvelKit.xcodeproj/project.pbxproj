@@ -89,6 +89,7 @@
 		3528E7A21CEA4BE900A53022 /* StoryParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */; };
 		AD00523A1EEB4CE2007F2161 /* CreatorSummary+Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */; };
 		AD3E3DDC1F00415C00F0EF27 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */; };
+		AD3E3DDE1F00507F00F0EF27 /* Date+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryParameterTests.swift; sourceTree = "<group>"; };
 		AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreatorSummary+Role.swift"; path = "Response/Creators/CreatorSummary+Role.swift"; sourceTree = "<group>"; };
 		AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
+		AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Factory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 				3520732F1CD3CD17009BC420 /* Resources */,
 				3528E6DF1CE23B3A00A53022 /* Response */,
 				352072781CD34A10009BC420 /* Info.plist */,
+				AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */,
 			);
 			path = MarvelKitTests;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				352364801CFB4100002A30B8 /* SeriesURLTests.swift in Sources */,
 				352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */,
 				3528E79A1CEA47FB00A53022 /* CharacterParameterTests.swift in Sources */,
+				AD3E3DDE1F00507F00F0EF27 /* Date+Factory.swift in Sources */,
 				352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */,
 				3528E79C1CEA4B6400A53022 /* CreatorParameterTests.swift in Sources */,
 				3523647E1CFB40F3002A30B8 /* EventURLTests.swift in Sources */,

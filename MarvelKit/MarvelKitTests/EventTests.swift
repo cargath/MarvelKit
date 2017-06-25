@@ -56,8 +56,11 @@ class EventTests: XCTestCase {
         XCTAssertEqual(dataWrapper?.data?.results[0].description, "Loki sets about convincing the super-villains of Earth to attack heroes other than those they normally fight in an attempt to destroy the Avengers to absolve his guilt over inadvertently creating the team in the first place.")
         XCTAssertEqual(dataWrapper?.data?.results[0].resourceURI, "http://gateway.marvel.com/v1/public/events/116")
         XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2013-06-28T16:31:24-0400")
+        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2013, month: 6, day: 28, hour: 16, minute: 31, second: 24, timeZoneOffset: -4 * 60 * 60))
         XCTAssertEqual(dataWrapper?.data?.results[0].start, "1989-12-10 00:00:00")
+        XCTAssertEqual(dataWrapper?.data?.results[0].startDate, Date.with(year: 1989, month: 12, day: 10, hour: 0, minute: 0, second: 0, timeZoneOffset: 0))
         XCTAssertEqual(dataWrapper?.data?.results[0].end, "2008-01-04 00:00:00")
+        XCTAssertEqual(dataWrapper?.data?.results[0].endDate, Date.with(year: 2008, month: 1, day: 4, hour: 0, minute: 0, second: 0, timeZoneOffset: 0))
     }
 
     func testUrls() {

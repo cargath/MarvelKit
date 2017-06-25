@@ -166,7 +166,7 @@ public extension Comic {
 
         for comicDate in dates {
             if let type = comicDate.type, type == ComicDateType.focDate.rawValue,
-                let date = comicDate.date?.iso8601Date {
+               let date = comicDate.date?.iso8601Date {
                 return date
             }
         }
@@ -178,7 +178,19 @@ public extension Comic {
 
         for comicDate in dates {
             if let type = comicDate.type, type == ComicDateType.onsaleDate.rawValue,
-                let date = comicDate.date?.iso8601Date {
+               let date = comicDate.date?.iso8601Date {
+                return date
+            }
+        }
+        
+        return nil
+    }
+    
+    public var unlimitedDate: Date? {
+        
+        for comicDate in dates {
+            if let type = comicDate.type, type == ComicDateType.unlimitedDate.rawValue,
+               let date = comicDate.date?.iso8601Date {
                 return date
             }
         }

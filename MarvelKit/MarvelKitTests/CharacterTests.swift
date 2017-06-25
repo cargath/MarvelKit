@@ -55,6 +55,7 @@ class CharacterTests: XCTestCase {
         XCTAssertEqual(dataWrapper?.data?.results[0].name, "3-D Man")
         XCTAssertEqual(dataWrapper?.data?.results[0].description, "")
         XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2014-04-29T14:18:17-0400")
+        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2014, month: 4, day: 29, hour: 14, minute: 18, second: 17, timeZoneOffset: -4 * 60 * 60))
         XCTAssertEqual(dataWrapper?.data?.results[0].resourceURI, "http://gateway.marvel.com/v1/public/characters/1011334")
     }
 

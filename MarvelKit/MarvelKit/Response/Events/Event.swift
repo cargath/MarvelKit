@@ -92,6 +92,20 @@ public struct Event: DataProtocol {
 
 }
 
+// MARK: - Event + dates
+
+public extension Event {
+    
+    public var startDate: Date? {
+        return start?.eventDate
+    }
+    
+    public var endDate: Date? {
+        return end?.eventDate
+    }
+    
+}
+
 // MARK: - Event + JSONObjectConvertible
 
 extension Event {

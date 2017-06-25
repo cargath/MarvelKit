@@ -58,6 +58,7 @@ class CreatorTests: XCTestCase {
         XCTAssertEqual(dataWrapper?.data?.results[0].suffix, "")
         XCTAssertEqual(dataWrapper?.data?.results[0].fullName, "Cameron")
         XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2007-01-02T00:00:00-0500")
+        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2007, month: 1, day: 2, hour: 0, minute: 0, second: 0, timeZoneOffset: -5 * 60 * 60))
         XCTAssertEqual(dataWrapper?.data?.results[0].resourceURI, "http://gateway.marvel.com/v1/public/creators/6642")
     }
 
