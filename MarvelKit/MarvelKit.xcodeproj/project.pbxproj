@@ -88,6 +88,7 @@
 		3528E7A01CEA4BC800A53022 /* SeriesParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */; };
 		3528E7A21CEA4BE900A53022 /* StoryParameterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */; };
 		AD00523A1EEB4CE2007F2161 /* CreatorSummary+Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */; };
+		AD3E3DDC1F00415C00F0EF27 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,7 @@
 		3528E79F1CEA4BC800A53022 /* SeriesParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesParameterTests.swift; sourceTree = "<group>"; };
 		3528E7A11CEA4BE900A53022 /* StoryParameterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryParameterTests.swift; sourceTree = "<group>"; };
 		AD0052391EEB4CE2007F2161 /* CreatorSummary+Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreatorSummary+Role.swift"; path = "Response/Creators/CreatorSummary+Role.swift"; sourceTree = "<group>"; };
+		AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +463,7 @@
 				352073251CD3CC7E009BC420 /* ComicTests.swift */,
 				352073271CD3CC91009BC420 /* CreatorTests.swift */,
 				352073291CD3CCA5009BC420 /* EventTests.swift */,
+				AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */,
 				3520732B1CD3CCB2009BC420 /* SeriesTests.swift */,
 				3520732D1CD3CCBD009BC420 /* StoryTests.swift */,
 			);
@@ -567,10 +570,12 @@
 				TargetAttributes = {
 					352072661CD34A0F009BC420 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FNU454NQ6G;
 						LastSwiftMigration = 0800;
 					};
 					352072701CD34A10009BC420 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FNU454NQ6G;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -704,6 +709,7 @@
 				3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */,
 				352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */,
 				3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */,
+				AD3E3DDC1F00415C00F0EF27 /* ImageTests.swift in Sources */,
 				3528E7981CEA23ED00A53022 /* ComicParameterTests.swift in Sources */,
 				3523647C1CFB40E7002A30B8 /* CreatorURLTests.swift in Sources */,
 				3520732A1CD3CCA5009BC420 /* EventTests.swift in Sources */,

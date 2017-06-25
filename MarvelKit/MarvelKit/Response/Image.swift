@@ -77,7 +77,7 @@ extension Image {
         /// 270 x 200px
         case landscapeXLarge = "landscape_xlarge"
         /// 464 x 261px
-        case landscaoeIncredible = "landscape_incredible"
+        case landscapeIncredible = "landscape_incredible"
         
         /// full image, constrained to 500px wide
         case detail = "detail"
