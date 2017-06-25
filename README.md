@@ -20,19 +20,21 @@ and add the framework to your project.
 
 ## Usage
 
-    let marvelKitClient = MarvelKitClient(privateKey: "abcd", publicKey: "1234")
-    
-    let request = marvelKitClient
-        .request(MarvelKit.Comic)
-        .withParameters([.dateRange(Date(timeIntervalSinceReferenceDate: 0), Date()), .limit(2)])
-        
-    let task = URLSession.shared.resourceTask(with: request, success: { comicDataWrapper in
-        print(comicDataWrapper)
-    }, error: { error in
-        print(error.description)
-    })
-        
-    task.resume()
+```swift
+let marvelKitClient = MarvelKitClient(privateKey: "abcd", publicKey: "1234")
+
+let request = marvelKitClient
+    .request(MarvelKit.Comic)
+    .withParameters([.dateRange(Date(timeIntervalSinceReferenceDate: 0), Date()), .limit(2)])
+
+let task = URLSession.shared.resourceTask(with: request, success: { comicDataWrapper in
+    print(comicDataWrapper)
+}, error: { error in
+    print(error.description)
+})
+
+task.resume()
+```
 
 ## Attribution
 
