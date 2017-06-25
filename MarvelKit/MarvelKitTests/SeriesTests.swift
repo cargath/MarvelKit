@@ -60,6 +60,7 @@ class SeriesTests: XCTestCase {
         XCTAssertEqual(dataWrapper?.data?.results[0].rating, "Rated T")
         XCTAssertEqual(dataWrapper?.data?.results[0].type, "limited")
         XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2015-01-14T08:48:32-0500")
+        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2015, month: 1, day: 14, hour: 8, minute: 48, second: 32, timeZoneOffset: -5 * 60 * 60))
 
         XCTAssertNil(dataWrapper?.data?.results[0].next)
         XCTAssertNil(dataWrapper?.data?.results[0].previous)

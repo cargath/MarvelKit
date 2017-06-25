@@ -58,6 +58,7 @@ class ComicTests: XCTestCase {
         XCTAssertEqual(dataWrapper?.data?.results[0].variantDescription, "")
         XCTAssertEqual(dataWrapper?.data?.results[0].description, nil)
         XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2015-10-15T11:13:52-0400")
+        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2015, month: 10, day: 15, hour: 11, minute: 13, second: 52, timeZoneOffset: -4 * 60 * 60))
         XCTAssertEqual(dataWrapper?.data?.results[0].isbn, "")
         XCTAssertEqual(dataWrapper?.data?.results[0].upc, "")
         XCTAssertEqual(dataWrapper?.data?.results[0].diamondCode, "")
@@ -97,12 +98,15 @@ class ComicTests: XCTestCase {
 
         XCTAssertEqual(dataWrapper?.data?.results[0].dates[0].type, "onsaleDate")
         XCTAssertEqual(dataWrapper?.data?.results[0].dates[0].date, "2054-03-01T00:00:00-0500")
+        XCTAssertEqual(dataWrapper?.data?.results[0].onsaleDate, Date.with(year: 2054, month: 3, day: 1, hour: 00, minute: 00, second: 00, timeZoneOffset: -5 * 60 * 60))
 
         XCTAssertEqual(dataWrapper?.data?.results[0].dates[1].type, "focDate")
-        XCTAssertEqual(dataWrapper?.data?.results[0].dates[1].date, "-0001-11-30T00:00:00-0500")
+        XCTAssertEqual(dataWrapper?.data?.results[0].dates[1].date, "1970-11-30T00:00:00-0500")
+        XCTAssertEqual(dataWrapper?.data?.results[0].focDate, Date.with(year: 1970, month: 11, day: 30, hour: 00, minute: 00, second: 00, timeZoneOffset: -5 * 60 * 60))
 
         XCTAssertEqual(dataWrapper?.data?.results[0].dates[2].type, "unlimitedDate")
         XCTAssertEqual(dataWrapper?.data?.results[0].dates[2].date, "2012-04-13T00:00:00-0400")
+        XCTAssertEqual(dataWrapper?.data?.results[0].unlimitedDate, Date.with(year: 2012, month: 4, day: 13, hour: 00, minute: 00, second: 00, timeZoneOffset: -4 * 60 * 60))
     }
 
     func testPrices() {

@@ -16,7 +16,6 @@ extension Sequence {
 
 extension Sequence where Iterator.Element: ResourceParameterProtocol {
 
-    // TODO: add custom init(resourceParameter: [ResourceParameterProtocol]) to URLParameters
     var urlParameters: URLParameters {
         return reduce(URLParameters(), { aggregate, resourceParameter in
             var newAggregate = aggregate

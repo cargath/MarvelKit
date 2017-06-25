@@ -93,6 +93,8 @@
 		AD3E3DD81F0031DE00F0EF27 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = AD3E3DD61F0031DE00F0EF27 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD3E3DD91F0031DE00F0EF27 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DD71F0031DE00F0EF27 /* NSString+MD5.m */; };
 		AD3E3DDA1F00354E00F0EF27 /* CommonCryptoWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E3DBF1F00318300F0EF27 /* CommonCryptoWrapper.framework */; };
+		AD3E3DDC1F00415C00F0EF27 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */; };
+		AD3E3DDE1F00507F00F0EF27 /* Date+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +206,8 @@
 		AD3E3DCE1F00318300F0EF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD3E3DD61F0031DE00F0EF27 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		AD3E3DD71F0031DE00F0EF27 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
+		AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Factory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +362,7 @@
 				3520732F1CD3CD17009BC420 /* Resources */,
 				3528E6DF1CE23B3A00A53022 /* Response */,
 				352072781CD34A10009BC420 /* Info.plist */,
+				AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */,
 			);
 			path = MarvelKitTests;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				352073251CD3CC7E009BC420 /* ComicTests.swift */,
 				352073271CD3CC91009BC420 /* CreatorTests.swift */,
 				352073291CD3CCA5009BC420 /* EventTests.swift */,
+				AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */,
 				3520732B1CD3CCB2009BC420 /* SeriesTests.swift */,
 				3520732D1CD3CCBD009BC420 /* StoryTests.swift */,
 			);
@@ -834,6 +840,7 @@
 				3520732C1CD3CCB2009BC420 /* SeriesTests.swift in Sources */,
 				352073281CD3CC91009BC420 /* CreatorTests.swift in Sources */,
 				3520732E1CD3CCBD009BC420 /* StoryTests.swift in Sources */,
+				AD3E3DDC1F00415C00F0EF27 /* ImageTests.swift in Sources */,
 				3528E7981CEA23ED00A53022 /* ComicParameterTests.swift in Sources */,
 				3523647C1CFB40E7002A30B8 /* CreatorURLTests.swift in Sources */,
 				3520732A1CD3CCA5009BC420 /* EventTests.swift in Sources */,
@@ -841,6 +848,7 @@
 				352364801CFB4100002A30B8 /* SeriesURLTests.swift in Sources */,
 				352073261CD3CC7E009BC420 /* ComicTests.swift in Sources */,
 				3528E79A1CEA47FB00A53022 /* CharacterParameterTests.swift in Sources */,
+				AD3E3DDE1F00507F00F0EF27 /* Date+Factory.swift in Sources */,
 				352073241CD3CC73009BC420 /* CharacterTests.swift in Sources */,
 				3528E79C1CEA4B6400A53022 /* CreatorParameterTests.swift in Sources */,
 				3523647E1CFB40F3002A30B8 /* EventURLTests.swift in Sources */,

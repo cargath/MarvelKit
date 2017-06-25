@@ -13,6 +13,10 @@ extension String {
     static var iso8601DateFormat: String {
         return "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
     }
+    
+    static var eventDateFormat: String {
+        return "yyyy-MM-dd HH:mm:ss"
+    }
 
     static var simpleDateFormat: String {
         return "yyyy-MM-dd"
@@ -33,17 +37,29 @@ extension DateFormatter {
 
         return iso8601Formatter
     }
+    
+    static var eventDateFormatter: DateFormatter {
+        
+        let eventDateFormatter = DateFormatter()
+        
+        eventDateFormatter.calendar = Calendar(identifier: .gregorian)
+        eventDateFormatter.dateFormat = .eventDateFormat
+        eventDateFormatter.locale = .current
+        eventDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        return eventDateFormatter
+    }
 
     static var simpleDateFormatter: DateFormatter {
 
-        let dateFormatter = DateFormatter()
+        let simpleDateFormatter = DateFormatter()
 
-        dateFormatter.calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        dateFormatter.dateFormat = .simpleDateFormat
-        dateFormatter.locale = Locale.current
-        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+        simpleDateFormatter.calendar = Calendar(identifier: .gregorian)
+        simpleDateFormatter.dateFormat = .simpleDateFormat
+        simpleDateFormatter.locale = .current
+        simpleDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
 
-        return dateFormatter
+        return simpleDateFormatter
     }
 
 }
@@ -52,6 +68,10 @@ extension Date {
 
     var iso8601String: String {
         return DateFormatter.iso8601Formatter.string(from: self)
+    }
+    
+    var eventString: String {
+        return DateFormatter.eventDateFormatter.string(from: self)
     }
 
     var string: String {
@@ -64,6 +84,10 @@ extension String {
 
     var iso8601Date: Date? {
         return DateFormatter.iso8601Formatter.date(from: self)
+    }
+    
+    var eventDate: Date? {
+        return DateFormatter.eventDateFormatter.date(from: self)
     }
 
     var date: Date? {

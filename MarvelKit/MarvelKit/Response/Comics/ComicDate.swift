@@ -12,6 +12,7 @@ public enum ComicDateType: String {
 
     case focDate = "focDate"
     case onsaleDate = "onsaleDate"
+    case unlimitedDate = "unlimitedDate"
 
 }
 
