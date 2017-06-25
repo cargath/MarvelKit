@@ -10,21 +10,18 @@ A Swift SDK for working with the https://developer.marvel.com/ API.
 
     let marvelKitClient = MarvelKitClient(privateKey: "abcd", publicKey: "1234")
     
-    func performRequest() {
-        marvelKitClient
-            .request(MarvelKit.Comic)
-            .withParameters([.dateRange(Date(timeIntervalSinceReferenceDate: 0), Date()), .limit(2)])
-            .exec(success: onSuccess, error: onError)
-    }
-
-    func onSuccess(comicDataWrapper: ComicDataWrapper) {
+    let request = marvelKitClient
+        .request(MarvelKit.Comic)
+        .withParameters([.dateRange(Date(timeIntervalSinceReferenceDate: 0), Date()), .limit(2)])
+        
+    let task = URLSession.shared.resourceTask(with: request, success: { comicDataWrapper in
         print(comicDataWrapper)
-    }
-
-    func onError(error: MarvelKitError) {
+    }, error: { error in
         print(error.description)
-    }
+    })
+        
+    task.resume()
 
-## Acknowledgements
+## Attribution
 
-I'm using the MD5 related bits from https://github.com/krzyzanowskim/CryptoSwift by Marcin Krzyżanowski until CommonCrypto works better with Swift. I could have used a Wrapper framework, but i didn't want to introduce a dependency and thought this was a great opportunity to see how MD5 is implemented.
+Data provided by Marvel. © 2014 Marvel.
