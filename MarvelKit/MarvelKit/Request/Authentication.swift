@@ -6,6 +6,8 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
+import CommonCryptoWrapper
+
 /**
  # Authentication for Server-Side Applications
 
