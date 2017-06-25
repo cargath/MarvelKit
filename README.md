@@ -4,7 +4,19 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/cargath/MarvelKit.svg?branch=master)](https://travis-ci.org/cargath/MarvelKit)
 
-A Swift SDK for working with the https://developer.marvel.com/ API.
+A Swift SDK for working with the [Marvel API](https://developer.marvel.com/).
+
+## Installation
+
+MarvelKit supports installation via [Carthage](https://github.com/Carthage/Carthage). Simply add
+
+    github "cargath/MarvelKit"
+    
+to your Cartfile, run
+
+    carthage update --platform iOS
+    
+and add the framework to your project.
 
 ## Usage
 
