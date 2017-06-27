@@ -82,7 +82,7 @@ public extension URLSession {
         }, errorHandler: errorHandler)
     }
 
-    public func resourceTask<Resource: ResourceProtocol & DataProtocol>(with url: URL, successHandler: @escaping (URLResponse?, DataWrapper<DataContainer<Resource>>) -> Void, errorHandler: @escaping (URLResponse?, MarvelKitError) -> Void) -> URLSessionTask {
+    public func resourceTask<Resource>(with url: URL, successHandler: @escaping (URLResponse?, DataWrapper<DataContainer<Resource>>) -> Void, errorHandler: @escaping (URLResponse?, MarvelKitError) -> Void) -> URLSessionTask {
         return JSONTask(with: url, successHandler: { response, JSONObject in
             if let resource = DataWrapper<DataContainer<Resource>>(JSONObject: JSONObject) {
                 return successHandler(response, resource)
@@ -92,7 +92,7 @@ public extension URLSession {
         }, errorHandler: errorHandler)
     }
     
-    public func resourceTask<Resource: ResourceProtocol & DataProtocol>(with request: Request<Resource>, success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) -> URLSessionTask {
+    public func resourceTask<Resource>(with request: Request<Resource>, success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (MarvelKitError) -> Void) -> URLSessionTask {
         
         guard let url = request.url else {
             return failingTask(errorHandler)

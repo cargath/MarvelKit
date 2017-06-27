@@ -34,15 +34,15 @@ public class MarvelKitClient {
 
     // MARK: Generate requests
 
-    public func request<Resource: DataResourceProtocol>(_ resource: Resource.Type) -> Request<Resource> {
+    public func request<Resource>(_ resource: Resource.Type) -> Request<Resource> {
         return Request(resource: resource, authentication: account)
     }
 
-    public func request<Resource: DataResourceProtocol>(_ resource: Resource.Type, id: Int) -> Request<Resource> {
+    public func request<Resource>(_ resource: Resource.Type, id: Int) -> Request<Resource> {
         return Request(resource: resource, authentication: account, id: id)
     }
 
-    public func request<Resource: DataResourceProtocol>(_ resource: Resource.Type, filter: ResourceFilter<Resource.ResourceFilterType>) -> Request<Resource> {
+    public func request<Resource>(_ resource: Resource.Type, filter: ResourceFilter<Resource.ResourceFilterType>) -> Request<Resource> {
         return Request(resource: resource, authentication: account, filter: filter)
     }
     
