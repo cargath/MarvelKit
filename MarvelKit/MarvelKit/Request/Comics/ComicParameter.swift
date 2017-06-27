@@ -311,7 +311,7 @@ extension ComicParameter: ResourceParameterProtocol {
             case let .collaborators(value):
                 return value.csv
             case let .orderBy(value):
-                return value.flatMap({ $0.rawValue }).csv
+                return value.map({ $0.rawValue }).csv
             case let .limit(value):
                 return "\(value)"
             case let .offset(value):

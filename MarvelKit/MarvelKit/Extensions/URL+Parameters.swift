@@ -24,7 +24,11 @@ public extension URLComponents {
     }
 
     public func appendingParameters(_ parameters: URLParameters) -> URLComponents {
-        return appendingQueryItems(parameters.flatMap { key, value in URLQueryItem(name: key, value: value) })
+        // TODO return appendingQueryItems(parameters.flatMap { key, value in URLQueryItem(name: key, value: value) })
+        return appendingQueryItems(parameters.flatMap { (arg) -> URLQueryItem in
+            let (key, value) = arg
+            return URLQueryItem(name: key, value: value)
+        })
     }
 
 }
