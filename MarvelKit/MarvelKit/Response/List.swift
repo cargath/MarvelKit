@@ -16,7 +16,7 @@ public protocol ListProtocol {
 
 // MARK: - List implementation
 
-public struct List<SummaryType: SummaryProtocol>: ListProtocol {
+public struct List<SummaryType: SummaryProtocol>: ListProtocol, Codable {
 
     public typealias SummaryProtocolType = SummaryType
 
@@ -39,19 +39,6 @@ public struct List<SummaryType: SummaryProtocol>: ListProtocol {
     /**
      * The list of returned resourced in this collection.
      */
-    public let items: [SummaryType]
-
-}
-
-// MARK: - List + JSONObjectConvertible
-
-extension List: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-        self.available = JSONObject["available"] as? Int
-        self.returned = JSONObject["returned"] as? Int
-        self.collectionURI = JSONObject["collectionURI"] as? String
-        self.items = SummaryType.from(JSONArray: JSONObject["items"] as? JSONArray)
-    }
+    public let items: [SummaryType]?
 
 }

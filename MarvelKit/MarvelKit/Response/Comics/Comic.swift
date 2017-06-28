@@ -84,7 +84,7 @@ public struct Comic: DataProtocol {
     /**
      * A set of descriptive text blurbs for the comic.
      */
-    public let textObjects: [TextObject]
+    public let textObjects: [TextObject]?
 
     /**
      * The canonical URL identifier for this resource.
@@ -94,7 +94,7 @@ public struct Comic: DataProtocol {
     /**
      * A set of public web site URLs for the resource.
      */
-    public let urls: [Url]
+    public let urls: [Url]?
 
     /**
      * A summary representation of the series to which this comic belongs.
@@ -104,27 +104,27 @@ public struct Comic: DataProtocol {
     /**
      * A list of variant issues for this comic (includes the "original" issue if the current issue is a variant).
      */
-    public let variants: [ComicSummary]
+    public let variants: [ComicSummary]?
 
     /**
      * A list of collections which include this comic (will generally be empty if the comic's format is a collection).
      */
-    public let collections: [ComicSummary]
+    public let collections: [ComicSummary]?
 
     /**
      * A list of issues collected in this comic (will generally be empty for periodical formats such as "comic" or "magazine").
      */
-    public let collectedIssues: [ComicSummary]
+    public let collectedIssues: [ComicSummary]?
 
     /**
      * A list of key dates for this comic.
      */
-    public let dates: [ComicDate]
+    public let dates: [ComicDate]?
 
     /**
      * A list of prices for this comic.
      */
-    public let prices: [ComicPrice]
+    public let prices: [ComicPrice]?
 
     /**
      * The representative image for this comic.
@@ -134,7 +134,7 @@ public struct Comic: DataProtocol {
     /**
      * A list of promotional images associated with this comic.
      */
-    public let images: [Image]
+    public let images: [Image]?
 
     /**
      * A resource list containing the creators associated with this comic.
@@ -163,6 +163,10 @@ public struct Comic: DataProtocol {
 public extension Comic {
 
     public var focDate: Date? {
+        
+        guard let dates = self.dates else {
+            return nil
+        }
 
         for comicDate in dates {
             if let type = comicDate.type, type == ComicDateType.focDate.rawValue,
@@ -175,6 +179,10 @@ public extension Comic {
     }
 
     public var onsaleDate: Date? {
+        
+        guard let dates = self.dates else {
+            return nil
+        }
 
         for comicDate in dates {
             if let type = comicDate.type, type == ComicDateType.onsaleDate.rawValue,
@@ -188,6 +196,10 @@ public extension Comic {
     
     public var unlimitedDate: Date? {
         
+        guard let dates = self.dates else {
+            return nil
+        }
+        
         for comicDate in dates {
             if let type = comicDate.type, type == ComicDateType.unlimitedDate.rawValue,
                let date = comicDate.date?.iso8601Date {
@@ -198,44 +210,6 @@ public extension Comic {
         return nil
     }
     
-}
-
-// MARK: - Comic + JSONObjectConvertible
-
-extension Comic {
-
-    public init?(JSONObject: JSONObject) {
-        self.id = JSONObject["id"] as? Int
-        self.digitalId = JSONObject["digitalId"] as? Int
-        self.title = JSONObject["title"] as? String
-        self.issueNumber = JSONObject["issueNumber"] as? Double
-        self.variantDescription = JSONObject["variantDescription"] as? String
-        self.description = JSONObject["description"] as? String
-        self.modified = JSONObject["modified"] as? String
-        self.isbn = JSONObject["isbn"] as? String
-        self.upc = JSONObject["upc"] as? String
-        self.diamondCode = JSONObject["diamondCode"] as? String
-        self.ean = JSONObject["ean"] as? String
-        self.issn = JSONObject["issn"] as? String
-        self.format = JSONObject["format"] as? String
-        self.pageCount = JSONObject["pageCount"] as? Int
-        self.textObjects = TextObject.from(JSONArray: JSONObject["textObjects"] as? JSONArray)
-        self.resourceURI = JSONObject["resourceURI"] as? String
-        self.urls = Url.from(JSONArray: JSONObject["urls"] as? JSONArray)
-        self.series = SeriesSummary(JSONObject: JSONObject["series"] as? JSONObject)
-        self.variants = ComicSummary.from(JSONArray: JSONObject["variants"] as? JSONArray)
-        self.collections = ComicSummary.from(JSONArray: JSONObject["collections"] as? JSONArray)
-        self.collectedIssues = ComicSummary.from(JSONArray: JSONObject["collectedIssues"] as? JSONArray)
-        self.dates = ComicDate.from(JSONArray: JSONObject["dates"] as? JSONArray)
-        self.prices = ComicPrice.from(JSONArray: JSONObject["prices"] as? JSONArray)
-        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
-        self.images = Image.from(JSONArray: JSONObject["images"] as? JSONArray)
-        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
-        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
-        self.stories = StoryList(JSONObject: JSONObject["stories"] as? JSONObject)
-        self.events = EventList(JSONObject: JSONObject["events"] as? JSONObject)
-    }
-
 }
 
 // MARK: - Typealiases used in the Marvel API docs

@@ -22,17 +22,6 @@ public struct EventSummary: SummaryProtocol {
 
 }
 
-// MARK: - Summary + JSONObjectConvertible
-
-extension EventSummary {
-
-    public init?(JSONObject: JSONObject) {
-        self.resourceURI = JSONObject["resourceURI"] as? String
-        self.name = JSONObject["name"] as? String
-    }
-
-}
-
 // MARK: - Typealias used in the Marvel API docs
 
 public typealias EventList = List<EventSummary>

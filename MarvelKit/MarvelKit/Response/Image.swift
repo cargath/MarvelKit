@@ -8,7 +8,7 @@
 
 // MARK: - Image
 
-public struct Image {
+public struct Image: Codable {
 
     /**
      * The directory path of to the image.
@@ -19,18 +19,7 @@ public struct Image {
      * The file extension for the image.
      * Actually 'extension', which is a keyword in Swift.
      */
-    public let pathExtension: String?
-
-}
-
-// MARK: - Image + JSONObjectConvertible
-
-extension Image: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-        self.path = JSONObject["path"] as? String
-        self.pathExtension = JSONObject["extension"] as? String
-    }
+    public let `extension`: String?
 
 }
 
@@ -109,16 +98,16 @@ extension Image {
     public func urlString(size: Size? = nil) -> String? {
         
         guard let path = self.path,
-              let pathExtension = self.pathExtension else {
+              let `extension` = self.`extension` else {
                 
             return nil
         }
         
         if let size = size {
-            return "\(path)/\(size.rawValue).\(pathExtension)"
+            return "\(path)/\(size.rawValue).\(`extension`)"
         }
         
-        return "\(path).\(pathExtension)"
+        return "\(path).\(`extension`)"
     }
     
 }

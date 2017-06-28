@@ -17,7 +17,7 @@ class SeriesTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        dataWrapper = SeriesDataWrapper(JSONObject: JSONSerialization.JSONObject(named: "SeriesTests", forBundle: Bundle(for: SeriesTests.self)))
+        dataWrapper = Series.resource(named: "SeriesTests", bundle: Bundle(for: SeriesTests.self))
     }
     
     override func tearDown() {
@@ -49,121 +49,121 @@ class SeriesTests: XCTestCase {
 
     func testSeriesData() {
 
-        XCTAssertEqual(dataWrapper?.data?.results.count, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?.count, 1)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].id, 18454)
-        XCTAssertEqual(dataWrapper?.data?.results[0].title, "100th Anniversary Special (2014 - Present)")
-        XCTAssertEqual(dataWrapper?.data?.results[0].description, nil)
-        XCTAssertEqual(dataWrapper?.data?.results[0].resourceURI, "http://gateway.marvel.com/v1/public/series/18454")
-        XCTAssertEqual(dataWrapper?.data?.results[0].startYear, 2014)
-        XCTAssertEqual(dataWrapper?.data?.results[0].endYear, 2099)
-        XCTAssertEqual(dataWrapper?.data?.results[0].rating, "Rated T")
-        XCTAssertEqual(dataWrapper?.data?.results[0].type, "limited")
-        XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2015-01-14T08:48:32-0500")
-        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2015, month: 1, day: 14, hour: 8, minute: 48, second: 32, timeZoneOffset: -5 * 60 * 60))
+        XCTAssertEqual(dataWrapper?.data?.results?[0].id, 18454)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].title, "100th Anniversary Special (2014 - Present)")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].description, nil)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].resourceURI, "http://gateway.marvel.com/v1/public/series/18454")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].startYear, 2014)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].endYear, 2099)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].rating, "Rated T")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].type, "limited")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].modified, "2015-01-14T08:48:32-0500")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].modifiedDate, Date.with(year: 2015, month: 1, day: 14, hour: 8, minute: 48, second: 32, timeZoneOffset: -5 * 60 * 60))
 
-        XCTAssertNil(dataWrapper?.data?.results[0].next)
-        XCTAssertNil(dataWrapper?.data?.results[0].previous)
+        XCTAssertNil(dataWrapper?.data?.results?[0].next)
+        XCTAssertNil(dataWrapper?.data?.results?[0].previous)
     }
 
     func testUrls() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].urls.count, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].urls?.count, 1)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].urls[0].type, "detail")
-        XCTAssertEqual(dataWrapper?.data?.results[0].urls[0].url, "http://marvel.com/comics/series/18454/100th_anniversary_special_2014_-_present?utm_campaign=apiRef&utm_source=21ad88fd0a067156ca0f6a77923ee6eb")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].urls?[0].type, "detail")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].urls?[0].url, "http://marvel.com/comics/series/18454/100th_anniversary_special_2014_-_present?utm_campaign=apiRef&utm_source=21ad88fd0a067156ca0f6a77923ee6eb")
     }
 
     func testThumbnail() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].thumbnail)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].thumbnail)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].thumbnail?.path, "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
-        XCTAssertEqual(dataWrapper?.data?.results[0].thumbnail?.pathExtension, "jpg")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].thumbnail?.path, "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].thumbnail?.`extension`, "jpg")
     }
 
     func testCreators() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].creators)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].creators)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.available, 2)
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/creators")
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.returned, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.available, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/creators")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.returned, 2)
     }
 
     func testCreatorItems() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items.count, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?.count, 2)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items[0].resourceURI, "http://gateway.marvel.com/v1/public/creators/485")
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items[0].name, "Andy Lanning")
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items[0].role, "writer")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?[0].resourceURI, "http://gateway.marvel.com/v1/public/creators/485")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?[0].name, "Andy Lanning")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?[0].role, "writer")
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items[1].resourceURI, "http://gateway.marvel.com/v1/public/creators/9432")
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items[1].name, "Sean Ryan")
-        XCTAssertEqual(dataWrapper?.data?.results[0].creators?.items[1].role, "writer")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?[1].resourceURI, "http://gateway.marvel.com/v1/public/creators/9432")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?[1].name, "Sean Ryan")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].creators?.items?[1].role, "writer")
     }
 
     func testCharacters() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].characters)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].characters)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].characters?.available, 0)
-        XCTAssertEqual(dataWrapper?.data?.results[0].characters?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/characters")
-        XCTAssertEqual(dataWrapper?.data?.results[0].characters?.items.count, 0)
-        XCTAssertEqual(dataWrapper?.data?.results[0].characters?.returned, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].characters?.available, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].characters?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/characters")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].characters?.items?.count, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].characters?.returned, 0)
     }
 
     func testStories() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].stories)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].stories)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.available, 2)
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/stories")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.returned, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.available, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/stories")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.returned, 2)
     }
 
     func testStoryItems() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items.count, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?.count, 2)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[0].resourceURI, "http://gateway.marvel.com/v1/public/stories/110101")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[0].name, "cover from 100th Anniversary Special (2014) #1")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[0].type, "cover")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[0].resourceURI, "http://gateway.marvel.com/v1/public/stories/110101")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[0].name, "cover from 100th Anniversary Special (2014) #1")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[0].type, "cover")
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[1].resourceURI, "http://gateway.marvel.com/v1/public/stories/110102")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[1].name, "story from 100th Anniversary Special (2014) #1")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[1].type, "interiorStory")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[1].resourceURI, "http://gateway.marvel.com/v1/public/stories/110102")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[1].name, "story from 100th Anniversary Special (2014) #1")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[1].type, "interiorStory")
     }
 
     func testComics() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].comics)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].comics)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.available, 2)
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/comics")
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.returned, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.available, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/comics")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.returned, 2)
     }
 
     func testComicItems() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items.count, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?.count, 2)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items[0].resourceURI, "http://gateway.marvel.com/v1/public/comics/49011")
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items[0].name, "100th Anniversary Special (2014) #1")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?[0].resourceURI, "http://gateway.marvel.com/v1/public/comics/49011")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?[0].name, "100th Anniversary Special (2014) #1")
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items[1].resourceURI, "http://gateway.marvel.com/v1/public/comics/49009")
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items[1].name, "100th Anniversary Special (2014) #1")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?[1].resourceURI, "http://gateway.marvel.com/v1/public/comics/49009")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?[1].name, "100th Anniversary Special (2014) #1")
     }
 
     func testEvents() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].events)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].events)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.available, 0)
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/events")
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.items.count, 0)
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.returned, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.available, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.collectionURI, "http://gateway.marvel.com/v1/public/series/18454/events")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.items?.count, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.returned, 0)
     }
 
 }

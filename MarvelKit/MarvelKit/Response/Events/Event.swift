@@ -33,7 +33,7 @@ public struct Event: DataProtocol {
     /**
      * A set of public web site URLs for the event.
      */
-    public let urls: [Url]
+    public let urls: [Url]?
 
     /**
      * The date the resource was most recently modified.
@@ -104,31 +104,6 @@ public extension Event {
         return end?.eventDate
     }
     
-}
-
-// MARK: - Event + JSONObjectConvertible
-
-extension Event {
-
-    public init?(JSONObject: JSONObject) {
-        self.id = JSONObject["id"] as? Int
-        self.title = JSONObject["title"] as? String
-        self.description = JSONObject["description"] as? String
-        self.resourceURI = JSONObject["resourceURI"] as? String
-        self.urls = Url.from(JSONArray: JSONObject["urls"] as? JSONArray)
-        self.modified = JSONObject["modified"] as? String
-        self.start = JSONObject["start"] as? String
-        self.end = JSONObject["end"] as? String
-        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
-        self.comics = ComicList(JSONObject: JSONObject["comics"] as? JSONObject)
-        self.stories = StoryList(JSONObject: JSONObject["stories"] as? JSONObject)
-        self.series = SeriesList(JSONObject: JSONObject["series"] as? JSONObject)
-        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
-        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
-        self.next = EventSummary(JSONObject: JSONObject["next"] as? JSONObject)
-        self.previous = EventSummary(JSONObject: JSONObject["previous"] as? JSONObject)
-    }
-
 }
 
 // MARK: - Typealiases used in the Marvel API docs

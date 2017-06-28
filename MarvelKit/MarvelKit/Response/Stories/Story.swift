@@ -77,28 +77,6 @@ public struct Story: DataProtocol {
 
 }
 
-// MARK: - Story + JSONObjectConvertible
-
-extension Story {
-
-    public init?(JSONObject: JSONObject) {
-        self.id = JSONObject["id"] as? Int
-        self.title = JSONObject["title"] as? String
-        self.description = JSONObject["description"] as? String
-        self.resourceURI = JSONObject["resourceURI"] as? String
-        self.type = JSONObject["type"] as? String
-        self.modified = JSONObject["modified"] as? String
-        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
-        self.comics = ComicList(JSONObject: JSONObject["comics"] as? JSONObject)
-        self.series = SeriesList(JSONObject: JSONObject["series"] as? JSONObject)
-        self.events = EventList(JSONObject: JSONObject["events"] as? JSONObject)
-        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
-        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
-        self.originalIssue = ComicSummary(JSONObject: JSONObject["originalIssue"] as? JSONObject)
-    }
-
-}
-
 // MARK: - Typealiases used in the Marvel API docs
 
 public typealias StoryDataContainer = DataContainer<Story>

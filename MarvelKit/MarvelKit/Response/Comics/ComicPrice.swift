@@ -6,9 +6,7 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-// MARK: - ComicPrice
-
-public struct ComicPrice {
+public struct ComicPrice: Codable {
 
     /**
      * A description of the price (e.g. print price, digital price).
@@ -19,16 +17,5 @@ public struct ComicPrice {
      * The price (all prices in USD).
      */
     public let price: Float?
-
-}
-
-// MARK: - ComicPrice + JSONObjectConvertible
-
-extension ComicPrice: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-        self.type = JSONObject["type"] as? String
-        self.price = JSONObject["price"] as? Float
-    }
 
 }

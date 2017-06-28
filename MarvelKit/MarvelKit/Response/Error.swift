@@ -8,30 +8,11 @@
 
 // MARK: - Error
 
-public struct Error {
+public struct Error: Swift.Error, Codable {
 
     public let message: String
 
     public let code: String
-
-}
-
-// MARK: - Error + JSONObjectConvertible
-
-extension Error: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-
-        guard let
-            message = JSONObject["message"] as? String,
-            let code = JSONObject["code"] as? String else {
-
-            return nil
-        }
-
-        self.message = message
-        self.code = code
-    }
 
 }
 

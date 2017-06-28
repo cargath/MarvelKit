@@ -17,7 +17,7 @@ class CreatorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        dataWrapper = CreatorDataWrapper(JSONObject: JSONSerialization.JSONObject(named: "CreatorTests", forBundle: Bundle(for: CreatorTests.self)))
+        dataWrapper = Creator.resource(named: "CreatorTests", bundle: Bundle(for: CreatorTests.self))
     }
     
     override func tearDown() {
@@ -49,99 +49,99 @@ class CreatorTests: XCTestCase {
 
     func testCreatorData() {
 
-        XCTAssertEqual(dataWrapper?.data?.results.count, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?.count, 1)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].id, 6642)
-        XCTAssertEqual(dataWrapper?.data?.results[0].firstName, "Cameron")
-        XCTAssertEqual(dataWrapper?.data?.results[0].middleName, "")
-        XCTAssertEqual(dataWrapper?.data?.results[0].lastName, "")
-        XCTAssertEqual(dataWrapper?.data?.results[0].suffix, "")
-        XCTAssertEqual(dataWrapper?.data?.results[0].fullName, "Cameron")
-        XCTAssertEqual(dataWrapper?.data?.results[0].modified, "2007-01-02T00:00:00-0500")
-        XCTAssertEqual(dataWrapper?.data?.results[0].modifiedDate, Date.with(year: 2007, month: 1, day: 2, hour: 0, minute: 0, second: 0, timeZoneOffset: -5 * 60 * 60))
-        XCTAssertEqual(dataWrapper?.data?.results[0].resourceURI, "http://gateway.marvel.com/v1/public/creators/6642")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].id, 6642)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].firstName, "Cameron")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].middleName, "")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].lastName, "")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].suffix, "")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].fullName, "Cameron")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].modified, "2007-01-02T00:00:00-0500")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].modifiedDate, Date.with(year: 2007, month: 1, day: 2, hour: 0, minute: 0, second: 0, timeZoneOffset: -5 * 60 * 60))
+        XCTAssertEqual(dataWrapper?.data?.results?[0].resourceURI, "http://gateway.marvel.com/v1/public/creators/6642")
     }
 
     func testThumbnail() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].thumbnail)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].thumbnail)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].thumbnail?.path, "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
-        XCTAssertEqual(dataWrapper?.data?.results[0].thumbnail?.pathExtension, "jpg")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].thumbnail?.path, "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].thumbnail?.`extension`, "jpg")
     }
 
     func testComics() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].comics)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].comics)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.available, 1)
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/comics")
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.returned, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.available, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/comics")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.returned, 1)
     }
 
     func testComicItems() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items.count, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?.count, 1)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items[0].resourceURI, "http://gateway.marvel.com/v1/public/comics/19833")
-        XCTAssertEqual(dataWrapper?.data?.results[0].comics?.items[0].name, "Marvel Fanfare (1982) #56")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?[0].resourceURI, "http://gateway.marvel.com/v1/public/comics/19833")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].comics?.items?[0].name, "Marvel Fanfare (1982) #56")
     }
 
     func testSeries() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].series)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].series)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].series?.available, 1)
-        XCTAssertEqual(dataWrapper?.data?.results[0].series?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/series")
-        XCTAssertEqual(dataWrapper?.data?.results[0].series?.returned, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].series?.available, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].series?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/series")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].series?.returned, 1)
     }
 
     func testSeriesItems() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].series?.items.count, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].series?.items?.count, 1)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].series?.items[0].resourceURI, "http://gateway.marvel.com/v1/public/series/3719")
-        XCTAssertEqual(dataWrapper?.data?.results[0].series?.items[0].name, "Marvel Fanfare (1982 - 1992)")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].series?.items?[0].resourceURI, "http://gateway.marvel.com/v1/public/series/3719")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].series?.items?[0].name, "Marvel Fanfare (1982 - 1992)")
     }
 
     func testStories() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].stories)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].stories)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.available, 4)
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/stories")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.returned, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.available, 4)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/stories")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.returned, 2)
     }
 
     func testStoryItems() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items.count, 2)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?.count, 2)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[0].resourceURI, "http://gateway.marvel.com/v1/public/stories/42458")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[0].name, "pinup")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[0].type, "")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[0].resourceURI, "http://gateway.marvel.com/v1/public/stories/42458")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[0].name, "pinup")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[0].type, "")
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[1].resourceURI, "http://gateway.marvel.com/v1/public/stories/42459")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[1].name, "pinup")
-        XCTAssertEqual(dataWrapper?.data?.results[0].stories?.items[1].type, "")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[1].resourceURI, "http://gateway.marvel.com/v1/public/stories/42459")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[1].name, "pinup")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].stories?.items?[1].type, "")
     }
 
     func testEvents() {
 
-        XCTAssertNotNil(dataWrapper?.data?.results[0].events)
+        XCTAssertNotNil(dataWrapper?.data?.results?[0].events)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.available, 0)
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/events")
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.items.count, 0)
-        XCTAssertEqual(dataWrapper?.data?.results[0].events?.returned, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.available, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.collectionURI, "http://gateway.marvel.com/v1/public/creators/6642/events")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.items?.count, 0)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].events?.returned, 0)
     }
 
     func testUrls() {
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].urls.count, 1)
+        XCTAssertEqual(dataWrapper?.data?.results?[0].urls?.count, 1)
 
-        XCTAssertEqual(dataWrapper?.data?.results[0].urls[0].type, "detail")
-        XCTAssertEqual(dataWrapper?.data?.results[0].urls[0].url, "http://marvel.com/comics/creators/6642/cameron?utm_campaign=apiRef&utm_source=21ad88fd0a067156ca0f6a77923ee6eb")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].urls?[0].type, "detail")
+        XCTAssertEqual(dataWrapper?.data?.results?[0].urls?[0].url, "http://marvel.com/comics/creators/6642/cameron?utm_campaign=apiRef&utm_source=21ad88fd0a067156ca0f6a77923ee6eb")
     }
 
 }

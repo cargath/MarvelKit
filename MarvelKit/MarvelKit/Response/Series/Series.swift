@@ -33,7 +33,7 @@ public struct Series: DataProtocol {
     /**
      * A set of public web site URLs for the resource.
      */
-    public let urls: [Url]
+    public let urls: [Url]?
 
     /**
      * The first year of publication for the series.
@@ -99,33 +99,6 @@ public struct Series: DataProtocol {
      * A summary representation of the series which preceded this series.
      */
     public let previous: SeriesSummary?
-
-}
-
-// MARK: - Series + JSONObjectConvertible
-
-extension Series {
-
-    public init?(JSONObject: JSONObject) {
-        self.id = JSONObject["id"] as? Int
-        self.title = JSONObject["title"] as? String
-        self.description = JSONObject["description"] as? String
-        self.resourceURI = JSONObject["resourceURI"] as? String
-        self.urls = Url.from(JSONArray: JSONObject["urls"] as? JSONArray)
-        self.startYear = JSONObject["startYear"] as? Int
-        self.endYear = JSONObject["endYear"] as? Int
-        self.rating = JSONObject["rating"] as? String
-        self.type = JSONObject["type"] as? String
-        self.modified = JSONObject["modified"] as? String
-        self.thumbnail = Image(JSONObject: JSONObject["thumbnail"] as? JSONObject)
-        self.comics = ComicList(JSONObject: JSONObject["comics"] as? JSONObject)
-        self.stories = StoryList(JSONObject: JSONObject["stories"] as? JSONObject)
-        self.events = EventList(JSONObject: JSONObject["events"] as? JSONObject)
-        self.characters = CharacterList(JSONObject: JSONObject["characters"] as? JSONObject)
-        self.creators = CreatorList(JSONObject: JSONObject["creators"] as? JSONObject)
-        self.next = SeriesSummary(JSONObject: JSONObject["next"] as? JSONObject)
-        self.previous = SeriesSummary(JSONObject: JSONObject["previous"] as? JSONObject)
-    }
 
 }
 

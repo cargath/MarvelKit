@@ -16,7 +16,7 @@ public protocol DataWrapperProtocol {
 
 // MARK: - Data wrapper implementation
 
-public struct DataWrapper<ContainerType: DataContainerProtocol>: DataWrapperProtocol {
+public struct DataWrapper<ContainerType: DataContainerProtocol>: DataWrapperProtocol, Codable {
 
     public typealias ContainerProtocolType = ContainerType
 
@@ -57,20 +57,4 @@ public struct DataWrapper<ContainerType: DataContainerProtocol>: DataWrapperProt
      */
     public let etag: String?
     
-}
-
-// MARK: - Data wrapper + JSONObjectConvertible
-
-extension DataWrapper: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-        self.code = JSONObject["code"] as? Int
-        self.status = JSONObject["status"] as? String
-        self.copyright = JSONObject["copyright"] as? String
-        self.attributionText = JSONObject["attributionText"] as? String
-        self.attributionHTML = JSONObject["attributionHTML"] as? String
-        self.data = ContainerType(JSONObject: JSONObject["data"] as? JSONObject)
-        self.etag = JSONObject["etag"] as? String
-    }
-
 }

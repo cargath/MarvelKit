@@ -8,7 +8,7 @@
 
 // MARK: - Summary interface
 
-public protocol SummaryProtocol: JSONObjectConvertible {
+public protocol SummaryProtocol: Codable {
 
     var resourceURI: String? { get }
 

@@ -8,7 +8,7 @@
 
 // MARK: - Url
 
-public struct Url {
+public struct Url: Codable {
 
     /**
      * A text identifier for the URL.
@@ -19,16 +19,5 @@ public struct Url {
      * A full URL (including scheme, domain, and path).
      */
     public let url: String?
-
-}
-
-// MARK: Url + JSONObjectConvertible
-
-extension Url: JSONObjectConvertible {
-
-    public init(JSONObject: Dictionary<String, AnyObject>) {
-        self.type = JSONObject["type"] as? String
-        self.url = JSONObject["url"] as? String
-    }
 
 }

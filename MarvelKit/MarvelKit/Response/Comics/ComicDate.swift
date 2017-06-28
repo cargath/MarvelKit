@@ -8,6 +8,8 @@
 
 // MARK: - ComicDateType
 
+// TODO: Make Codable
+// TODO: Make Subtype of ComicData?
 public enum ComicDateType: String {
 
     case focDate = "focDate"
@@ -18,7 +20,7 @@ public enum ComicDateType: String {
 
 // MARK: - ComicDate
 
-public struct ComicDate {
+public struct ComicDate: Codable {
 
     /**
      * A description of the date (e.g. onsale date, FOC date).
@@ -29,16 +31,5 @@ public struct ComicDate {
      * The date.
      */
     public let date: String?
-
-}
-
-// MARK: - ComicDate + JSONObjectConvertible
-
-extension ComicDate: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-        self.type = JSONObject["type"] as? String
-        self.date = JSONObject["date"] as? String
-    }
 
 }

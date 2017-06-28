@@ -6,15 +6,13 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-public protocol ResourceProtocol {
+public protocol ResourceProtocol: Codable {
 
     associatedtype ResourceFilterType: ResourceFilterProtocol
 
     associatedtype ResourceParameterType: ResourceParameterProtocol
 
     static var name: String { get }
-
-    init?(JSONObject: JSONObject)
 
 }
 

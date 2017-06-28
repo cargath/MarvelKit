@@ -8,7 +8,7 @@
 
 // MARK: - Data interface
 
-public protocol DataProtocol: JSONObjectConvertible {
+public protocol DataProtocol: Codable {
 
     var id: Int? { get }
 

@@ -8,7 +8,7 @@
 
 // MARK: - TextObject
 
-public struct TextObject {
+public struct TextObject: Codable {
 
     /**
      * The canonical type of the text object (e.g. solicit text, preview text, etc.).
@@ -24,17 +24,5 @@ public struct TextObject {
      * The text.
      */
     public let text: String?
-
-}
-
-// MARK: - TextObject + JSONObjectConvertible
-
-extension TextObject: JSONObjectConvertible {
-
-    public init?(JSONObject: JSONObject) {
-        self.type = JSONObject["type"] as? String
-        self.language = JSONObject["language"] as? String
-        self.text = JSONObject["text"] as? String
-    }
 
 }

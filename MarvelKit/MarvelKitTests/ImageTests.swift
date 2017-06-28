@@ -17,7 +17,7 @@ class ImageTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        image = Image(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73", pathExtension: "jpg")
+        image = Image(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73", extension: "jpg")
     }
     
     override func tearDown() {

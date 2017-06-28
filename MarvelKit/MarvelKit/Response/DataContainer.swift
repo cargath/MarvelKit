@@ -8,7 +8,7 @@
 
 // MARK: - Data container interface
 
-public protocol DataContainerProtocol: JSONObjectConvertible {
+public protocol DataContainerProtocol: Codable {
 
     associatedtype DataProtocolType: DataProtocol
 
@@ -43,20 +43,6 @@ public struct DataContainer<DataType: DataProtocol>: DataContainerProtocol {
     /**
      * The list of results returned by the call.
      */
-    public let results: [DataType]
-
-}
-
-// MARK: - Data container + JSONObjectConvertible
-
-extension DataContainer {
-
-    public init?(JSONObject: JSONObject) {
-        self.offset = JSONObject["offset"] as? Int
-        self.limit = JSONObject["limit"] as? Int
-        self.total = JSONObject["total"] as? Int
-        self.count = JSONObject["count"] as? Int
-        self.results = DataType.from(JSONArray: JSONObject["results"] as? JSONArray)
-    }
+    public let results: [DataType]?
 
 }
