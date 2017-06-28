@@ -10,14 +10,10 @@
 
 public struct EventSummary: SummaryProtocol {
 
-    /**
-     * The path to the individual event resource.
-     */
+    /// The path to the individual event resource.
     public let resourceURI: String?
 
-    /**
-     * The name of the event.
-     */
+    /// The name of the event.
     public let name: String?
 
 }

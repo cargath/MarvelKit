@@ -8,14 +8,10 @@
 
 public struct ComicPrice: Codable {
 
-    /**
-     * A description of the price (e.g. print price, digital price).
-     */
+    /// A description of the price (e.g. print price, digital price).
     public let type: String?
 
-    /**
-     * The price (all prices in USD).
-     */
+    /// The price (all prices in USD).
     public let price: Float?
 
 }

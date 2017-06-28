@@ -10,14 +10,10 @@
 
 public struct Url: Codable {
 
-    /**
-     * A text identifier for the URL.
-     */
+    /// A text identifier for the URL.
     public let type: String?
 
-    /**
-     * A full URL (including scheme, domain, and path).
-     */
+    /// A full URL (including scheme, domain, and path).
     public let url: String?
 
 }

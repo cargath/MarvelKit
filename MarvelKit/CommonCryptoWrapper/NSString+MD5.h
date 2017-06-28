@@ -10,12 +10,10 @@
 
 @interface NSString (MD5)
 
-/**
-    Returns the MD5 hash of this string.
- 
-    Note that this specifically returns the lowercase version,
-    because the Marvel API doesn't accept the uppercase one from CommonCrypto.
- */
+/// Returns the MD5 hash of this string.
+///
+/// Note that this specifically returns the lowercase version,
+/// because the Marvel API doesn't accept the uppercase one from CommonCrypto.
 @property (nonatomic, readonly) NSString *md5;
 
 @end

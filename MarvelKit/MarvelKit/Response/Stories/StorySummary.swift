@@ -10,19 +10,13 @@
 
 public struct StorySummary: SummaryProtocol {
 
-    /**
-     * The path to the individual story resource.
-     */
+    /// The path to the individual story resource.
     public let resourceURI: String?
 
-    /**
-     * The canonical name of the story.
-     */
+    /// The canonical name of the story.
     public let name: String?
 
-    /**
-     * The type of the story (interior or cover).
-     */
+    /// The type of the story (interior or cover).
     public let type: String?
 
 }

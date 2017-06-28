@@ -10,14 +10,10 @@
 
 public struct ComicSummary: SummaryProtocol {
 
-    /**
-     * The path to the individual comic resource.
-     */
+    /// The path to the individual comic resource.
     public let resourceURI: String?
 
-    /**
-     * The canonical name of the comic.
-     */
+    /// The canonical name of the comic.
     public let name: String?
     
 }

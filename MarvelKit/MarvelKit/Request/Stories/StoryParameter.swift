@@ -20,50 +20,32 @@ public enum StoryParameter {
         
     }
 
-    /**
-     * Return only stories which have been modified since the specified date.
-     */
+    /// Return only stories which have been modified since the specified date.
     case modifiedSince(Date)
 
-    /**
-     * Return only stories contained in the specified comics.
-     */
+    /// Return only stories contained in the specified comics.
     case comics([Int])
 
-    /**
-     * Return only stories contained the specified series.
-     */
+    /// Return only stories contained the specified series.
     case series([Int])
 
-    /**
-     * Return only stories which take place during the specified events.
-     */
+    /// Return only stories which take place during the specified events.
     case events([Int])
 
-    /**
-     * Return only stories which feature work by the specified creators.
-     */
+    /// Return only stories which feature work by the specified creators.
     case creators([Int])
 
-    /**
-     * Return only stories which feature the specified characters.
-     */
+    /// Return only stories which feature the specified characters.
     case characters([Int])
 
-    /**
-     * Order the result set by a field or fields.
-     * Multiple values are given priority in the order in which they are passed.
-     */
+    /// Order the result set by a field or fields.
+    /// Multiple values are given priority in the order in which they are passed.
     case orderBy([Order])
 
-    /**
-     * Limit the result set to the specified number of resources.
-     */
+    /// Limit the result set to the specified number of resources.
     case limit(Int)
 
-    /**
-     * Skip the specified number of resources in the result set.
-     */
+    /// Skip the specified number of resources in the result set.
     case offset(Int)
 
 }

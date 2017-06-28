@@ -10,15 +10,11 @@
 
 public struct Image: Codable {
 
-    /**
-     * The directory path of to the image.
-     */
+    /// The directory path of to the image.
     public let path: String?
 
-    /**
-     * The file extension for the image.
-     * Actually 'extension', which is a keyword in Swift.
-     */
+    /// The file extension for the image.
+    /// Actually 'extension', which is a keyword in Swift.
     public let `extension`: String?
 
 }
@@ -72,29 +68,31 @@ extension Image {
         case detail = "detail"
     }
     
-    /**
-     # Image Representations and Pathing
-     
-     The Marvel Comics API does not provide full paths to images. Instead, images are represented as a partial path to an image file and the canonical extension of that file. Developers may select from a set of image variants (predefined sizes and ratios) in order to best serve the presentation of their web site or application.
-     
-     To build a full image path from an image representation
-     
-     1. Take the "path" element from the image representation
-     2. Append a variant name to the path element
-     3. Append the "extension" element to the variant name
-     
-     For example, to display the image represented here:
-     
-         "thumbnail": {
-             "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73",
-             "extension": "jpg"
-         }
-     
-     1. Take the path element: `http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73`
-     2. Select an image variant name (see the full list below) and append the variant name to the path element: `http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_xlarge`
-     3. Append the extension: `http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_xlarge.jpg`
-     4. In order to make your web site or application load and respond quickly and preserve end-user bandwidth, we recommend using the smallest-sized image necessary to meet the needs our user interface.
-     */
+    /// Image Representations and Pathing
+    /// =================================
+    ///
+    /// The Marvel Comics API does not provide full paths to images.
+    /// Instead, images are represented as a partial path to an image file and the canonical extension of that file.
+    /// Developers may select from a set of image variants (predefined sizes and ratios)
+    /// in order to best serve the presentation of their web site or application.
+    ///
+    /// To build a full image path from an image representation
+    ///
+    /// 1. Take the "path" element from the image representation
+    /// 2. Append a variant name to the path element
+    /// 3. Append the "extension" element to the variant name
+    ///
+    /// For example, to display the image represented here:
+    ///
+    ///     "thumbnail": {
+    ///         "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73",
+    ///         "extension": "jpg"
+    ///     }
+    ///
+    /// 1. Take the path element: `http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73`
+    /// 2. Select an image variant name (see the full list below) and append the variant name to the path element: `http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_xlarge`
+    /// 3. Append the extension: `http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_xlarge.jpg`
+    /// 4. In order to make your web site or application load and respond quickly and preserve end-user bandwidth, we recommend using the smallest-sized image necessary to meet the needs our user interface.
     public func urlString(size: Size? = nil) -> String? {
         
         guard let path = self.path,

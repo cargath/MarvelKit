@@ -10,19 +10,13 @@
 
 public struct CharacterSummary: SummaryProtocol {
 
-    /**
-     * The path to the individual character resource.
-     */
+    /// The path to the individual character resource.
     public let resourceURI: String?
 
-    /**
-     * The full name of the character.
-     */
+    /// The full name of the character.
     public let name: String?
 
-    /**
-     * The role of the creator in the parent entity.
-     */
+    /// The role of the creator in the parent entity.
     public let role: String?
 
 }

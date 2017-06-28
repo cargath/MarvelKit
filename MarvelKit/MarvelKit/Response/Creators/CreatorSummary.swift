@@ -10,19 +10,13 @@
 
 public struct CreatorSummary: SummaryProtocol {
 
-    /**
-     * The path to the individual creator resource.
-     */
+    /// The path to the individual creator resource.
     public let resourceURI: String?
 
-    /**
-     * The full name of the creator.
-     */
+    /// The full name of the creator.
     public let name: String?
 
-    /**
-     * The role of the creator in the parent entity.
-     */
+    /// The role of the creator in the parent entity.
     public let role: String?
 
 }

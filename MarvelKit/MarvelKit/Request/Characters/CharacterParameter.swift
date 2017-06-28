@@ -17,58 +17,38 @@ public enum CharacterParameter {
         // modified since
         case ModifiedAscending = "modified"
         case ModifiedDescending = "-modified"
-        
+
     }
 
-    /**
-     * Return only characters matching the specified full character name (e.g. Spider-Man).
-     */
+    /// Return only characters matching the specified full character name (e.g. Spider-Man).
     case name(String)
 
-    /**
-     * Return characters with names that begin with the specified string (e.g. Sp).
-     */
+    /// Return characters with names that begin with the specified string (e.g. Sp).
     case nameStartsWith(String)
 
-    /**
-     * Return only characters which have been modified since the specified date.
-     */
+    /// Return only characters which have been modified since the specified date.
     case modifiedSince(Date)
 
-    /**
-     * Return only characters which appear in the specified comics.
-     */
+    /// Return only characters which appear in the specified comics.
     case comics([Int])
 
-    /**
-     * Return only characters which appear the specified series.
-     */
+    /// Return only characters which appear the specified series.
     case series([Int])
 
-    /**
-     * Return only characters which appear in the specified events.
-     */
+    /// Return only characters which appear in the specified events.
     case events([Int])
 
-    /**
-     * Return only characters which appear the specified stories.
-     */
+    /// Return only characters which appear the specified stories.
     case stories([Int])
 
-    /**
-     * Order the result set by a field or fields.
-     * Multiple values are given priority in the order in which they are passed.
-     */
+    /// Order the result set by a field or fields.
+    /// Multiple values are given priority in the order in which they are passed.
     case orderBy([Order])
 
-    /**
-     * Limit the result set to the specified number of resources.
-     */
+    /// Limit the result set to the specified number of resources.
     case limit(Int)
 
-    /**
-     * Skip the specified number of resources in the result set.
-     */
+    /// Skip the specified number of resources in the result set.
     case offset(Int)
 
 }

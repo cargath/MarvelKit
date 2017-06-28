@@ -33,75 +33,47 @@ public enum SeriesParameter {
         
     }
 
-    /**
-     * Return only series matching the specified title.
-     */
+    /// Return only series matching the specified title.
     case title(String)
 
-    /**
-     * Return series with titles that begin with the specified string (e.g. Sp).
-     */
+    /// Return series with titles that begin with the specified string (e.g. Sp).
     case titleStartsWith(String)
 
-    /**
-     * Return only series matching the specified start year.
-     */
+    /// Return only series matching the specified start year.
     case startYear(Int)
 
-    /**
-     * Return only series which have been modified since the specified date.
-     */
+    /// Return only series which have been modified since the specified date.
     case modifiedSince(Date)
 
-    /**
-     * Return only series which contain the specified comics.
-     */
+    /// Return only series which contain the specified comics.
     case comics([Int])
 
-    /**
-     * Return only series which contain the specified stories.
-     */
+    /// Return only series which contain the specified stories.
     case stories([Int])
 
-    /**
-     * Return only series which have comics that take place during the specified events.
-     */
+    /// Return only series which have comics that take place during the specified events.
     case events([Int])
 
-    /**
-     * Return only series which feature work by the specified creators.
-     */
+    /// Return only series which feature work by the specified creators.
     case creators([Int])
 
-    /**
-     * Return only series which feature the specified characters.
-     */
+    /// Return only series which feature the specified characters.
     case characters([Int])
 
-    /**
-     * Filter the series by publication frequency type.
-     */
+    /// Filter the series by publication frequency type.
     case seriesType(Type)
 
-    /**
-     * Return only series containing one or more comics with the specified format.
-     */
+    /// Return only series containing one or more comics with the specified format.
     case contains([ComicParameter.IssueFormat])
 
-    /**
-     * Order the result set by a field or fields.
-     * Multiple values are given priority in the order in which they are passed.
-     */
+    /// Order the result set by a field or fields.
+    /// Multiple values are given priority in the order in which they are passed.
     case orderBy([Order])
 
-    /**
-     * Limit the result set to the specified number of resources.
-     */
+    /// Limit the result set to the specified number of resources.
     case limit(Int)
 
-    /**
-     * Skip the specified number of resources in the result set.
-     */
+    /// Skip the specified number of resources in the result set.
     case offset(Int)
 
 }

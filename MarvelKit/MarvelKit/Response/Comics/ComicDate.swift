@@ -6,30 +6,20 @@
 //  Copyright © 2016 cargath. All rights reserved.
 //
 
-// MARK: - ComicDateType
-
-// TODO: Make Codable
-// TODO: Make Subtype of ComicData?
-public enum ComicDateType: String {
-
-    case focDate = "focDate"
-    case onsaleDate = "onsaleDate"
-    case unlimitedDate = "unlimitedDate"
-
-}
-
-// MARK: - ComicDate
-
 public struct ComicDate: Codable {
+    
+    public enum DateType: String {
+        
+        case focDate = "focDate"
+        case onsaleDate = "onsaleDate"
+        case unlimitedDate = "unlimitedDate"
+        
+    }
 
-    /**
-     * A description of the date (e.g. onsale date, FOC date).
-     */
+    /// A description of the date (e.g. onsale date, FOC date).
     public let type: String?
 
-    /**
-     * The date.
-     */
+    /// The date.
     public let date: String?
 
 }

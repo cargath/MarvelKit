@@ -10,14 +10,10 @@
 
 public struct SeriesSummary: SummaryProtocol {
 
-    /**
-     * The path to the individual series resource.
-     */
+    /// The path to the individual series resource.
     public let resourceURI: String?
 
-    /**
-     * The canonical name of the series.
-     */
+    /// The canonical name of the series.
     public let name: String?
     
 }

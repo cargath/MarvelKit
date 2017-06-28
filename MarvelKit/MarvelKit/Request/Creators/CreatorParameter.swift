@@ -32,85 +32,53 @@ public enum CreatorParameter {
         
     }
 
-    /**
-     * Filter by creator first name (e.g. Brian).
-     */
+    /// Filter by creator first name (e.g. Brian).
     case firstName(String)
 
-    /**
-     * Filter by creator middle name (e.g. Michael).
-     */
+    /// Filter by creator middle name (e.g. Michael).
     case middleName(String)
 
-    /**
-     * Filter by creator last name (e.g. Bendis).
-     */
+    /// Filter by creator last name (e.g. Bendis).
     case lastName(String)
 
-    /**
-     * Filter by suffix or honorific (e.g. Jr., Sr.).
-     */
+    /// Filter by suffix or honorific (e.g. Jr., Sr.).
     case suffix(String)
 
-    /**
-     * Filter by creator names that match critera (e.g. B, St L).
-     */
+    /// Filter by creator names that match critera (e.g. B, St L).
     case nameStartsWith(String)
 
-    /**
-     * Filter by creator first names that match critera (e.g. B, St L).
-     */
+    /// Filter by creator first names that match critera (e.g. B, St L).
     case firstNameStartsWith(String)
 
-    /**
-     * Filter by creator middle names that match critera (e.g. Mi).
-     */
+    /// Filter by creator middle names that match critera (e.g. Mi).
     case middleNameStartsWith(String)
 
-    /**
-     * Filter by creator last names that match critera (e.g. Ben).
-     */
+    /// Filter by creator last names that match critera (e.g. Ben).
     case lastNameStartsWith(String)
 
-    /**
-     * Return only creators which have been modified since the specified date.
-     */
+    /// Return only creators which have been modified since the specified date.
     case modifiedSince(Date)
 
-    /**
-     * Return only creators who worked on in the specified comics.
-     */
+    /// Return only creators who worked on in the specified comics.
     case comics([Int])
 
-    /**
-     * Return only creators who worked on the specified series.
-     */
+    /// Return only creators who worked on the specified series.
     case series([Int])
 
-    /**
-     * Return only creators who worked on comics that took place in the specified events.
-     */
+    /// Return only creators who worked on comics that took place in the specified events.
     case events([Int])
 
-    /**
-     * Return only creators who worked on the specified stories.
-     */
+    /// Return only creators who worked on the specified stories.
     case stories([Int])
 
-    /**
-     * Order the result set by a field or fields.
-     * Multiple values are given priority in the order in which they are passed.
-     */
+    /// Order the result set by a field or fields.
+    /// Multiple values are given priority in the order in which they are passed.
     case orderBy([Order])
-
-    /**
-     * Limit the result set to the specified number of resources.
-     */
+    
+    /// Limit the result set to the specified number of resources.
     case limit(Int)
 
-    /**
-     * Skip the specified number of resources in the result set.
-     */
+    /// Skip the specified number of resources in the result set.
     case offset(Int)
 
 }

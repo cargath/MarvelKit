@@ -61,140 +61,88 @@ public enum ComicParameter {
         
     }
 
-    /**
-     * Filter by the issue format (e.g. comic, digital comic, hardcover).
-     */
+    /// Filter by the issue format (e.g. comic, digital comic, hardcover).
     case format(IssueFormat)
 
-    /**
-     * Filter by the issue format type (comic or collection).
-     */
+    /// Filter by the issue format type (comic or collection).
     case formatType(IssueFormatType)
 
-    /**
-     * Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set.
-     */
+    /// Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set.
     case noVariants(Bool)
 
-    /**
-     * Return comics within a predefined date range.
-     */
+    /// Return comics within a predefined date range.
     case dateDescriptor(PredefinedDateDescriptor)
 
-    /**
-     * Return comics within a date range.
-     */
+    /// Return comics within a date range.
     case dateRange(Date, Date)
 
-    /**
-     * Return only issues in series whose title matches the input.
-     */
+    /// Return only issues in series whose title matches the input.
     case title(String)
 
-    /**
-     * Return only issues in series whose title starts with the input.
-     */
+    /// Return only issues in series whose title starts with the input.
     case titleStartsWith(String)
 
-    /**
-     * Return only issues in series whose start year matches the input.
-     */
+    /// Return only issues in series whose start year matches the input.
     case startYear(Int)
 
-    /**
-     * Return only issues in series whose issue number matches the input.
-     */
+    /// Return only issues in series whose issue number matches the input.
     case issueNumber(Int)
 
-    /**
-     * Filter by diamond code.
-     */
+    /// Filter by diamond code.
     case diamondCode(String)
 
-    /**
-     * Filter by digital comic id.
-     */
+    /// Filter by digital comic id.
     case digitalID(Int)
 
-    /**
-     * Filter by UPC.
-     */
+    /// Filter by UPC.
     case upc(String)
 
-    /**
-     * Filter by ISBN.
-     */
+    /// Filter by ISBN.
     case isbn(String)
 
-    /**
-     * Filter by EAN.
-     */
+    /// Filter by EAN.
     case ean(String)
 
-    /**
-     * Filter by ISSN.
-     */
+    /// Filter by ISSN.
     case issn(String)
 
-    /**
-     * Include only results which are available digitally.
-     */
+    /// Include only results which are available digitally.
     case hasDigitalIssue(Bool)
 
-    /**
-     * Return only comics which have been modified since the specified date.
-     */
+    /// Return only comics which have been modified since the specified date.
     case modifiedSince(Date)
 
-    /**
-     * Return only comics which feature work by the specified creators ids.
-     */
+    /// Return only comics which feature work by the specified creators ids.
     case creators([Int])
 
-    /**
-     * Return only comics which feature the specified characters ids.
-     */
+    /// Return only comics which feature the specified characters ids.
     case characters([Int])
 
-    /**
-     * Return only comics which are part of the specified series ids.
-     */
+    /// Return only comics which are part of the specified series ids.
     case series([Int])
 
-    /**
-     * Return only comics which take place in the specified events ids.
-     */
+    /// Return only comics which take place in the specified events ids.
     case events([Int])
 
-    /**
-     * Return only comics which contain the specified stories ids.
-     */
+    /// Return only comics which contain the specified stories ids.
     case stories([Int])
 
-    /**
-     * Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear).
-     */
+    /// Return only comics in which the specified characters appear together
+    /// (for example in which BOTH Spider-Man and Wolverine appear).
     case sharedAppearances([Int])
 
-    /**
-     * Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work).
-     */
+    /// Return only comics in which the specified creators worked together
+    /// (for example in which BOTH Stan Lee and Jack Kirby did work).
     case collaborators([Int])
 
-    /**
-     * Order the result set by a field or fields.
-     * Multiple values are given priority in the order in which they are passed.
-     */
+    /// Order the result set by a field or fields.
+    /// Multiple values are given priority in the order in which they are passed.
     case orderBy([Order])
 
-    /**
-     * Limit the result set to the specified number of resources.
-     */
+    /// Limit the result set to the specified number of resources.
     case limit(Int)
 
-    /**
-     * Skip the specified number of resources in the result set.
-     */
+    /// Skip the specified number of resources in the result set.
     case offset(Int)
 
 }
