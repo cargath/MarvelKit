@@ -94,6 +94,8 @@
 		AD3E3DDA1F00354E00F0EF27 /* CommonCryptoWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E3DBF1F00318300F0EF27 /* CommonCryptoWrapper.framework */; };
 		AD3E3DDC1F00415C00F0EF27 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */; };
 		AD3E3DDE1F00507F00F0EF27 /* Date+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */; };
+		AD567D5A2049977B00AA6D72 /* URLSession+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD567D592049977B00AA6D72 /* URLSession+Codable.swift */; };
+		AD567D5C20499E5800AA6D72 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD567D5B20499E5800AA6D72 /* Array+Convenience.swift */; };
 		AD947B7E1F04254C003DFC19 /* Data+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD947B7D1F04254C003DFC19 /* Data+Factory.swift */; };
 /* End PBXBuildFile section */
 
@@ -207,6 +209,8 @@
 		AD3E3DD71F0031DE00F0EF27 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		AD3E3DDB1F00415C00F0EF27 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 		AD3E3DDD1F00507F00F0EF27 /* Date+Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Factory.swift"; sourceTree = "<group>"; };
+		AD567D592049977B00AA6D72 /* URLSession+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "URLSession+Codable.swift"; path = "Extensions/URLSession+Codable.swift"; sourceTree = "<group>"; };
+		AD567D5B20499E5800AA6D72 /* Array+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Array+Convenience.swift"; path = "Extensions/Array+Convenience.swift"; sourceTree = "<group>"; };
 		AD947B7D1F04254C003DFC19 /* Data+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Factory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -506,9 +510,11 @@
 		3528E76F1CE8B03500A53022 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AD567D5B20499E5800AA6D72 /* Array+Convenience.swift */,
 				3528E7861CE90BE300A53022 /* DateFormatter+Conversion.swift */,
 				3528E78A1CE9328E00A53022 /* Sequence+Reduce.swift */,
 				3528E7701CE8B05000A53022 /* URL+Parameters.swift */,
+				AD567D592049977B00AA6D72 /* URLSession+Codable.swift */,
 				3528E7721CE8B0A500A53022 /* URLSession+Tasks.swift */,
 			);
 			name = Extensions;
@@ -772,6 +778,7 @@
 				3528E7851CE8EC6100A53022 /* StoryParameter.swift in Sources */,
 				352073001CD369A6009BC420 /* Series.swift in Sources */,
 				350156AA1CDB8F5F0021759D /* Event+ResourceProtocol.swift in Sources */,
+				AD567D5C20499E5800AA6D72 /* Array+Convenience.swift in Sources */,
 				352072D81CD36928009BC420 /* CharacterSummary.swift in Sources */,
 				3520731C1CD371A4009BC420 /* Summary.swift in Sources */,
 				352073121CD3713B009BC420 /* Data.swift in Sources */,
@@ -810,6 +817,7 @@
 				3528E78D1CE9E11700A53022 /* Authentication.swift in Sources */,
 				3528E77D1CE8EC0600A53022 /* ComicParameter.swift in Sources */,
 				3518CE751E1912F1007885D1 /* MarvelKitClient.swift in Sources */,
+				AD567D5A2049977B00AA6D72 /* URLSession+Codable.swift in Sources */,
 				352072D41CD36928009BC420 /* Character.swift in Sources */,
 				352072F61CD3699B009BC420 /* Event.swift in Sources */,
 				352072AA1CD35422009BC420 /* Url.swift in Sources */,

@@ -13,3 +13,11 @@ public protocol ResourceParameterProtocol {
     var value: String { get }
 
 }
+
+public extension ResourceParameterProtocol {
+
+    var urlQueryItem: URLQueryItem {
+        return URLQueryItem(name: key, value: value)
+    }
+
+}

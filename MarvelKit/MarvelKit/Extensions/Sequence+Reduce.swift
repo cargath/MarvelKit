@@ -16,11 +16,9 @@ extension Sequence {
 
 extension Sequence where Iterator.Element: ResourceParameterProtocol {
 
-    var urlParameters: URLParameters {
-        return reduce(URLParameters(), { aggregate, resourceParameter in
-            var newAggregate = aggregate
-            newAggregate[resourceParameter.key] = resourceParameter.value
-            return newAggregate
+    var urlQueryItems: [URLQueryItem] {
+        return reduce([], { aggregate, resourceParameter in
+            return aggregate.appending(resourceParameter.urlQueryItem)
         })
     }
     

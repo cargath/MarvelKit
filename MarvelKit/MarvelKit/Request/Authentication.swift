@@ -46,17 +46,21 @@ public extension Authentication {
     func hash() -> String {
         return hash(timestamp: timestamp)
     }
+    
+}
 
-    func params(timestamp: String, publicKey: String, hash: String) -> URLParameters {
+public extension Authentication {
+
+    func queryItems(timestamp: String, publicKey: String, hash: String) -> [URLQueryItem] {
         return [
-            "ts": timestamp,
-            "apikey": publicKey,
-            "hash": hash
+            URLQueryItem(name: "ts", value: timestamp),
+            URLQueryItem(name: "apikey", value: publicKey),
+            URLQueryItem(name: "hash", value: hash)
         ]
     }
 
-    func params() -> URLParameters {
-        return params(timestamp: timestamp, publicKey: publicKey, hash: hash())
+    func queryItems() -> [URLQueryItem] {
+        return queryItems(timestamp: timestamp, publicKey: publicKey, hash: hash())
     }
-    
+
 }
