@@ -14,6 +14,11 @@ public struct Error: Swift.Error, Codable {
 
     public let code: String
 
+    public init(message: String, code: String) {
+        self.message = message
+        self.code = code
+    }
+
 }
 
 // MARK: - Error + CustomStringConvertible
