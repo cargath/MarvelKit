@@ -1,5 +1,5 @@
 //
-//  Array+Convenience.swift
+//  Array+MarvelKit.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 02.03.2018.

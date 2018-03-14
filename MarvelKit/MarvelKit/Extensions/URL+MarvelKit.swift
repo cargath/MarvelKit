@@ -1,5 +1,5 @@
 //
-//  URL+Parameters.swift
+//  URL+MarvelKit.swift
 //  MarvelKit
 //
 //  Created by Carsten Könemann on 15.05.16.
