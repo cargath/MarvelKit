@@ -20,13 +20,3 @@ public struct Error: Swift.Error, Codable {
     }
 
 }
-
-// MARK: - Error + CustomStringConvertible
-
-extension Error: CustomStringConvertible {
-
-    public var description: String {
-        return "\(message) (\(code))"
-    }
-
-}
