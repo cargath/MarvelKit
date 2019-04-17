@@ -69,7 +69,7 @@ public extension URLSession {
         })
     }
 
-    public func resourceTask<Resource>(with request: Request<Resource>, success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (Swift.Error) -> Void) -> URLSessionTask {
+    func resourceTask<Resource>(with request: Request<Resource>, success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void, error errorHandler: @escaping (Swift.Error) -> Void) -> URLSessionTask {
         if let url = request.url {
             return resourceTask(with: url, errorHandler: errorHandler) { (dataWrapper: DataWrapper<DataContainer<Resource>>) in
 
@@ -88,7 +88,7 @@ public extension URLSession {
     }
 
     // Same as above, but with flipped success and failure handlers, because it allows for nicer error chaining.
-    public func resourceTask<Resource>(with request: Request<Resource>, error errorHandler: @escaping (Swift.Error) -> Void, success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void) -> URLSessionTask {
+    func resourceTask<Resource>(with request: Request<Resource>, error errorHandler: @escaping (Swift.Error) -> Void, success successHandler: @escaping (DataWrapper<DataContainer<Resource>>) -> Void) -> URLSessionTask {
         return resourceTask(with: request, success: successHandler, error: errorHandler)
     }
     

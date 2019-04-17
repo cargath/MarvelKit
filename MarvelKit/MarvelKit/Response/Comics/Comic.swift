@@ -111,7 +111,7 @@ public struct Comic: DataProtocol {
 
 public extension Comic {
 
-    public var focDate: Date? {
+    var focDate: Date? {
         
         guard let dates = self.dates else {
             return nil
@@ -127,7 +127,7 @@ public extension Comic {
         return nil
     }
 
-    public var onsaleDate: Date? {
+    var onsaleDate: Date? {
         
         guard let dates = self.dates else {
             return nil
@@ -143,7 +143,7 @@ public extension Comic {
         return nil
     }
     
-    public var unlimitedDate: Date? {
+    var unlimitedDate: Date? {
         
         guard let dates = self.dates else {
             return nil

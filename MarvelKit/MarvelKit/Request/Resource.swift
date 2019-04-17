@@ -18,11 +18,11 @@ public protocol ResourceProtocol: Codable {
 
 public extension ResourceProtocol {
 
-    public static var baseURLString: String {
+    static var baseURLString: String {
         return "https://gateway.marvel.com/v1/public"
     }
 
-    public static var baseURL: URL? {
+    static var baseURL: URL? {
         return URL(string: baseURLString)
     }
 
@@ -30,15 +30,15 @@ public extension ResourceProtocol {
 
 public extension ResourceProtocol {
 
-    public static func pathComponent() -> String {
+    static func pathComponent() -> String {
         return name
     }
 
-    public static func pathComponent(id: Int) -> String {
+    static func pathComponent(id: Int) -> String {
         return "\(name)/\(id)"
     }
 
-    public static func pathComponent(filter: ResourceFilter<ResourceFilterType>) -> String {
+    static func pathComponent(filter: ResourceFilter<ResourceFilterType>) -> String {
         return "\(filter.pathComponent)/\(name)"
     }
 
@@ -46,15 +46,15 @@ public extension ResourceProtocol {
 
 public extension ResourceProtocol {
 
-    public static func absoluteURL() -> URL? {
+    static func absoluteURL() -> URL? {
         return baseURL?.appendingPathComponent(pathComponent())
     }
 
-    public static func absoluteURL(id: Int) -> URL? {
+    static func absoluteURL(id: Int) -> URL? {
         return baseURL?.appendingPathComponent(pathComponent(id: id))
     }
 
-    public static func absoluteURL(filter: ResourceFilter<ResourceFilterType>) -> URL? {
+    static func absoluteURL(filter: ResourceFilter<ResourceFilterType>) -> URL? {
         return baseURL?.appendingPathComponent(pathComponent(filter: filter))
     }
     

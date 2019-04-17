@@ -64,11 +64,11 @@ public struct Event: DataProtocol {
 
 public extension Event {
     
-    public var startDate: Date? {
+    var startDate: Date? {
         return start?.eventDate
     }
     
-    public var endDate: Date? {
+    var endDate: Date? {
         return end?.eventDate
     }
     

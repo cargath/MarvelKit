@@ -10,7 +10,7 @@ import Foundation
 
 public extension URLComponents {
 
-    public func appendingQueryItems(_ queryItems: [URLQueryItem]) -> URLComponents {
+    func appendingQueryItems(_ queryItems: [URLQueryItem]) -> URLComponents {
         var copy = self
         copy.queryItems = (copy.queryItems ?? []) + queryItems
         return copy
@@ -20,7 +20,7 @@ public extension URLComponents {
 
 public extension URL {
 
-    public func appendingQueryItems(_ queryItems: [URLQueryItem]) -> URL? {
+    func appendingQueryItems(_ queryItems: [URLQueryItem]) -> URL? {
         return URLComponents(string: absoluteString)?.appendingQueryItems(queryItems).url
     }
     

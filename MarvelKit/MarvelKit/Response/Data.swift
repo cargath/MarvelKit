@@ -22,7 +22,7 @@ public protocol DataProtocol: Codable {
 
 public extension DataProtocol {
     
-    public var modifiedDate: Date? {
+    var modifiedDate: Date? {
         return modified?.iso8601Date
     }
     

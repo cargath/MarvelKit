@@ -16,7 +16,7 @@ public protocol ResourceFilterProtocol {
 
 public extension ResourceFilterProtocol {
 
-    public func pathComponent(id: Int) -> String {
+    func pathComponent(id: Int) -> String {
         return "\(name)/\(id)"
     }
     
