@@ -692,10 +692,11 @@
 			};
 			buildConfigurationList = 352072611CD34A0F009BC420 /* Build configuration list for PBXProject "MarvelKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 3520725D1CD34A0F009BC420;
 			productRefGroup = 352072681CD34A0F009BC420 /* Products */;
